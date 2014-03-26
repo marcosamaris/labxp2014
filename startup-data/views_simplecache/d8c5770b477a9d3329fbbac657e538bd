@@ -753,16 +753,16 @@ a.elgg-button {
 	z-index:1;
 }
 .friends-picker-navigation-l {
-	background: url("http://200.144.254.81:50080/startup/_graphics/friendspicker.png") no-repeat left top;
+	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat left top;
 }
 .friends-picker-navigation-r {
-	background: url("http://200.144.254.81:50080/startup/_graphics/friendspicker.png") no-repeat -60px top;
+	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px top;
 }
 .friends-picker-navigation-l:hover {
-	background: url("http://200.144.254.81:50080/startup/_graphics/friendspicker.png") no-repeat left -44px;
+	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat left -44px;
 }
 .friends-picker-navigation-r:hover {
-	background: url("http://200.144.254.81:50080/startup/_graphics/friendspicker.png") no-repeat -60px -44px;
+	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px -44px;
 }
 .friendspicker-savebuttons .elgg-button-submit,
 .friendspicker-savebuttons .elgg-button-cancel {
@@ -1222,7 +1222,7 @@ a.elgg-widget-collapsed:before {
 	ICONS
 *************************************** */
 .elgg-icon {
-	background: transparent url(http://200.144.254.81:50080/startup/_graphics/admin_sprites.png) no-repeat left;
+	background: transparent url(http://200.144.254.81:50080/labxp2014/startup/_graphics/admin_sprites.png) no-repeat left;
 	width: 16px;
 	height: 16px;
 	display: inline-block;
@@ -1260,7 +1260,7 @@ a.elgg-widget-collapsed:before {
 }
 
 .elgg-ajax-loader {
-	background: white url(http://200.144.254.81:50080/startup/_graphics/ajax_loader_bw.gif) no-repeat center center;
+	background: white url(http://200.144.254.81:50080/labxp2014/startup/_graphics/ajax_loader_bw.gif) no-repeat center center;
 	min-height: 33px;
 	min-width: 33px;
 }

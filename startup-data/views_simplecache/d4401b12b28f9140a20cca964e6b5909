@@ -2226,7 +2226,7 @@ elgg.register_hook_handler('init', 'system', elgg.ui.widgets.init);
 
 elgg.version = '2014012000';
 elgg.release = '1.8.19';
-elgg.config.wwwroot = 'http://200.144.254.81:50080/startup/';
+elgg.config.wwwroot = 'http://200.144.254.81:50080/labxp2014/startup/';
 elgg.security.interval = 5 * 60 * 1000;
 elgg.config.domReady = false;
 elgg.config.language = 'en';
