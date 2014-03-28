@@ -1,0 +1,50 @@
+TUTORIAL PARA INSTALAÇÃO DA REDE SOCIAL
+
+
+requerimentos para tutorial:
+
+-apache2
+-php5
+-phpmyadmin
+-bando de dados mysql
+
+tutorial para instalação da rede social plus network.
+
+1- faça o clone do projeto no github:
+   git clone http://[link do projeto]
+	na pasta do apache2 ( no meu caso /var/www)
+
+2- supondo que tenha o phpmyadmin instalado:
+   
+   no browser, acesse o link: 
+	
+   localhost/phpmyadmin
+
+   faça o login no seu banco de dados com acesso root.
+   
+   crie um usuário do banco de dados:
+
+   *usarname: startup
+    password: monashees
+
+   faça logout com a conta root, e faça login com a conta recém criadao,  startup.
+   
+   crie um novo banco de dados, cujo nome também será startup.
+
+   
+   após a criação do banco, selecione ele, vá em importar e busque pelo banco.sql mais atualizado
+
+   ainda dentro do phpadmin:
+   verifique se alguma atualização precisa ser feita no elgg_datalists
+	e elgg_sites_entity. Um problema comum é que o caminho para o diretório
+   da pasta startup esteja errado em um desses arquivos. Verifique também
+	se o ip nesses arquivos é o correto.
+
+	*usuário e senha do banco de dados, criados para o site, devem estar consistentes com o arquivo [path]/www/labxp/startup/engine/settings.php                      
+   ** [ubuntu 12.04] no arquivo: /etc/apache2/sites-available/default na tag directory
+"/var/www" dê permissão AllowOvewrite All (provavel default é AllowOverwrite none). 
+
+
+  
+
+   
