@@ -27,7 +27,7 @@ tutorial para instalação da rede social plus network.
    *usarname: startup
     password: monashees
 
-   faça logout com a conta root, e faça login com a conta recém criadao,  startup.
+   faça logout com a conta root, e faça login com a conta recém criada,  startup.
    
    crie um novo banco de dados, cujo nome também será startup.
 

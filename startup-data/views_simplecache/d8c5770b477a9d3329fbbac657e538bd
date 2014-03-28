@@ -753,16 +753,16 @@ a.elgg-button {
 	z-index:1;
 }
 .friends-picker-navigation-l {
-	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat left top;
+	background: url("http://localhost/labxp2014/startup/_graphics/friendspicker.png") no-repeat left top;
 }
 .friends-picker-navigation-r {
-	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px top;
+	background: url("http://localhost/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px top;
 }
 .friends-picker-navigation-l:hover {
-	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat left -44px;
+	background: url("http://localhost/labxp2014/startup/_graphics/friendspicker.png") no-repeat left -44px;
 }
 .friends-picker-navigation-r:hover {
-	background: url("http://200.144.254.81:50080/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px -44px;
+	background: url("http://localhost/labxp2014/startup/_graphics/friendspicker.png") no-repeat -60px -44px;
 }
 .friendspicker-savebuttons .elgg-button-submit,
 .friendspicker-savebuttons .elgg-button-cancel {
@@ -1222,7 +1222,7 @@ a.elgg-widget-collapsed:before {
 	ICONS
 *************************************** */
 .elgg-icon {
-	background: transparent url(http://200.144.254.81:50080/labxp2014/startup/_graphics/admin_sprites.png) no-repeat left;
+	background: transparent url(http://localhost/labxp2014/startup/_graphics/admin_sprites.png) no-repeat left;
 	width: 16px;
 	height: 16px;
 	display: inline-block;
@@ -1260,7 +1260,7 @@ a.elgg-widget-collapsed:before {
 }
 
 .elgg-ajax-loader {
-	background: white url(http://200.144.254.81:50080/labxp2014/startup/_graphics/ajax_loader_bw.gif) no-repeat center center;
+	background: white url(http://localhost/labxp2014/startup/_graphics/ajax_loader_bw.gif) no-repeat center center;
 	min-height: 33px;
 	min-width: 33px;
 }
@@ -1639,113 +1639,3 @@ table.mceLayout {
 .mvs{margin-top:5px;margin-bottom:5px}
 .mvm{margin-top:10px;margin-bottom:10px}
 .mvl{margin-top:20px;margin-bottom:20px}
-/*** Elgg Developer Tools ***/
-#developers-iframe {
-	width: 100%;
-	height: 600px;
-	border: none;
-}
-#developer-settings-form label {
-	margin-right: 5px;
-}
-.elgg-page .jstree-default.jstree-focused {
-	background-color: transparent;
-}
-.developers-log {
-	background-color: #EBF5FF;
-	border: 1px solid #999;
-	color: #666;
-	padding: 20px;
-}
-
-.developers-content-thin {
-	max-width: 600px;
-}.embed-wrapper {
-	width: 730px;
-	min-height: 400px;
-	margin: 20px 15px;
-}
-.embed-wrapper h2 {
-	color: #333333;
-	margin-bottom: 10px;
-}
-.embed-wrapper .elgg-item {
-	cursor: pointer;
-}
-
-/* ***************************************
-	EMBED TABBED PAGE NAVIGATION
-*************************************** */
-.embed-wrapper .elgg-tabs a:hover {
-	color: #666;
-}
-
-.embed-wrapper p {
-	color: #333;
-}
-.embed-item {
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.embed-item:hover {
-	background-color: #eee;
-}
-
-/* REPORTED CONTENT */
-.reported-content {
-	margin: 5px 0 0;
-	padding: 5px 7px 3px 9px;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-.reported-content p {
-	margin: 0;
-}
-.reported-content-active {
-	border: 1px solid #D3322A;
-	background: #F7DAD8;
-}
-.reported-content-archived {
-	border: 1px solid #666666;
-	background: #dedede;
-}
-.reported-content .controls {
-	float: right;
-	margin: 5px 0 0 10px;
-}
-.report-details {
-	background-color: white;
-	padding: 5px;
-	margin-bottom: 5px;
-	max-width: 500px;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-.elgg-widget-content .reported-content .elgg-button {
-	display: block;
-	margin: 5px;
-}
-/* TinyMCE */
-.elgg-page .mceEditor table.mceLayout {
-	border: 1px solid #CCC;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-.elgg-page table.mceLayout tr.mceFirst td.mceToolbar,
-.elgg-page table.mceLayout tr.mceLast td.mceStatusbar {
-	border-width: 0px;
-}
-.mceButton {
-	-webkit-border-radius: 4px; 
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-.mceLast .mceStatusbar {
-	padding-left: 5px;
-}
