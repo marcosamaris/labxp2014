@@ -1,50 +1,61 @@
 TUTORIAL PARA INSTALAÇÃO DA REDE SOCIAL
 
+Requerimentos para tutorial:
 
-requerimentos para tutorial:
+  -apache2
+  -php5
+  -phpmyadmin
+  -bando de dados mysql
 
--apache2
--php5
--phpmyadmin
--bando de dados mysql
+Tutorial para instalação da rede social plus network.
 
-tutorial para instalação da rede social plus network.
+  1- Faça o clone do projeto no github:
+    git clone http://[link do projeto]
+  	na pasta do apache2 ( no meu caso /var/www)
 
-1- faça o clone do projeto no github:
-   git clone http://[link do projeto]
-	na pasta do apache2 ( no meu caso /var/www)
-
-2- supondo que tenha o phpmyadmin instalado:
-   
-   no browser, acesse o link: 
-	
-   localhost/phpmyadmin
-
-   faça o login no seu banco de dados com acesso root.
-   
-   crie um usuário do banco de dados:
-
-   *usarname: startup
-    password: monashees
-
-   faça logout com a conta root, e faça login com a conta recém criada,  startup.
-   
-   crie um novo banco de dados, cujo nome também será startup.
-
-   
-   após a criação do banco, selecione ele, vá em importar e busque pelo banco.sql mais atualizado
-
-   ainda dentro do phpadmin:
-   verifique se alguma atualização precisa ser feita no elgg_datalists
-	e elgg_sites_entity. Um problema comum é que o caminho para o diretório
-   da pasta startup esteja errado em um desses arquivos. Verifique também
-	se o ip nesses arquivos é o correto.
-
-	*usuário e senha do banco de dados, criados para o site, devem estar consistentes com o arquivo [path]/www/labxp/startup/engine/settings.php                      
-   ** [ubuntu 12.04] no arquivo: /etc/apache2/sites-available/default na tag directory
-"/var/www" dê permissão AllowOvewrite All (provavel default é AllowOverwrite none). 
-
-
+  2- Supondo que tenha o phpmyadmin instalado:
   
-
+    > Adicionar phpmyadmin ao apache:
+        sudo nano /etc/apache2/apache2.conf
+        Adicione no final do arquivo: Include /etc/phpmyadmin/apache.conf
+        sudo service apache2 restart
    
+    > No browser, acesse o link: localhost/phpmyadmin
+
+    > Faça o login no seu banco de dados com acesso root.
+   
+    > Crie um usuário do banco de dados:
+
+        usarname: startup
+        password: monashees
+
+    > Faça logout com a conta root, e faça login com a conta recém criada, startup.
+   
+    > Crie um novo banco de dados, cujo nome também será startup.
+
+    > Após a criação do banco, selecione ele, vá em importar e busque pelo banco.sql mais atualizado
+
+    > Ainda dentro do phpadmin:
+      
+        Verifique se alguma atualização precisa ser feita no elgg_datalists 
+        e elgg_sites_entity. Um problema comum é que o caminho para o diretório
+        da pasta startup esteja errado em um desses arquivos. Verifique também
+	      se o ip nesses arquivos é o correto.
+
+	3-Configuracoes adicionais:
+	
+	  > Usuário e senha do banco de dados, criados para o site, devem estar consistentes com o arquivo:
+	       [path]/www/labxp/startup/engine/settings.php
+	       
+    > [ubuntu 12.04] no arquivo: /etc/apache2/sites-available/default na tag directory 
+        "/var/www" dê permissão AllowOvewrite All (provavel default é AllowOverwrite none). 
+
+    > Para usar o mod_rewrite: 
+         sudo a2enmod rewrite
+    > Restart apache2:
+        /etc/init.d/apache2 restart (ou service apache2 restart)
+        
+    > [ubuntu 13.10]: 
+      sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf.d/phpmyadmin.conf 
+      sudo /etc/init.d/apache2 reload
+

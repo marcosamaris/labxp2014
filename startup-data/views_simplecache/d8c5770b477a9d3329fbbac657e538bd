@@ -1729,13 +1729,7 @@ table.mceLayout {
 	display: block;
 	margin: 5px;
 }
-
-.uservalidation-module > .elgg-head * {
-	color: white;
-}
-.uservalidation-module > .elgg-body * {
-	color: #333;
-}/* TinyMCE */
+/* TinyMCE */
 .elgg-page .mceEditor table.mceLayout {
 	border: 1px solid #CCC;
 	
