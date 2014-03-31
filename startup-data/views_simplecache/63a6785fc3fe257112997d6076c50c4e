@@ -1,74 +1,4 @@
-
-/* ***************************************
-	RESET CSS
-*************************************** */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
-}
-body {
-	background-color: white;
-}
-html, body {
-	height: 100%;
-	margin-bottom: 1px;
-}
-img {
-	border-width:0;
-	border-color:transparent;
-}
-:focus {
-	outline: 0 none;
-}
-ol, ul {
-	list-style: none;
-}
-em, i {
-	font-style:italic;
-}
-ins {
-	text-decoration:none;
-}
-del {
-	text-decoration:line-through;
-}
-strong, b {
-	font-weight:bold;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
-	vertical-align: top;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-a {
-	text-decoration: none;
-}
-
+﻿
 /* Clearfix */
 .clearfix:after,
 .elgg-grid:after,
@@ -152,277 +82,6 @@ a {
 	position: relative;
 
 	display: inline-block;
-}
-
-/* ***************************************
-	GRID
-*************************************** */
-.elgg-col {
-	float: left;
-}
-.elgg-col-1of1 {
-	float: none;
-}
-.elgg-col-1of2 {
-	width: 50%;
-}
-.elgg-col-1of3 {
-	width: 33.33%;
-}
-.elgg-col-2of3 {
-	width: 66.66%;
-}
-.elgg-col-1of4 {
-	width: 25%;
-}
-.elgg-col-3of4 {
-	width: 75%;
-}
-.elgg-col-1of5 {
-	width: 20%;
-}
-.elgg-col-2of5 {
-	width: 40%;
-}
-.elgg-col-3of5 {
-	width: 60%;
-}
-.elgg-col-4of5 {
-	width: 80%;
-}
-.elgg-col-1of6 {
-	width: 16.66%;
-}
-.elgg-col-5of6 {
-	width: 83.33%;
-}
-
-/* ***************************************
-	Typography
-*************************************** */
-body {
-	font-size: 80%;
-	line-height: 1.4em;
-	font-family: "Lucida Grande", Arial, Tahoma, Verdana, sans-serif;
-}
-
-a {
-	color: #4690D6;
-}
-
-a:hover,
-a.selected { 	color: #555555;
-	text-decoration: underline;
-}
-
-p {
-	margin-bottom: 15px;
-}
-
-p:last-child {
-	margin-bottom: 0;
-}
-
-pre, code {
-	font-family: Monaco, "Courier New", Courier, monospace;
-	font-size: 12px;
-	
-	background:#EBF5FF;
-	color:#000000;
-	overflow:auto;
-
-	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
-
-	white-space: pre-wrap;
-	word-wrap: break-word; /* IE 5.5-7 */
-	
-}
-
-pre {
-	padding:3px 15px;
-	margin:0px 0 15px 0;
-	line-height:1.3em;
-}
-
-code {
-	padding:2px 3px;
-}
-
-.elgg-monospace {
-	font-family: Monaco, "Courier New", Courier, monospace;
-}
-
-blockquote {
-	line-height: 1.3em;
-	padding:3px 15px;
-	margin:0px 0 15px 0;
-	background:#EBF5FF;
-	border:none;
-	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
-	color: #0054A7;
-}
-
-h1 { font-size: 1.8em; }
-h2 { font-size: 1.5em; line-height: 1.1em; padding-bottom:5px}
-h3 { font-size: 1.2em; }
-h4 { font-size: 1.0em; }
-h5 { font-size: 0.9em; }
-h6 { font-size: 0.8em; }
-
-.elgg-heading-site, .elgg-heading-site:hover {
-	font-size: 2em;
-	line-height: 1.4em;
-	color: white;
-	font-style: italic;
-	font-family: Georgia, times, serif;
-	text-shadow: 1px 2px 4px #333333;
-	text-decoration: none;
-}
-
-.elgg-heading-main {
-	float: left;
-	max-width: 530px;
-	margin-right: 10px;
-}
-.elgg-heading-basic {
-	color: #0054A7;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-
-.elgg-subtext {
-	color: #666666;
-	font-size: 85%;
-	line-height: 1.2em;
-	font-style: italic;
-}
-
-.elgg-text-help {
-	display: block;
-	font-size: 85%;
-	font-style: italic;
-}
-
-.elgg-quiet {
-	color: #666;
-}
-
-.elgg-loud {
-	color: #0054A7;
-}
-
-/* ***************************************
-	USER INPUT DISPLAY RESET
-*************************************** */
-.elgg-output {
-	margin-top: 10px;
-}
-
-.elgg-output dt { font-weight: bold }
-.elgg-output dd { margin: 0 0 1em 1em }
-
-.elgg-output ul, .elgg-output ol {
-	margin: 0 1.5em 1.5em 0;
-	padding-left: 1.5em;
-}
-.elgg-output ul {
-	list-style-type: disc;
-}
-.elgg-output ol {
-	list-style-type: decimal;
-}
-.elgg-output table {
-	border: 1px solid #ccc;
-}
-.elgg-output table td {
-	border: 1px solid #ccc;
-	padding: 3px 5px;
-}
-.elgg-output img {
-	max-width: 100%;
-	height: auto;
-}
-
-/* ***************************************
-	Form Elements
-*************************************** */
-fieldset > div {
-	margin-bottom: 15px;
-}
-fieldset > div:last-child {
-	margin-bottom: 0;
-}
-.elgg-form-alt > fieldset > .elgg-foot {
-	border-top: 1px solid #CCC;
-	padding: 10px 0;
-}
-
-label {
-	font-weight: bold;
-	color: #333;
-	font-size: 110%;
-}
-
-input, textarea {
-	border: 1px solid #ccc;
-	color: #666;
-	font: 120% Arial, Helvetica, sans-serif;
-	padding: 5px;
-	width: 100%;	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-input[type=text]:focus, textarea:focus {
-	border: solid 1px #4690d6;
-	background: #e4ecf5;
-	color:#333;
-}
-
-textarea {
-	height: 200px;
-}
-
-
-.elgg-longtext-control {
-	float: right;
-	margin-left: 14px;
-	font-size: 80%;
-	cursor: pointer;
-}
-
-
-.elgg-input-access {
-	margin:5px 0 0 0;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	margin:0 3px 0 0;
-	padding:0;
-	border:none;
-	border-radius:0;
-	width:auto;
-}
-.elgg-input-checkboxes.elgg-horizontal li,
-.elgg-input-radios.elgg-horizontal li {
-	display: inline;
-	padding-right: 10px;
-}
-
-.elgg-form-login, .elgg-form-account {
-	max-width: 450px;
 }
 
 /* ***************************************
@@ -610,10 +269,6 @@ input[type="radio"] {
 	text-decoration: none;
 	color: #4690D6;
 }
-.ui-autocomplete a.ui-state-hover {
-	background-color: #eee;
-	display: block;
-}
 
 /* ***************************************
 	USER PICKER
@@ -721,149 +376,605 @@ input[type="radio"] {
 
 /* Base */
 .elgg-button {
-	font-size: 14px;
-	font-weight: bold;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-
-	width: auto;
-	padding: 2px 4px;
-	cursor: pointer;
-	outline: none;
-	
-	-webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.40);
-	-moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.40);
-	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.40);
+	display: inline-block;
+  *display: inline;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  *margin-left: .3em;
+  font-size: 13px;
+  line-height: 18px;
+  *line-height: 20px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  *background-color: #e6e6e6;
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-bottom-color: #b3b3b3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  *zoom: 1;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-a.elgg-button {
-	padding: 3px 6px;
-}
-
-/* Submit: This button should convey, "you're about to take some definitive action" */
-.elgg-button-submit {
-	color: white;
-	text-shadow: 1px 1px 0px black;
-	text-decoration: none;
-	border: 1px solid #4690d6;
-	background: #4690d6 url(http://localhost/labxp2014/startup/_graphics/button_graduation.png) repeat-x left 10px;
-}
-
-.elgg-button-submit:hover {
-	border-color: #0054a7;
-	text-decoration: none;
-	color: white;
-	background: #0054a7 url(http://localhost/labxp2014/startup/_graphics/button_graduation.png) repeat-x left 10px;
-}
-
-.elgg-button-submit.elgg-state-disabled {
-	background: #999;
-	border-color: #999;
-	cursor: default;
-}
-
-/* Cancel: This button should convey a negative but easily reversible action (e.g., turning off a plugin) */
-.elgg-button-cancel {
-	color: #333;
-	background: #ddd url(http://localhost/labxp2014/startup/_graphics/button_graduation.png) repeat-x left 10px;
-	border: 1px solid #999;
-}
-.elgg-button-cancel:hover {
-	color: #444;
-	background-color: #999;
-	background-position: left 10px;
-	text-decoration: none;
+.elgg-button:hover,
+.elgg-button:active,
+.elgg-button.active,
+.elgg-button.disabled,
+.elgg-button[disabled] {
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
 }
 
-/* Action: This button should convey a normal, inconsequential action, such as clicking a link */
-.elgg-button-action {
-	background: #ccc url(http://localhost/labxp2014/startup/_graphics/button_background.gif) repeat-x 0 0;
-	border:1px solid #999;
-	color: #333;
-	padding: 2px 15px;
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	text-shadow: 0 1px 0 white;
-	cursor: pointer;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+.elgg-button:active,
+.elgg-button.active {
+  background-color: #cccccc \9;
 }
 
-.elgg-button-action:hover,
-.elgg-button-action:focus {
-	background: #ccc url(http://localhost/labxp2014/startup/_graphics/button_background.gif) repeat-x 0 -15px;
-	color: #111;
-	text-decoration: none;
-	border: 1px solid #999;
+.elgg-button:first-child {
+  *margin-left: 0;
 }
 
-/* Delete: This button should convey "be careful before you click me" */
-.elgg-button-delete {
-	color: #bbb;
-	text-decoration: none;
-	border: 1px solid #333;
-	background: #555 url(http://localhost/labxp2014/startup/_graphics/button_graduation.png) repeat-x left 10px;
-	text-shadow: 1px 1px 0px black;
-}
-.elgg-button-delete:hover {
-	color: #999;
-	background-color: #333;
-	background-position: left 10px;
-	text-decoration: none;
+.elgg-button:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+     -moz-transition: background-position 0.1s linear;
+      -ms-transition: background-position 0.1s linear;
+       -o-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
 }
 
-.elgg-button-dropdown {
-	padding:3px 6px;
-	text-decoration:none;
-	display:block;
-	font-weight:bold;
-	position:relative;
-	margin-left:0;
-	color: white;
-	border:1px solid #71B9F7;
-	
-	-webkit-border-radius:4px;
-	-moz-border-radius:4px;
-	border-radius:4px;
-	
-	-webkit-box-shadow: 0 0 0;
-	-moz-box-shadow: 0 0 0;
-	box-shadow: 0 0 0;
-	
-	/*background-image:url(http://localhost/labxp2014/startup/_graphics/elgg_sprites.png);
-	background-position:-150px -51px;
-	background-repeat:no-repeat;*/
+.elgg-button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
-.elgg-button-dropdown:after {
-	content: " \25BC ";
-	font-size:smaller;
+.elgg-button.active,
+.elgg-button:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.elgg-button-dropdown:hover {
-	background-color:#71B9F7;
-	text-decoration:none;
+.elgg-button.disabled,
+.elgg-button[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
 
-.elgg-button-dropdown.elgg-state-active {
-	background: #ccc;
-	outline: none;
-	color: #333;
-	border:1px solid #ccc;
-	
-	-webkit-border-radius:4px 4px 0 0;
-	-moz-border-radius:4px 4px 0 0;
-	border-radius:4px 4px 0 0;
+.elgg-button-large {
+  padding: 9px 14px;
+  font-size: 15px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 
+.elgg-button-large [class^="icon-"] {
+  margin-top: 1px;
+}
+
+.elgg-button-small {
+  padding: 5px 9px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.elgg-button-small [class^="icon-"] {
+  margin-top: -1px;
+}
+
+.elgg-button-mini {
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.elgg-button-primary,
+.elgg-button-primary:hover,
+.elgg-button-warning,
+.elgg-button-warning:hover,
+.elgg-button-danger,
+.elgg-button-danger:hover,
+.elgg-button-success,
+.elgg-button-success:hover,
+.elgg-button-info,
+.elgg-button-info:hover,
+.elgg-button-inverse,
+.elgg-button-inverse:hover {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.elgg-button-primary.active,
+.elgg-button-warning.active,
+.elgg-button-danger.active,
+.elgg-button-success.active,
+.elgg-button-info.active,
+.elgg-button-inverse.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.elgg-button {
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.elgg-button-primary {
+  background-color: #0074cc;
+  *background-color: #0055cc;
+  background-image: -ms-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0055cc);
+  background-image: -moz-linear-gradient(top, #0088cc, #0055cc);
+  background-image: linear-gradient(top, #0088cc, #0055cc);
+  background-repeat: repeat-x;
+  border-color: #0055cc #0055cc #003580;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-primary:hover,
+.elgg-button-primary:active,
+.elgg-button-primary.active,
+.elgg-button-primary.disabled,
+.elgg-button-primary[disabled] {
+  background-color: #0055cc;
+  *background-color: #004ab3;
+}
+
+.elgg-button-primary:active,
+.elgg-button-primary.active {
+  background-color: #004099 \9;
+}
+
+.elgg-button-warning {
+  background-color: #faa732;
+  *background-color: #f89406;
+  background-image: -ms-linear-gradient(top, #fbb450, #f89406);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image: -o-linear-gradient(top, #fbb450, #f89406);
+  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+  background-image: linear-gradient(top, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  border-color: #f89406 #f89406 #ad6704;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-warning:hover,
+.elgg-button-warning:active,
+.elgg-button-warning.active,
+.elgg-button-warning.disabled,
+.elgg-button-warning[disabled] {
+  background-color: #f89406;
+  *background-color: #df8505;
+}
+
+.elgg-button-warning:active,
+.elgg-button-warning.active {
+  background-color: #c67605 \9;
+}
+
+.elgg-button-danger {
+  background-color: #da4f49;
+  *background-color: #bd362f;
+  background-image: -ms-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(top, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-danger:hover,
+.elgg-button-danger:active,
+.elgg-button-danger.active,
+.elgg-button-danger.disabled,
+.elgg-button-danger[disabled] {
+  background-color: #bd362f;
+  *background-color: #a9302a;
+}
+
+.elgg-button-danger:active,
+.elgg-button-danger.active {
+  background-color: #942a25 \9;
+}
+
+.elgg-button-success {
+  background-color: #5bb75b;
+  *background-color: #51a351;
+  background-image: -ms-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(top, #62c462, #51a351);
+  background-repeat: repeat-x;
+  border-color: #51a351 #51a351 #387038;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-success:hover,
+.elgg-button-success:active,
+.elgg-button-success.active,
+.elgg-button-success.disabled,
+.elgg-button-success[disabled] {
+  background-color: #51a351;
+  *background-color: #499249;
+}
+
+.elgg-button-success:active,
+.elgg-button-success.active {
+  background-color: #408140 \9;
+}
+
+.elgg-button-info {
+  background-color: #49afcd;
+  *background-color: #2f96b4;
+  background-image: -ms-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(top, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-info:hover,
+.elgg-button-info:active,
+.elgg-button-info.active,
+.elgg-button-info.disabled,
+.elgg-button-info[disabled] {
+  background-color: #2f96b4;
+  *background-color: #2a85a0;
+}
+
+.elgg-button-info:active,
+.elgg-button-info.active {
+  background-color: #24748c \9;
+}
+
+.elgg-button-inverse {
+  background-color: #414141;
+  *background-color: #222222;
+  background-image: -ms-linear-gradient(top, #555555, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#555555), to(#222222));
+  background-image: -webkit-linear-gradient(top, #555555, #222222);
+  background-image: -o-linear-gradient(top, #555555, #222222);
+  background-image: -moz-linear-gradient(top, #555555, #222222);
+  background-image: linear-gradient(top, #555555, #222222);
+  background-repeat: repeat-x;
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#555555', endColorstr='#222222', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.elgg-button-inverse:hover,
+.elgg-button-inverse:active,
+.elgg-button-inverse.active,
+.elgg-button-inverse.disabled,
+.elgg-button-inverse[disabled] {
+  background-color: #222222;
+  *background-color: #151515;
+}
+
+.elgg-button-inverse:active,
+.elgg-button-inverse.active {
+  background-color: #080808 \9;
+}
+
+button.elgg-button,
+input[type="submit"].elgg-button {
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+}
+
+button.elgg-button::-moz-focus-inner,
+input[type="submit"].elgg-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+button.elgg-button.elgg-button-large,
+input[type="submit"].elgg-button.elgg-button-large {
+  *padding-top: 7px;
+  *padding-bottom: 7px;
+}
+
+button.elgg-button.elgg-button-small,
+input[type="submit"].elgg-button.elgg-button-small {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+
+button.elgg-button.elgg-button-mini,
+input[type="submit"].elgg-button.elgg-button-mini {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+
+.elgg-button-group {
+  position: relative;
+  *margin-left: .3em;
+  *zoom: 1;
+}
+
+.elgg-button-group:before,
+.elgg-button-group:after {
+  display: table;
+  content: "";
+}
+
+.elgg-button-group:after {
+  clear: both;
+}
+
+.elgg-button-group:first-child {
+  *margin-left: 0;
+}
+
+.elgg-button-group + .elgg-button-group {
+  margin-left: 5px;
+}
+
+.elgg-button-toolbar {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.elgg-button-toolbar .elgg-button-group {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+}
+
+.elgg-button-group > .elgg-button {
+  position: relative;
+  float: left;
+  margin-left: -1px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+.elgg-button-group > .elgg-button:first-child {
+  margin-left: 0;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+
+.elgg-button-group > .elgg-button:last-child,
+.elgg-button-group > .dropdown-toggle {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+
+.elgg-button-group > .elgg-button.large:first-child {
+  margin-left: 0;
+  -webkit-border-bottom-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+          border-top-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-topleft: 6px;
+}
+
+.elgg-button-group > .elgg-button.large:last-child,
+.elgg-button-group > .large.dropdown-toggle {
+  -webkit-border-top-right-radius: 6px;
+          border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+}
+
+.elgg-button-group > .elgg-button:hover,
+.elgg-button-group > .elgg-button:focus,
+.elgg-button-group > .elgg-button:active,
+.elgg-button-group > .elgg-button.active {
+  z-index: 2;
+}
+
+.elgg-button-group .dropdown-toggle:active,
+.elgg-button-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+.elgg-button-group > .dropdown-toggle {
+  *padding-top: 4px;
+  padding-right: 8px;
+  *padding-bottom: 4px;
+  padding-left: 8px;
+  -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.elgg-button-group > .elgg-button-mini.dropdown-toggle {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.elgg-button-group > .elgg-button-small.dropdown-toggle {
+  *padding-top: 4px;
+  *padding-bottom: 4px;
+}
+
+.elgg-button-group > .elgg-button-large.dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.elgg-button-group.open .dropdown-toggle {
+  background-image: none;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.elgg-button-group.open .elgg-button.dropdown-toggle {
+  background-color: #e6e6e6;
+}
+
+.elgg-button-group.open .elgg-button-primary.dropdown-toggle {
+  background-color: #0055cc;
+}
+
+.elgg-button-group.open .elgg-button-warning.dropdown-toggle {
+  background-color: #f89406;
+}
+
+.elgg-button-group.open .elgg-button-danger.dropdown-toggle {
+  background-color: #bd362f;
+}
+
+.elgg-button-group.open .elgg-button-success.dropdown-toggle {
+  background-color: #51a351;
+}
+
+.elgg-button-group.open .elgg-button-info.dropdown-toggle {
+  background-color: #2f96b4;
+}
+
+.elgg-button-group.open .elgg-button-inverse.dropdown-toggle {
+  background-color: #222222;
+}
+
+.elgg-button .caret {
+  margin-top: 7px;
+  margin-left: 0;
+}
+
+.elgg-button:hover .caret,
+.open.elgg-button-group .caret {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.elgg-button-mini .caret {
+  margin-top: 5px;
+}
+
+.elgg-button-small .caret {
+  margin-top: 6px;
+}
+
+.elgg-button-large .caret {
+  margin-top: 6px;
+  border-top-width: 5px;
+  border-right-width: 5px;
+  border-left-width: 5px;
+}
+
+.dropup .elgg-button-large .caret {
+  border-top: 0;
+  border-bottom: 5px solid #000000;
+}
+
+.elgg-button-primary .caret,
+.elgg-button-warning .caret,
+.elgg-button-danger .caret,
+.elgg-button-info .caret,
+.elgg-button-success .caret,
+.elgg-button-inverse .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+}
+
+.input-prepend .elgg-button,
+.input-append .elgg-button {
+  margin-left: -1px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+.input-prepend .elgg-button {
+  margin-right: -1px;
+}
+
+.input-prepend .elgg-button:first-child {
+  -webkit-border-radius: 3px 0 0 3px;
+     -moz-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
+}
+
+.input-append .elgg-button:last-child {
+  -webkit-border-radius: 0 3px 3px 0;
+     -moz-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
+}
+
+.input-prepend.input-append .elgg-button:last-child {
+  margin-left: -1px;
+  -webkit-border-radius: 0 3px 3px 0;
+     -moz-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
+}
 /* ***************************************
 	ICONS
 *************************************** */
@@ -1201,555 +1312,6 @@ a.elgg-button {
 .elgg-avatar-large > a > img {
 	width: 200px;
 	height: 200px;
-}
-
-/* ***************************************
-	PAGINATION
-*************************************** */
-.elgg-pagination {
-	margin: 10px 0;
-	display: block;
-	text-align: center;
-}
-.elgg-pagination li {
-	display: inline-block;
-	margin: 0 6px 0 0;
-	text-align: center;
-}
-.elgg-pagination a, .elgg-pagination span {
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-
-	display: block;
-	padding: 2px 6px;
-	color: #4690d6;
-	border: 1px solid #4690d6;
-	font-size: 12px;
-}
-.elgg-pagination a:hover {
-	background: #4690d6;
-	color: white;
-	text-decoration: none;
-}
-.elgg-pagination .elgg-state-disabled span {
-	color: #CCCCCC;
-	border-color: #CCCCCC;
-}
-.elgg-pagination .elgg-state-selected span {
-	color: #555555;
-	border-color: #555555;
-}
-
-/* ***************************************
-	TABS
-*************************************** */
-.elgg-tabs {
-	margin-bottom: 5px;
-	border-bottom: 2px solid #cccccc;
-	display: table;
-	width: 100%;
-}
-.elgg-tabs li {
-	float: left;
-	border: 2px solid #ccc;
-	border-bottom: 0;
-	background: #eee;
-	margin: 0 0 0 10px;
-	
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
-}
-.elgg-tabs a {
-	text-decoration: none;
-	display: block;
-	padding: 3px 10px 0 10px;
-	text-align: center;
-	height: 21px;
-	color: #999;
-}
-.elgg-tabs a:hover {
-	background: #dedede;
-	color: #4690D6;
-}
-.elgg-tabs .elgg-state-selected {
-	border-color: #ccc;
-	background: white;
-}
-.elgg-tabs .elgg-state-selected a {
-	position: relative;
-	top: 2px;
-	background: white;
-}
-
-/* ***************************************
-	BREADCRUMBS
-*************************************** */
-.elgg-breadcrumbs {
-	font-size: 80%;
-	font-weight: bold;
-	line-height: 1.2em;
-	color: #bababa;
-}
-.elgg-breadcrumbs > li {
-	display: inline-block;
-}
-.elgg-breadcrumbs > li:after {
-	content: "\003E";
-	padding: 0 4px;
-	font-weight: normal;
-}
-.elgg-breadcrumbs > li > a {
-	display: inline-block;
-	color: #999;
-}
-.elgg-breadcrumbs > li > a:hover {
-	color: #0054a7;
-	text-decoration: underline;
-}
-
-.elgg-main .elgg-breadcrumbs {
-	position: relative;
-	top: -6px;
-	left: 0;
-}
-
-/* ***************************************
-	TOPBAR MENU
-*************************************** */
-.elgg-menu-topbar {
-	float: left;
-}
-
-.elgg-menu-topbar > li {
-	float: left;
-}
-
-.elgg-menu-topbar > li > a {
-	padding-top: 2px;
-	color: #eee;
-	margin: 1px 15px 0;
-}
-
-.elgg-menu-topbar > li > a:hover {
-	color: #4690D6;
-	text-decoration: none;
-}
-
-.elgg-menu-topbar-alt {
-	float: right;
-}
-
-.elgg-menu-topbar .elgg-icon {
-	vertical-align: middle;
-	margin-top: -1px;
-}
-
-.elgg-menu-topbar > li > a.elgg-topbar-logo {
-	margin-top: 0;
-	padding-left: 5px;
-	width: 38px;
-	height: 20px;
-}
-
-.elgg-menu-topbar > li > a.elgg-topbar-avatar {
-	width: 18px;
-	height: 18px;
-}
-
-/* ***************************************
-	SITE MENU
-*************************************** */
-.elgg-menu-site {
-	z-index: 1;
-}
-
-.elgg-menu-site > li > a {
-	font-weight: bold;
-	padding: 3px 13px 0px 13px;
-	height: 20px;
-}
-
-.elgg-menu-site > li > a:hover {
-	text-decoration: none;
-}
-
-.elgg-menu-site-default {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 23px;
-}
-
-.elgg-menu-site-default > li {
-	float: left;
-	margin-right: 1px;
-}
-
-.elgg-menu-site-default > li > a {
-	color: white;
-}
-
-.elgg-menu-site > li > ul {
-	display: none;
-	background-color: white;
-}
-
-.elgg-menu-site > li:hover > ul {
-	display: block;
-}
-
-.elgg-menu-site-default > .elgg-state-selected > a,
-.elgg-menu-site-default > li:hover > a {
-	background: white;
-	color: #555;
-
-	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
-	box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
-
-	-webkit-border-radius: 4px 4px 0 0;
-	-moz-border-radius: 4px 4px 0 0;
-	border-radius: 4px 4px 0 0;
-}
-
-.elgg-menu-site-more {
-	position: relative;
-	left: -1px;
-	width: 100%;
-	min-width: 150px;
-	border: 1px solid #999;
-	border-top: 0;
-
-	-webkit-border-radius: 0 0 4px 4px;
-	-moz-border-radius: 0 0 4px 4px;
-	border-radius: 0 0 4px 4px;
-
-	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-.elgg-menu-site-more > li > a {
-	background-color: white;
-	color: #555;
-
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-
-.elgg-menu-site-more > li > a:hover {
-	background: #4690D6;
-	color: white;
-}
-
-.elgg-menu-site-more > li:last-child > a,
-.elgg-menu-site-more > li:last-child > a:hover {
-	-webkit-border-radius: 0 0 4px 4px;
-	-moz-border-radius: 0 0 4px 4px;
-	border-radius: 0 0 4px 4px;
-}
-
-.elgg-more > a:before {
-	content: "\25BC";
-	font-size: smaller;
-	margin-right: 4px;
-}
-
-/* ***************************************
-	TITLE
-*************************************** */
-.elgg-menu-title {
-	float: right;
-}
-
-.elgg-menu-title > li {
-	display: inline-block;
-	margin-left: 4px;
-}
-
-/* ***************************************
-	FILTER MENU
-*************************************** */
-.elgg-menu-filter {
-	margin-bottom: 5px;
-	border-bottom: 2px solid #ccc;
-	display: table;
-	width: 100%;
-}
-.elgg-menu-filter > li {
-	float: left;
-	border: 2px solid #ccc;
-	border-bottom: 0;
-	background: #eee;
-	margin: 0 0 0 10px;
-	
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
-}
-.elgg-menu-filter > li:hover {
-	background: #dedede;
-}
-.elgg-menu-filter > li > a {
-	text-decoration: none;
-	display: block;
-	padding: 3px 10px 0;
-	text-align: center;
-	height: 21px;
-	color: #999;
-}
-.elgg-menu-filter > li > a:hover {
-	background: #dedede;
-	color: #4690D6;
-}
-.elgg-menu-filter > .elgg-state-selected {
-	border-color: #ccc;
-	background: white;
-}
-.elgg-menu-filter > .elgg-state-selected > a {
-	position: relative;
-	top: 2px;
-	background: white;
-}
-
-/* ***************************************
-	PAGE MENU
-*************************************** */
-.elgg-menu-page {
-	margin-bottom: 15px;
-}
-
-.elgg-menu-page a {
-	display: block;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	
-	background-color: white;
-	margin: 0 0 3px;
-	padding: 2px 4px 2px 8px;
-}
-.elgg-menu-page a:hover {
-	background-color: #0054A7;
-	color: white;
-	text-decoration: none;
-}
-.elgg-menu-page li.elgg-state-selected > a {
-	background-color: #4690D6;
-	color: white;
-}
-.elgg-menu-page .elgg-child-menu {
-	display: none;
-	margin-left: 15px;
-}
-.elgg-menu-page .elgg-menu-closed:before, .elgg-menu-opened:before {
-	display: inline-block;
-	padding-right: 4px;
-}
-.elgg-menu-page .elgg-menu-closed:before {
-	content: "\002B";
-}
-.elgg-menu-page .elgg-menu-opened:before {
-	content: "\002D";
-}
-
-/* ***************************************
-	HOVER MENU
-*************************************** */
-.elgg-menu-hover {
-	display: none;
-	position: absolute;
-	z-index: 10000;
-
-	overflow: hidden;
-
-	min-width: 165px;
-	max-width: 250px;
-	border: solid 1px;
-	border-color: #E5E5E5 #999 #999 #E5E5E5;
-	background-color: #FFF;
-	
-	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
-	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
-	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
-}
-.elgg-menu-hover > li {
-	border-bottom: 1px solid #ddd;
-}
-.elgg-menu-hover > li:last-child {
-	border-bottom: none;
-}
-.elgg-menu-hover .elgg-heading-basic {
-	display: block;
-}
-.elgg-menu-hover a {
-	padding: 2px 8px;
-	font-size: 92%;
-}
-.elgg-menu-hover a:hover {
-	background: #ccc;
-	text-decoration: none;
-}
-.elgg-menu-hover-admin a {
-	color: red;
-}
-.elgg-menu-hover-admin a:hover {
-	color: white;
-	background-color: red;
-}
-
-/* ***************************************
-	SITE FOOTER
-*************************************** */
-.elgg-menu-footer > li,
-.elgg-menu-footer > li > a {
-	display: inline-block;
-	color: #999;
-}
-
-.elgg-menu-footer > li:after {
-	content: "\007C";
-	padding: 0 4px;
-}
-
-.elgg-menu-footer-default {
-	float: right;
-}
-
-.elgg-menu-footer-alt {
-	float: left;
-}
-
-/* ***************************************
-	GENERAL MENU
-*************************************** */
-.elgg-menu-general > li,
-.elgg-menu-general > li > a {
-	display: inline-block;
-	color: #999;
-}
-
-.elgg-menu-general > li:after {
-	content: "\007C";
-	padding: 0 4px;
-}
-
-/* ***************************************
-	ENTITY AND ANNOTATION
-*************************************** */
-.elgg-menu-entity, .elgg-menu-annotation {
-	float: right;
-	margin-left: 15px;
-	font-size: 90%;
-	color: #aaa;
-	line-height: 16px;
-	height: 16px;
-}
-.elgg-menu-entity > li, .elgg-menu-annotation > li {
-	margin-left: 15px;
-}
-.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
-	color: #aaa;
-}
-.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
-	display: block;
-}
-.elgg-menu-entity > li > span, .elgg-menu-annotation > li > span {
-	vertical-align: baseline;
-}
-
-/* ***************************************
-	OWNER BLOCK
-*************************************** */
-.elgg-menu-owner-block li a {
-	display: block;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	
-	background-color: white;
-	margin: 3px 0 5px 0;
-	padding: 2px 4px 2px 8px;
-}
-.elgg-menu-owner-block li a:hover {
-	background-color: #0054A7;
-	color: white;
-	text-decoration: none;
-}
-.elgg-menu-owner-block li.elgg-state-selected > a {
-	background-color: #4690D6;
-	color: white;
-}
-
-/* ***************************************
-	LONGTEXT
-*************************************** */
-.elgg-menu-longtext {
-	float: right;
-}
-
-/* ***************************************
-	RIVER
-*************************************** */
-.elgg-menu-river {
-	float: right;
-	margin-left: 15px;
-	font-size: 90%;
-	color: #aaa;
-	line-height: 16px;
-	height: 16px;
-}
-.elgg-menu-river > li {
-	display: inline-block;
-	margin-left: 5px;
-}
-.elgg-menu-river > li > a {
-	color: #aaa;
-	height: 16px;
-}
-.elgg-menu-river > li > a {
-	display: block;
-}
-.elgg-menu-river > li > span {
-	vertical-align: baseline;
-}
-
-/* ***************************************
-	SIDEBAR EXTRAS (rss, bookmark, etc)
-*************************************** */
-.elgg-menu-extras {
-	margin-bottom: 15px;
-}
-
-/* ***************************************
-	WIDGET MENU
-*************************************** */
-.elgg-menu-widget > li {
-	position: absolute;
-	top: 4px;
-	display: inline-block;
-	width: 18px;
-	height: 18px;
-	padding: 2px 2px 0 0;
-}
-
-.elgg-menu-widget > .elgg-menu-item-collapse {
-	left: 5px;
-}
-.elgg-menu-widget > .elgg-menu-item-delete {
-	right: 5px;
-}
-.elgg-menu-widget > .elgg-menu-item-settings {
-	right: 25px;
 }
 /* ***************************************
 	Modules
@@ -2218,114 +1780,6 @@ a.elgg-widget-collapsed:before {
 .elgg-tagcloud {
 	text-align: justify;
 }
-
-/* ***************************************
-	PAGE LAYOUT
-*************************************** */
-/***** DEFAULT LAYOUT ******/
-.elgg-page-default {
-	min-width: 998px;
-}
-.elgg-page-default .elgg-page-header > .elgg-inner {
-	width: 990px;
-	margin: 0 auto;
-	height: 90px;
-}
-.elgg-page-default .elgg-page-body > .elgg-inner {
-	width: 990px;
-	margin: 0 auto;
-}
-.elgg-page-default .elgg-page-footer > .elgg-inner {
-	width: 990px;
-	margin: 0 auto;
-	padding: 5px 0;
-	border-top: 1px solid #DEDEDE;
-}
-
-/***** TOPBAR ******/
-.elgg-page-topbar {
-	background: #333333 url(http://localhost/labxp2014/startup/_graphics/toptoolbar_background.gif) repeat-x top left;
-	border-bottom: 1px solid #000000;
-	position: relative;
-	height: 24px;
-	z-index: 9000;
-}
-.elgg-page-topbar > .elgg-inner {
-	padding: 0 10px;
-}
-
-/***** PAGE MESSAGES ******/
-.elgg-system-messages {
-	position: fixed;
-	top: 24px;
-	right: 20px;
-	max-width: 500px;
-	z-index: 2000;
-}
-.elgg-system-messages li {
-	margin-top: 10px;
-}
-.elgg-system-messages li p {
-	margin: 0;
-}
-
-/***** PAGE HEADER ******/
-.elgg-page-header {
-	position: relative;
-	background: #4690D6 url(http://localhost/labxp2014/startup/_graphics/header_shadow.png) repeat-x bottom left;
-}
-.elgg-page-header > .elgg-inner {
-	position: relative;
-}
-
-/***** PAGE BODY LAYOUT ******/
-.elgg-layout {
-	min-height: 360px;
-}
-.elgg-layout-one-sidebar {
-	background: transparent url(http://localhost/labxp2014/startup/_graphics/sidebar_background.gif) repeat-y right top;
-}
-.elgg-layout-two-sidebar {
-	background: transparent url(http://localhost/labxp2014/startup/_graphics/two_sidebar_background.gif) repeat-y right top;
-}
-.elgg-layout-error {
-	margin-top: 20px;
-}
-.elgg-sidebar {
-	position: relative;
-	padding: 20px 10px;
-	float: right;
-	width: 210px;
-	margin: 0 0 0 10px;
-}
-.elgg-sidebar-alt {
-	position: relative;
-	padding: 20px 10px;
-	float: left;
-	width: 160px;
-	margin: 0 10px 0 0;
-}
-.elgg-main {
-	position: relative;
-	min-height: 360px;
-	padding: 10px;
-}
-.elgg-main > .elgg-head {
-	padding-bottom: 3px;
-	border-bottom: 1px solid #CCCCCC;
-	margin-bottom: 10px;
-}
-
-/***** PAGE FOOTER ******/
-.elgg-page-footer {
-	position: relative;
-}
-.elgg-page-footer {
-	color: #999;
-}
-.elgg-page-footer a:hover {
-	color: #666;
-}
 /* ***************************************
 	MISC
 *************************************** */
@@ -2388,144 +1842,24 @@ a.elgg-widget-collapsed:before {
 	display: none;
 	padding: 0;
 }
-
-.clearfloat { 
-	clear: both;
-}
-
-.hidden {
-	display: none;
-}
-
-.centered {
-	margin: 0 auto;
-}
-
-.center {
-	text-align: center;
-}
-
-.float {
-	float: left;
-}
-
-.float-alt {
-	float: right;
-}
-
-.link {
-	cursor: pointer;
-}
-
-.elgg-discover .elgg-discoverable {
-	display: none;
-}
-
-.elgg-discover:hover .elgg-discoverable {
-	display: block;
-}
-
-.elgg-transition:hover {
-	opacity: .7;
-}
-
 /* ***************************************
-	BORDERS AND SEPARATORS
-*************************************** */
-.elgg-border-plain {
-	border: 1px solid #eeeeee;
-}
-.elgg-border-transition {
-	border: 1px solid #eeeeee;
-}
-.elgg-divide-top {
-	border-top: 1px solid #CCCCCC;
-}
-.elgg-divide-bottom {
-	border-bottom: 1px solid #CCCCCC;
-}
-.elgg-divide-left {
-	border-left: 1px solid #CCCCCC;
-}
-.elgg-divide-right {
-	border-right: 1px solid #CCCCCC;
-}
-
-/* ***************************************
-	Spacing (from OOCSS)
-*************************************** */
-/* Padding */
-.pan{padding:0}
-.prn, .phn{padding-right:0}
-.pln, .phn{padding-left:0}
-.ptn, .pvn{padding-top:0}
-.pbn, .pvn{padding-bottom:0}
-
-.pas{padding:5px}
-.prs, .phs{padding-right:5px}
-.pls, .phs{padding-left:5px}
-.pts, .pvs{padding-top:5px}
-.pbs, .pvs{padding-bottom:5px}
-
-.pam{padding:10px}
-.prm, .phm{padding-right:10px}
-.plm, .phm{padding-left:10px}
-.ptm, .pvm{padding-top:10px}
-.pbm, .pvm{padding-bottom:10px}
-
-.pal{padding:20px}
-.prl, .phl{padding-right:20px}
-.pll, .phl{padding-left:20px}
-.ptl, .pvl{padding-top:20px}
-.pbl, .pvl{padding-bottom:20px}
-
-/* Margin */
-.man{margin:0}
-.mrn, .mhn{margin-right:0}
-.mln, .mhn{margin-left:0}
-.mtn, .mvn{margin-top:0}
-.mbn, .mvn{margin-bottom:0}
-
-.mas{margin:5px}
-.mrs, .mhs{margin-right:5px}
-.mls, .mhs{margin-left:5px}
-.mts, .mvs{margin-top:5px}
-.mbs, .mvs{margin-bottom:5px}
-
-.mam{margin:10px}
-.mrm, .mhm{margin-right:10px}
-.mlm, .mhm{margin-left:10px}
-.mtm, .mvm{margin-top:10px}
-.mbm, .mvm{margin-bottom:10px}
-
-.mal{margin:20px}
-.mrl, .mhl{margin-right:20px}
-.mll, .mhl{margin-left:20px}
-.mtl, .mvl{margin-top:20px}
-.mbl, .mvl{margin-bottom:20px}/* ***************************************
 	Profile
 *************************************** */
+
 .profile {
-	float: left;
-	margin-bottom: 15px;
-}
-.profile .elgg-inner {
-	margin: 0 5px;
-	border: 2px solid #eee;
-	
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
+	margin: 0;
+	padding:0;
 }
 #profile-details {
-	padding: 15px;
+	padding: 15px 0 15px 0;
 }
 /*** ownerblock ***/
 #profile-owner-block {
-	width: 200px;
-	float: left;
 	background-color: #eee;
 	padding: 15px;
+	margin:0;
+	width:200px;
+	border-radius:4px;
 }
 #profile-owner-block .large {
 	margin-bottom: 10px;
@@ -2552,6 +1886,23 @@ a.elgg-widget-collapsed:before {
 }
 .profile-admin-menu {
 	display: none;
+}
+
+ul.profile-action-menu > li {
+	margin-bottom:4px;
+}
+
+ul.profile-content-menu {
+	margin:0;
+}
+
+ul.profile-action-menu {
+	margin:0px;
+	padding:0;
+}
+
+ul.profile-admin-menu-wrapper {
+	margin:0;
 }
 .profile-admin-menu-wrapper a {
 	display: block;
@@ -2622,15 +1973,27 @@ a.elgg-widget-collapsed:before {
 	border-radius: 6px;
 }
 
+#widgets-row {
+	margin-top: 20px;
+}
+
+/**
+ * Without this rule widget columns has a min-height
+ * creating a gap on mobile layout
+ */
+@media (max-width: 767px) {
+	.elgg-widgets {
+		min-height: 0 !important;
+	}
+}
+
 /* Blog Plugin */
 
 /* force tinymce input height for a more useful editing / blog creation area */
 form#blog-post-edit #description_parent #description_ifr {
 	height:400px !important;
 }
-.elgg-icon-bookmark {
-	background: transparent url(http://localhost/labxp2014/startup/mod/bookmarks/graphics/bookmark.gif);
-}
+
 .categories li label {
 	font-size: 100%;
 	line-height: 1.2em;
@@ -3060,4 +2423,503 @@ The Wire
 }
 .mceLast .mceStatusbar {
 	padding-left: 5px;
+}
+﻿
+/** SOME CORE OVERRIDES **/
+
+body {
+	position: relative;
+}
+
+.hidden {
+	display:none;
+}
+
+.elgg-page .elgg-page-header {
+	position: relative;
+	padding-top:15px;
+	margin-top:40px;
+}
+
+.elgg-page-header h1 {
+	padding-bottom:10px;
+}
+
+.elgg-page-header h1 a {
+	font-size:32px;
+	color:#000;
+}
+
+.elgg-menu-extras-default {
+	margin:10px 0 10px -10px;
+	min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.elgg-menu-longtext-default > li, .elgg-menu-extras-default > li {
+	padding:0 10px 0 10px;
+}
+
+ul.elgg-menu-river-default, ul.elgg-menu-annotation-default {
+	float:right;
+}
+
+ul.elgg-tags {
+	margin:0;
+}
+
+.page-header {
+	margin:0 0 5px 0;
+	padding:0 0 5px 0;
+}
+
+li {
+	list-style:none;
+}
+
+.elgg-foot {
+	margin-top:20px;
+}
+
+/** system messages **/
+
+.elgg-page-messages {
+	position:relative;
+}
+
+.bootstrap-messages {
+	position:absolute;
+	top:40px;
+	z-index:100;
+ 	right:0;
+}
+
+/** Footer **/
+
+.elgg-page-footer li  {
+	padding:0 0 0 10px;
+}
+
+.elgg-page-footer {
+	padding-bottom:20px;
+}
+
+.elgg-body:after,
+.elgg-col-last:after {
+	display: block;
+	visibility: hidden;
+	height: 0 !important;
+	line-height: 0;
+	overflow: hidden;
+	
+	/* Stretch to fill up available space */
+	font-size: xx-large;
+	content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+/** This should not be required, @todo figure out why it is **/
+/** navigation / menu / topbar line 52 **/
+.nav-collapse-margin-issue {
+	margin-top:-16px;
+}
+
+/* Aside */
+.elgg-module-aside .elgg-head {
+	border-bottom: 0px solid #CCC;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+/** Elgg access label **/
+
+.elgg-access {
+	 font-size: 10.998px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999999;
+	padding: 1px 9px 2px;
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+}
+
+.elgg-access:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/** Elgg Avatar within elgg-page-body **/
+
+.elgg-page-body .elgg-avatar {
+	float:left;
+	margin:0 10px 10px 0;
+}
+
+
+/* ***************************************
+	ENTITY AND ANNOTATION
+*************************************** */
+
+.elgg-menu-entity, elgg-menu-annotation {
+	float: right;
+	margin-left: 15px;
+	font-size: 90%;
+	color: #aaa;
+	line-height: 16px;
+	height: 16px;
+}
+.elgg-menu-entity > li, .elgg-menu-annotation > li {
+	margin-left: 15px;
+}
+.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
+	color: #aaa;
+}
+
+.elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
+	display: block;
+}
+.elgg-menu-entity > li > span, .elgg-menu-annotation > li > span {
+	vertical-align: baseline;
+}
+
+/* ***************************************
+	LONGTEXT
+*************************************** */
+.elgg-menu-longtext {
+	float: right;
+}
+
+/*** MISC ***/
+
+.elgg-tagcloud {
+	margin:10px 0 10px 0;
+}
+
+/* ***************************************
+	SIDEBAR EXTRAS (rss, bookmark, etc)
+*************************************** */
+.elgg-menu-extras {
+	margin-bottom: 15px;
+}
+
+/* ***************************************
+	WIDGET MENU
+*************************************** */
+.elgg-menu-widget > li {
+	position: absolute;
+	top: 4px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	padding: 2px 2px 0 0;
+}
+
+.elgg-menu-widget > .elgg-menu-item-collapse {
+	left: 5px;
+}
+.elgg-menu-widget > .elgg-menu-item-delete {
+	right: 5px;
+}
+.elgg-menu-widget > .elgg-menu-item-settings {
+	right: 25px;
+}
+
+/* ***************************************
+	HOVER MENU
+*************************************** */
+.elgg-menu-hover {
+	display: none;
+	position: absolute;
+	z-index: 10000;
+
+	overflow: hidden;
+
+	min-width: 165px;
+	max-width: 250px;
+	border: solid 1px;
+	border-color: #E5E5E5 #999 #999 #E5E5E5;
+	background-color: #FFF;
+	
+	-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
+	-moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.50);
+}
+.elgg-menu-hover > li {
+	border-bottom: 1px solid #ddd;
+}
+.elgg-menu-hover > li:last-child {
+	border-bottom: none;
+}
+.elgg-menu-hover .elgg-heading-basic {
+	display: block;
+}
+.elgg-menu-hover a {
+	padding: 2px 8px;
+	font-size: 92%;
+}
+.elgg-menu-hover a:hover {
+	background: #ccc;
+	text-decoration: none;
+}
+.elgg-menu-hover-admin a {
+	color: red;
+}
+.elgg-menu-hover-admin a:hover {
+	color: white;
+	background-color: red;
+}
+
+/* ***************************************
+	BREADCRUMBS
+*************************************** */
+.elgg-breadcrumbs {
+	font-size: 80%;
+	font-weight: bold;
+	line-height: 1.2em;
+	color: #bababa;
+	margin-left:4px;
+	padding:10px 0 0 0;
+}
+.elgg-breadcrumbs > li {
+	display: inline-block;
+}
+.elgg-breadcrumbs > li:after {
+	content: "\003E";
+	padding: 0 4px;
+	font-weight: normal;
+}
+.elgg-breadcrumbs > li > a {
+	display: inline-block;
+	color: #999;
+}
+.elgg-breadcrumbs > li > a:hover {
+	color: #0054a7;
+	text-decoration: underline;
+}
+
+.elgg-main .elgg-breadcrumbs {
+	position: relative;
+	left: 0;
+	margin-top:5px;
+}
+
+/** The wire **/
+
+#thewire-textarea {
+	height: 40px;
+	padding: 4px;
+}
+
+
+/** Subnav as seen on Twitter bootstrap - you will want to change this. It is here as an example. **/
+/** This code was originally found here: http://jsfiddle.net/baptme/ydY6W/ **/
+.subnav-fixed {
+   	position: fixed;
+	top: 40px;
+	left: 0;
+	right: 0;
+	z-index: 1020;
+	border-color: #D5D5D5;
+	border-width: 0 0 1px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, .1);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.subnav {
+    width: 100%;
+    height: 36px;
+    background-color: #eeeeee; /* Old browsers */
+    background-repeat: repeat-x; /* Repeat the gradient */
+    background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+    background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+    background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+    background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.subnav .nav {
+    margin-bottom: 0;
+}
+.subnav .nav > li > a {
+  margin: 0;
+  padding-top:    11px;
+  padding-bottom: 11px;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+  background-color: #e9e9e9;
+  border-right-color: #ddd;
+  border-left: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+     -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+          box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+}
+.subnav .nav > .active > a .caret,
+.subnav .nav > .active > a:hover .caret {
+  border-top-color: #777;
+}
+.subnav .nav > li:first-child > a,
+.subnav .nav > li:first-child > a:hover {
+  border-left: 0;
+  padding-left: 12px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+.subnav .nav > li:last-child > a {
+  border-right: 0;
+}
+.subnav .dropdown-menu {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+/** SPECIFIC @media conditions **/
+
+@media (max-width: 768px) {
+    .subnav {
+        position: static;
+        top: auto;
+        z-index: auto;
+        width: auto;
+        height: auto;
+        background: #fff; /* whole background property since we use a background-image for gradient */
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .subnav .nav > li {
+        float: none;
+    }
+    .subnav .nav > li > a {
+        border: 0;
+    }
+    .subnav .nav > li + li > a {
+        border-top: 1px solid #e5e5e5;
+    }
+    .subnav .nav > li:first-child > a,
+    .subnav .nav > li:first-child > a:hover {
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+    }
+    .elgg-page-header {
+		height:auto;
+	}
+	body {
+		padding-top:0;
+	}
+}
+
+@media (min-width: 980px) {
+  .subnav-fixed {
+   left: 0;
+    right: 0;
+    z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+    border-color: #d5d5d5;
+    border-width: 0 0 1px; /* drop the border on the fixed edges */
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+       -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+            box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); /* IE6-9 */
+  }
+  .subnav-fixed .nav {
+    width: 938px;
+    margin: 0 auto;
+    padding: 0 1px;
+  }
+  .subnav .nav > li:first-child > a,
+  .subnav .nav > li:first-child > a:hover {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+  }
+}
+
+@media (min-width: 1210px) {
+  .subnav-fixed .nav {
+    width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
+  }
+
+}​
+
+@media (min-width: 768px) and (max-width: 979px) {
+	body {
+		padding-top: 0;
+	}
+	.elgg-header-wrapper {
+		margin-top:0;
+	}
+	.elgg-page-header {
+		height:auto;
+	}
+}
+
+@media (min-width: 480px) and (max-width:767px) {
+	body {
+		padding-top: 0;
+	}
+	.elgg-header-wrapper {
+		margin:-20px;
+		padding-left:10px;
+	}
+	.elgg-page-header {
+		height:auto;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		padding-top: 0;
+	}
+	.elgg-page-header {
+		height:auto;
+	}
+	.elgg-page .elgg-page-header {
+		padding-top:0;
+		margin-top:0;
+	}
+	.bootstrap-messages {
+		z-index:100;
+	 	right:0;
+	 	top:0;
+	}
+}
+	.elgg-icon-bookmark {
+	background: transparent url(http://localhost/labxp2014/startup/mod/bookmarks/graphics/bookmark.gif);
 }

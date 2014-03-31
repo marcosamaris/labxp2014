@@ -5,9 +5,12 @@
  * @package Elgg
  * @subpackage Core
  */
+
 ?>
 
-<div>
+<div align="center">
+	<img src="_graphics/logo.png" />
+	<br><br>
 	<label><?php echo elgg_echo('loginusername'); ?></label>
 	<?php echo elgg_view('input/text', array(
 		'name' => 'username',
@@ -15,14 +18,14 @@
 		));
 	?>
 </div>
-<div>
+<div align="center">
 	<label><?php echo elgg_echo('password'); ?></label>
 	<?php echo elgg_view('input/password', array('name' => 'password')); ?>
 </div>
 
 <?php echo elgg_view('login/extend', $vars); ?>
 
-<div class="elgg-foot">
+<div align="center" class="elgg-foot">
 	<label class="mtm float-alt">
 		<input type="checkbox" name="persistent" value="true" />
 		<?php echo elgg_echo('user:persistent'); ?>

@@ -49,13 +49,11 @@ $lang = get_current_language();
 		<?php echo $messages; ?>
 	</div>
 	
-	<?php if (elgg_is_logged_in()){ ?>
 	<div class="elgg-page-topbar">
 		<div class="elgg-inner">
 			<?php echo $topbar; ?>
 		</div>
 	</div>
-	<?php } ?>
 	
 	<div class="elgg-page-header">
 		<div class="elgg-inner">
@@ -77,11 +75,17 @@ $lang = get_current_language();
 
 <?php }else{ ?>
 
-<div class="elgg-page-body">
+	<div class="elgg-page-body">
 		<div class="elgg-inner">
 			<?php echo $body;?>
 		</div>
 	</div>
-    <?php } ?>
+	
+	<div class="elgg-page-footer">
+		<div class="elgg-inner">
+			<?php echo $footer; ?>
+		</div>
+	</div>
+<?php } ?>
 </body>
 </html>
