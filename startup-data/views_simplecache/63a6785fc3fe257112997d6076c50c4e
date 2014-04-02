@@ -1986,6 +1986,35 @@ ul.profile-admin-menu-wrapper {
 		min-height: 0 !important;
 	}
 }
+/********************************
+The Wire
+*********************************/
+#thewire-textarea {
+	height: 40px;
+	padding: 6px;
+}
+#thewire-characters-remaining {
+	text-align: right;
+	float: right;
+	font-weight: bold;
+	color: #333333;
+}
+.thewire-characters-remaining {
+	color:#333333;
+	border:none;
+	font-size: 100%;
+	font-weight: bold;
+	padding:0 2px 0 0;
+	margin:0;
+	text-align: right;
+	background: white;
+}
+.thewire-characters-remaining-warning {
+	color: #D40D12 !important;
+}
+.thewire-parent {
+	margin-left: 40px;
+}
 
 /* Blog Plugin */
 
@@ -1993,7 +2022,9 @@ ul.profile-admin-menu-wrapper {
 form#blog-post-edit #description_parent #description_ifr {
 	height:400px !important;
 }
-
+.elgg-icon-bookmark {
+	background: transparent url(http://localhost/labxp2014/startup/mod/bookmarks/graphics/bookmark.gif);
+}
 .categories li label {
 	font-size: 100%;
 	line-height: 1.2em;
@@ -2041,37 +2072,7 @@ form#blog-post-edit #description_parent #description_ifr {
 
 .developers-content-thin {
 	max-width: 600px;
-}.embed-wrapper {
-	width: 730px;
-	min-height: 400px;
-	margin: 20px 15px;
-}
-.embed-wrapper h2 {
-	color: #333333;
-	margin-bottom: 10px;
-}
-.embed-wrapper .elgg-item {
-	cursor: pointer;
-}
-
-/* ***************************************
-	EMBED TABBED PAGE NAVIGATION
-*************************************** */
-.embed-wrapper .elgg-tabs a:hover {
-	color: #666;
-}
-
-.embed-wrapper p {
-	color: #333;
-}
-.embed-item {
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.embed-item:hover {
-	background-color: #eee;
-}
-.file-photo {
+}.file-photo {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -2375,35 +2376,6 @@ Search plugin
 .search-highlight-color5 {
 	background-color: #4690d6;
 }
-/********************************
-The Wire
-*********************************/
-#thewire-textarea {
-	height: 40px;
-	padding: 6px;
-}
-#thewire-characters-remaining {
-	text-align: right;
-	float: right;
-	font-weight: bold;
-	color: #333333;
-}
-.thewire-characters-remaining {
-	color:#333333;
-	border:none;
-	font-size: 100%;
-	font-weight: bold;
-	padding:0 2px 0 0;
-	margin:0;
-	text-align: right;
-	background: white;
-}
-.thewire-characters-remaining-warning {
-	color: #D40D12 !important;
-}
-.thewire-parent {
-	margin-left: 40px;
-}
 /* TinyMCE */
 .elgg-page .mceEditor table.mceLayout {
 	border: 1px solid #CCC;
@@ -2424,6 +2396,10 @@ The Wire
 .mceLast .mceStatusbar {
 	padding-left: 5px;
 }
+/* ZAudio */
+.zaudio {
+	margin: 10px 0;
+}
 ﻿
 /** SOME CORE OVERRIDES **/
 
@@ -2437,8 +2413,8 @@ body {
 
 .elgg-page .elgg-page-header {
 	position: relative;
-	padding-top:15px;
-	margin-top:40px;
+	padding-top:1px;
+	margin-top:4px;
 }
 
 .elgg-page-header h1 {
@@ -2920,6 +2896,4 @@ li {
 	 	top:0;
 	}
 }
-	.elgg-icon-bookmark {
-	background: transparent url(http://localhost/labxp2014/startup/mod/bookmarks/graphics/bookmark.gif);
-}
+	

@@ -35,7 +35,7 @@ $display_query = htmlspecialchars($display_query, ENT_QUOTES, 'UTF-8', false);
 
 ?>
 
-<form class="<?php echo $class; ?>" action="<?php echo elgg_get_site_url(); ?>search" method="get">
+<form class="<?php echo $class; ?> navbar-form" action="<?php echo elgg_get_site_url(); ?>search" method="get">
 	<fieldset>
 		<input type="text" class="input-medium search-query" size="21" name="q" value="" />
 		<input type="hidden" name="search_type" value="all" />
