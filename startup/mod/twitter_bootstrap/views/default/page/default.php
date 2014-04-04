@@ -25,8 +25,7 @@ if (elgg_get_context() == 'admin') {
 
 // render content before head so that JavaScript and CSS can be loaded. See #4032
 $topbar = elgg_view('page/elements/topbar', $vars);
-$vars['topbar'] = $topbar; 
-$messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages'])); 
+$messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
 $header = elgg_view('page/elements/header', $vars);
 $body = elgg_view('page/elements/body', $vars);
 $footer = elgg_view('page/elements/footer', $vars);
@@ -34,59 +33,50 @@ $footer = elgg_view('page/elements/footer', $vars);
 // Set the content type
 header("Content-type: text/html; charset=UTF-8");
 
-$lang = get_current_language();
-
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $lang; ?>" lang="<?php echo $lang; ?>">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
 <body>
-
-<?php if (elgg_is_logged_in()){ ?>
 <div class="elgg-page elgg-page-default">
-	<!-- <div class="elgg-page-messages">
-		<?php //echo $messages; ?>
-	</div>
-	<!-- 
-	<div class="elgg-page-topbar">
-		<div class="elgg-inner">
-			<?php //echo $topbar; ?>
+	<div class="elgg-page-topbar navbar navbar-fixed-top"><!-- navbar -->
+		<div class="elgg-inner navbar-inner"><!-- navbar-inner -->
+			<div class="container"><!-- container -->
+				<?php echo $topbar; ?>
+			</div><!-- /container -->
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->
+	<div class="container"><!-- container -->
+		<div class="row">
+			<div class="span12">
+				<div class="elgg-page-messages">
+					<?php echo $messages; ?>
+				</div>
+			</div>
 		</div>
-	</div>
-		 -->
-	<div class="elgg-page-header">
-		<div class="elgg-inner">
-			<?php echo $header; ?>
+		<div class="row">
+			<div class="span12">
+				<div class="elgg-page-header">
+					<?php echo $header; ?>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="elgg-page-body">
-		<div class="elgg-inner">
-			<?php echo $body; ?>
+		<div class="row">
+			<div class="elgg-page-body">
+				<?php echo $body; ?>
+			</div>
 		</div>
-	</div>
-	<div class="elgg-page-footer">
-		<div class="elgg-inner">
-			<?php echo $footer; ?>
+		<div class="row">
+			<div class="elgg-page-footer">
+				<div class="elgg-inner">
+					<?php echo $footer; ?>
+				</div>
+			</div>
 		</div>
-	</div>
+	</div><!-- /container -->
 </div>
 <?php echo elgg_view('page/elements/foot'); ?>
-
-<?php }else{ ?>
-
-	<div class="elgg-page-body">
-		<div class="elgg-inner">
-			<?php echo $body;?>
-		</div>
-	</div>
-	
-	<div class="elgg-page-footer">
-		<div class="elgg-inner">
-			<?php echo $footer; ?>
-		</div>
-	</div>
-<?php } ?>
 </body>
 </html>

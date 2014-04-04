@@ -23,7 +23,7 @@ $body = elgg_view_form('login', array('action' => "{$login_url}action/login"), a
 		<li class="dropdown" style="padding:10px;">
 			<?php 
 				echo $body;
-			?>	
+			?>
 		</li>
 	</ul>
 </div>

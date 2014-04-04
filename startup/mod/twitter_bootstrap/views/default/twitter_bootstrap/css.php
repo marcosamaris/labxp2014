@@ -500,3 +500,33 @@ li {
 	}
 }
 	
+
+#login-monashees{
+ 	background: none repeat scroll 0 0 #FFFFFF;
+ 	padding-top: 25px;
+}
+
+#login-monashees .elgg-head{
+	padding-bottom: 15px;
+}
+
+body{
+   background: none repeat scroll 0 0 #F5F5F5;
+}
+
+img.logo-img { 
+
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding-bottom: 15px;
+
+}
+
+.login-box{
+	text-align: center;
+}
+
+.forgot_link{
+	padding-right: 5px;
+}

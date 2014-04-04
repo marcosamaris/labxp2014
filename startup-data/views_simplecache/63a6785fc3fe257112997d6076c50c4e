@@ -1986,35 +1986,6 @@ ul.profile-admin-menu-wrapper {
 		min-height: 0 !important;
 	}
 }
-/********************************
-The Wire
-*********************************/
-#thewire-textarea {
-	height: 40px;
-	padding: 6px;
-}
-#thewire-characters-remaining {
-	text-align: right;
-	float: right;
-	font-weight: bold;
-	color: #333333;
-}
-.thewire-characters-remaining {
-	color:#333333;
-	border:none;
-	font-size: 100%;
-	font-weight: bold;
-	padding:0 2px 0 0;
-	margin:0;
-	text-align: right;
-	background: white;
-}
-.thewire-characters-remaining-warning {
-	color: #D40D12 !important;
-}
-.thewire-parent {
-	margin-left: 40px;
-}
 
 /* Blog Plugin */
 
@@ -2022,34 +1993,10 @@ The Wire
 form#blog-post-edit #description_parent #description_ifr {
 	height:400px !important;
 }
-.elgg-icon-bookmark {
-	background: transparent url(http://localhost/labxp2014/startup/mod/bookmarks/graphics/bookmark.gif);
-}
+
 .categories li label {
 	font-size: 100%;
 	line-height: 1.2em;
-}
-
-/*******************************
-	Custom Index
-********************************/
-.custom-index {
-	padding: 10px 0;
-}
-.elgg-module-highlight {
-	-webkit-box-shadow: 1px 1px 5px #CCC;
-	-moz-box-shadow: 1px 1px 5px #CCC;
-	box-shadow: 1px 1px 5px #CCC;
-}
-.elgg-module-highlight:hover {
-	-webkit-box-shadow: 1px 1px 6px #AAA;
-	-moz-box-shadow: 1px 1px 6px #AAA;
-	box-shadow: 1px 1px 6px #AAA;
-}
-
-#dashboard-info {
-	border: 2px solid #dedede;
-	margin-bottom: 15px;
 }
 /*** Elgg Developer Tools ***/
 #developers-iframe {
@@ -2072,83 +2019,7 @@ form#blog-post-edit #description_parent #description_ifr {
 
 .developers-content-thin {
 	max-width: 600px;
-}.file-photo {
-	text-align: center;
-	margin-bottom: 15px;
 }
-.file-gallery-item {
-	text-align: center;
-	width: 165px;
-}
-.groups-profile > .elgg-image {
-	margin-right: 10px;
-}
-.groups-stats {
-	background: #eeeeee;
-	padding: 5px;
-	margin-top: 10px;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.groups-profile-fields .odd,
-.groups-profile-fields .even {
-	background: #f4f4f4;
-	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	
-	padding: 2px 4px;
-	margin-bottom: 7px;
-}
-
-.groups-profile-fields .elgg-output {
-	margin: 0;
-}
-
-#groups-tools > li {
-	width: 48%;
-	min-height: 200px;
-	margin-bottom: 40px;
-}
-
-#groups-tools > li:nth-child(odd) {
-	margin-right: 4%;
-}
-
-.groups-widget-viewall {
-	float: right;
-	font-size: 85%;
-}
-
-.groups-latest-reply {
-	float: right;
-}
-
-.elgg-menu-groups-my-status li a {
-	display: block;
-
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-
-	background-color: white;
-	margin: 3px 0 5px 0;
-	padding: 2px 4px 2px 8px;
-}
-.elgg-menu-groups-my-status li a:hover {
-	background-color: #0054A7;
-	color: white;
-	text-decoration: none;
-}
-.elgg-menu-groups-my-status li.elgg-state-selected > a {
-	background-color: #4690D6;
-	color: white;
-}
-
 /* ***************************************
 	Likes
 *************************************** */
@@ -2159,66 +2030,6 @@ form#blog-post-edit #description_parent #description_ifr {
 
 .elgg-menu .elgg-menu-item-likes-count {
 	margin-left: 3px;
-}
-
-.messageboard-input {
-	height: 100px;
-}
-
-.messages-container {
-	min-height: 200px;
-}
-.message.unread a {
-	color: #d40005;
-}
-.messages-buttonbank {
-	text-align: right;
-}
-.messages-buttonbank input {
-	margin-left: 10px;
-}
-
-/*** message metadata ***/
-.messages-owner {
-	float: left;
-	width: 20%;
-	margin-right: 2%;
-}
-.messages-subject {
-	float: left;
-	width: 55%;
-	margin-right: 2%;
-}
-.messages-timestamp {
-	float: left;
-	width: 14%;
-	margin-right: 2%;
-}
-.messages-delete {
-	float: left;
-	width: 5%;
-}
-/*** topbar icon ***/
-.messages-new {
-	color: white;
-	background-color: red;
-	
-	-webkit-border-radius: 10px; 
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	
-	-webkit-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
-	-moz-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
-	box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
-	
-	position: absolute;
-	text-align: center;
-	top: 0px;
-	left: 26px;
-	min-width: 16px;
-	height: 16px;
-	font-size: 10px;
-	font-weight: bold;
 }
 
 #notificationstable td.namefield {
@@ -2300,18 +2111,7 @@ form#blog-post-edit #description_parent #description_ifr {
 
 
 
-
-.pages-nav.treeview ul {
-	background-color: transparent;
-}
-
-.pages-nav.treeview a.selected {
-	color: #555555;
-}
-
-.pages-nav.treeview .hover {
-	color: #0054a7;
-}/* Reported Content */
+/* Reported Content */
 .elgg-icon-report-this {
 	background: url(http://localhost/labxp2014/startup/mod/reportedcontent/graphics/icon_reportthis.gif) no-repeat left top;
 }
@@ -2396,10 +2196,6 @@ Search plugin
 .mceLast .mceStatusbar {
 	padding-left: 5px;
 }
-/* ZAudio */
-.zaudio {
-	margin: 10px 0;
-}
 ﻿
 /** SOME CORE OVERRIDES **/
 
@@ -2413,8 +2209,8 @@ body {
 
 .elgg-page .elgg-page-header {
 	position: relative;
-	padding-top:1px;
-	margin-top:4px;
+	padding-top:15px;
+	margin-top:40px;
 }
 
 .elgg-page-header h1 {
@@ -2897,3 +2693,33 @@ li {
 	}
 }
 	
+
+#login-monashees{
+ 	background: none repeat scroll 0 0 #FFFFFF;
+ 	padding-top: 25px;
+}
+
+#login-monashees .elgg-head{
+	padding-bottom: 15px;
+}
+
+body{
+   background: none repeat scroll 0 0 #F5F5F5;
+}
+
+img.logo-img { 
+
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding-bottom: 15px;
+
+}
+
+.login-box{
+	text-align: center;
+}
+
+.forgot_link{
+	padding-right: 5px;
+}

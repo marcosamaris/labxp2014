@@ -17,7 +17,6 @@ $site = elgg_get_site_entity();
 $site_name = $site->name;
 $site_url = $site->url;
 
-/**
 if(elgg_is_logged_in()){
 //required for responsive
 echo <<<HTML
@@ -27,11 +26,12 @@ echo <<<HTML
             <span class="icon-bar"></span>
          </a>
 HTML;
-}**/
+
+}
 
 
 //output site title
-//echo '<a href="'.$site_url.'" class="brand">'.$site_name.'</a>';
+echo '<a href="'.$site_url.'" class="brand">'.$site_name.'</a>';
 
 //personal dropdown menu
 echo <<<HTML
@@ -66,7 +66,6 @@ if(elgg_is_logged_in()){
 echo '</ul>';
 echo '</div><!-- /button group -->';
 
-/**
 //create the logo and tools menu
 echo '<div class="nav-collapse nav-collapse-margin-issue">';
 echo '<ul class="nav">';
@@ -75,4 +74,3 @@ foreach ($default_items as $menu_item) {
 }
 echo '</ul>';
 echo '</div>';
-**/
