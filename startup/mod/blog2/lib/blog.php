@@ -5,7 +5,6 @@
  * @package Blog
  */
 
-
 /**
  * Get page components to view a blog post.
  *
@@ -77,7 +76,7 @@ function blog_get_page_content_list($container_guid = NULL) {
 
 		}
 		$return['title'] = elgg_echo('blog:title:user_blogs', array($container->name));
-
+		
 		$crumbs_title = $container->name;
 		elgg_push_breadcrumb($crumbs_title);
 
