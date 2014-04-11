@@ -43,11 +43,7 @@ $save_button = elgg_view('input/submit', array(
 $action_buttons = $save_button . $preview_button . $delete_link;
 
 $title_label = elgg_echo('title');
-$title_input = elgg_view('input/text', array(
-	'name' => 'title',
-	'id' => 'blog_title',
-	'value' => $vars['title']
-));
+$title_input = elgg_view('input/hidden', array('name' => 'title', 'value' => 'title'));
 
 $excerpt_label = elgg_echo('blog:excerpt');
 $excerpt_input = elgg_view('input/text', array(
@@ -72,23 +68,13 @@ if ($vars['guid']) {
 }
 
 $status_label = elgg_echo('blog:status');
-$status_input = elgg_view('input/dropdown', array(
-	'name' => 'status',
-	'id' => 'blog_status',
-	'value' => $vars['status'],
-	'options_values' => array(
-		'draft' => elgg_echo('blog:status:draft'),
-		'published' => elgg_echo('blog:status:published')
-	)
-));
+$status_input = elgg_view('input/hidden', array('name' => 'status', 'value' => 'published')
+);
+
 
 $comments_label = elgg_echo('comments');
-$comments_input = elgg_view('input/dropdown', array(
-	'name' => 'comments_on',
-	'id' => 'blog_comments_on',
-	'value' => $vars['comments_on'],
-	'options_values' => array('On' => elgg_echo('on'), 'Off' => elgg_echo('off'))
-));
+$comments_input = elgg_view('input/hidden', array('name' => 'comments_on', 'value' => elgg_echo('on'))
+);
 
 $tags_label = elgg_echo('tags');
 $tags_input = elgg_view('input/tags', array(
@@ -98,11 +84,8 @@ $tags_input = elgg_view('input/tags', array(
 ));
 
 $access_label = elgg_echo('access');
-$access_input = elgg_view('input/access', array(
-	'name' => 'access_id',
-	'id' => 'blog_access_id',
-	'value' => $vars['access_id']
-));
+$access_input = elgg_view('input/hidden', array('name' => 'access_id', 'value' => '1')
+);
 
 $categories_input = elgg_view('input/categories', $vars);
 
@@ -116,41 +99,41 @@ echo <<<___HTML
 $draft_warning
 
 <div>
-	<label for="blog_title">$title_label</label>
 	$title_input
 </div>
 
+<!--
 <div>
 	<label for="blog_excerpt">$excerpt_label</label>
 	$excerpt_input
 </div>
+-->
 
 <div>
 	<label for="blog_description">$body_label</label>
 	$body_input
 </div>
 
+<!--
 <div>
 	<label for="blog_tags">$tags_label</label>
 	$tags_input
 </div>
-
+-->
 $categories_input
 
-<div>
-	<label for="blog_comments_on">$comments_label</label>
+<div>	
 	$comments_input
 </div>
 
-<div>
-	<label for="blog_access_id">$access_label</label>
+<div>	
 	$access_input
 </div>
 
-<div>
-	<label for="blog_status">$status_label</label>
+<div>	
 	$status_input
 </div>
+
 
 <div class="elgg-foot">
 	<div class="elgg-subtext mbm">
