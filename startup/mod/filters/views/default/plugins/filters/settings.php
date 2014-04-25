@@ -7,7 +7,8 @@
 
 // Get site categories
 $site = elgg_get_site_entity();
-$filters = $site->filters;
+$filters_functions = $site->filters_functions;
+$filters_spaces = $site->filters_spaces;
 
 if (empty($filters)) {
 	$filters = array();
@@ -18,10 +19,11 @@ if (empty($filters)) {
 	<p><?php echo elgg_echo('filters:explanation'); ?></p>
 	<p><?php echo elgg_echo('filters:functions'); ?></p>
 <?php
-	echo elgg_view('input/tags', array('value' => $filters, 'name' => 'filters_functions'));
+	echo elgg_view('input/tags', array('value' => $filters_functions, 'name' => 'filters_functions'));
 ?>
 <p><?php echo elgg_echo('filters:spaces'); ?></p>
 <?php
-	echo elgg_view('input/tags', array('value' => $filters, 'name' => 'filters_spaces'));
+	echo elgg_view('input/tags', array('value' => $filters_spaces, 'name' => 'filters_spaces'));
 ?>
 </div>
+

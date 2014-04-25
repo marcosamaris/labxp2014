@@ -2,7 +2,13 @@
 
 function filters_init()
 {
+	
+	elgg_register_event_handler('update', 'all', 'filters_save');
+	elgg_register_event_handler('create', 'all', 'filters_save');
 	elgg_register_plugin_hook_handler('action', 'plugins/settings/save', 'filters_save_admin_categories');
+	
+	
+	
 }
 
 /**
@@ -13,6 +19,23 @@ function filters_init()
  * @param type $value
  * @param type $params
  */
+
+function filters_save($event, $object_type, $object) {
+	if ($object instanceof ElggEntity) {
+		/*$marker = get_input('universal_category_marker');
+
+		if ($marker == 'on') {*/
+			$categories = get_input('functions');
+
+			if (empty($categories)) {
+				$categories = array();
+			}
+
+			$object->functions = $categories;
+		//}
+	}
+	return TRUE;
+}
 
 function filters_save_admin_categories($hook, $type, $value, $params) {
 	$plugin_id = get_input('plugin_id');
@@ -37,4 +60,11 @@ function filters_save_admin_categories($hook, $type, $value, $params) {
 
 	forward(REFERER);
 }
+
+
+
+
+
+
+
 elgg_register_event_handler('init', 'system', 'filters_init');
