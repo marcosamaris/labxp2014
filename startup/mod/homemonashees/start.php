@@ -8,29 +8,37 @@ function homemonashees_init() {
 	// add a site navigation item
 	$item = new ElggMenuItem('homemonashees', elgg_echo('homemonashees:home'), 'homemonashees');
 	elgg_register_menu_item('site', $item);
-		
+
 	elgg_register_library('elgg:homemonashees', elgg_get_plugins_path() . 'homemonashees/lib/homemonashees.php');
-	
-	
-	elgg_register_page_handler('homemonashees', 'homemonashees_hello_page_handler');
+
+
+	elgg_register_action("homemonashees/save", elgg_get_plugins_path() . "homemonashees/actions/homemonashees/save.php");
+	elgg_register_page_handler('homemonashees', 'homemonashees_page_handler');
 	
 }
 
 
-function homemonashees_hello_page_handler() {
-	require_once dirname(__FILE__) . '/pages/homemonashees/hello/hello.php';
-	return true;
+function homemonashees_page_handler($segments) {
+	$page = $segments[0];
+	if($page == ''){
+		$page = 'add';
+	}
+	if ($page == 'add') {
+		include elgg_get_plugins_path() . 'homemonashees/pages/homemonashees/add.php';
+		return true;
+	}
+	return false;
 }
 
 
 /*function homemonashees_page_handler() {
-	$params = array(
-	'title' => 'Hello world!',
-    'content' => 'This is my first plugin.',
-    'filter' => '',
-    );
+ $params = array(
+ 		'title' => 'Hello world!',
+ 		'content' => 'This is my first plugin.',
+ 		'filter' => '',
+ );
 
-    $body = elgg_view_layout('content', $params);
+$body = elgg_view_layout('content', $params);
 
-    echo elgg_view_page('Hello', $body);
+echo elgg_view_page('Hello', $body);
 }*/
