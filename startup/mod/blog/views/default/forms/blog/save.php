@@ -104,7 +104,7 @@ $access_input = elgg_view('input/access', array(
 	'value' => $vars['access_id']
 ));
 
-$categories_input = elgg_view('input/functions', $vars);
+$categories_input = elgg_view('input/categories', $vars);
 
 // hidden inputs
 $container_guid_input = elgg_view('input/hidden', array('name' => 'container_guid', 'value' => elgg_get_page_owner_guid()));
@@ -114,15 +114,29 @@ $guid_input = elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars
 echo <<<___HTML
 
 $draft_warning
+
+<div>
+	<label for="blog_title">$title_label</label>
+	$title_input
+</div>
+
+<div>
+	<label for="blog_excerpt">$excerpt_label</label>
+	$excerpt_input
+</div>
+
 <div>
 	<label for="blog_description">$body_label</label>
 	$body_input
 </div>
 
-___HTML;
+<div>
+	<label for="blog_tags">$tags_label</label>
+	$tags_input
+</div>
 
-echo $categories_input; 
-echo <<<___HTML
+$categories_input
+
 <div>
 	<label for="blog_comments_on">$comments_label</label>
 	$comments_input
@@ -138,5 +152,15 @@ echo <<<___HTML
 	$status_input
 </div>
 
+<div class="elgg-foot">
+	<div class="elgg-subtext mbm">
+	$save_status <span class="blog-save-status-time">$saved</span>
+	</div>
+
+	$guid_input
+	$container_guid_input
+
+	$action_buttons
+</div>
 
 ___HTML;
