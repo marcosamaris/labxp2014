@@ -6,7 +6,10 @@ $tags = string_to_tag_array(get_input('tags'));
 
 // create a new my_blog object
 $blog = new ElggObject();
-$blog->subtype = "my_blog";
+
+//$blog->subtype = "my_blog";
+
+$blog->subtype = "home";
 $blog->title = $title;
 $blog->description = $body;
 

@@ -114,26 +114,11 @@ $guid_input = elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars
 echo <<<___HTML
 
 $draft_warning
-
-<div>
-	<label for="blog_title">$title_label</label>
-	$title_input
-</div>
-
-<div>
-	<label for="blog_excerpt">$excerpt_label</label>
-	$excerpt_input
-</div>
-
 <div>
 	<label for="blog_description">$body_label</label>
 	$body_input
 </div>
 
-<div>
-	<label for="blog_tags">$tags_label</label>
-	$tags_input
-</div>
 ___HTML;
 
 echo $categories_input; 
@@ -153,15 +138,5 @@ echo <<<___HTML
 	$status_input
 </div>
 
-<div class="elgg-foot">
-	<div class="elgg-subtext mbm">
-	$save_status <span class="blog-save-status-time">$saved</span>
-	</div>
-
-	$guid_input
-	$container_guid_input
-
-	$action_buttons
-</div>
 
 ___HTML;
