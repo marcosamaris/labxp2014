@@ -1,5 +1,4 @@
 <?php
-
 // make sure only logged in users can see this page
 gatekeeper();
 
@@ -11,15 +10,15 @@ $title = "Create a new my_blog post";
 $content = elgg_view_title($title);
 
 // add the form to this section
-$content .= elgg_view_form("my_blog/save");
+$content .= elgg_view_form("homemonashees/save");
 
 // optionally, add the content for the sidebar
 $sidebar = "";
 
 // layout the page
 $body = elgg_view_layout('one_sidebar', array(
-		'content' => $content,
-		'sidebar' => $sidebar
+   'content' => $content,
+   'sidebar' => $sidebar
 ));
 
 // draw the page
