@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> <head> <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <title>Exemplo</title> 
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+
+ </head>   
+ 
+ <body> 
+ 
+ <form action="mantemPessoas.php" method="post"> 
+ 
+ <fieldset> 
+ 
+ <legend>Dados Pessoais</legend> 
+ <label for="nome">Nome da Pessoa</label> 
+ <input id="nome" type="text" name="nome" /> 
+ <br>
+ <label for="dataNascimento">Data de Nascimento</label> 
+ <input id="dataNascimento" type="text" name="dataNascimento" /> </p> 
+ 
+ </fieldset> 
+ 
+ <fieldset> 
+ <legend>Telefones</legend> 
+ <div class="telefones"> 
+	<p class="campoTelefone"> 
+		<input type="text" name="telefone[]" /> 
+		<a href="#" class="removerCampo">Remover Campo</a> 
+	</p> 
+ </div> 
+ 
+ <br> 
+ <a href="#" class="adicionarCampo">Adicionar Telefone</a>
+ </fieldset>   
+ </form>
+
+<script>
+
+$(function () { 
+
+	function removeCampo() { 
+			//precisa criar o bind para campos adicionados dinamicamente via javascript (ele perde os eventos do navegador, tem q dar o bind)
+		$(".removerCampo").unbind("click"); 
+		$(".removerCampo").bind("click", function () {
+			
+			var i=0; 
+			$(".telefones p.campoTelefone").each(function () {
+				i++; 
+			}); 
+			
+			if (i>1) {
+				$(this).parent().remove(); 
+			} });
+				
+	} 
+			
+	removeCampo(); 
+
+	$(".adicionarCampo").click(function () { 
+		novoCampo = $(".telefones p.campoTelefone:first").clone(); 
+		novoCampo.find("input").val(""); 
+		novoCampo.insertAfter(".telefones p.campoTelefone:last"); 
+		removeCampo(); 
+	}); 
+}); 
+</script>
+
+</body> </html>
