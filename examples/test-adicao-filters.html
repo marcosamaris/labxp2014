@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> <head> <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <title>Exemplo</title> 
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+
+ </head>   
+ 
+ <body> 
+
+<div class="filters"> 
+<label>Functions</label>
+<select class="elgg-input-dropdown dropdown-filters" name="functions[]">
+	<option value="Finance">Finance</option>
+	<option value="Analytics" selected>Analytics</option>
+</select>
+
+<div class="testDropdown"></div>
+<a href="#" class="addFilter">+</a>
+</div>
+<script>
+
+$(function () { 
+
+	$("a.addFilter").click(function () { 
+		newDropdown = $(".dropdown-filters:first").clone(); 
+		newDropdown.insertAfter(".dropdown-filters:last"); 
+		//captura o valor selecionado
+		//transforma label (com valor oculto) e coloca o X
+		
+		var str = "";
+		
+		 $( ".dropdown-filters option:selected" ).each(function() {
+			 str += $( this ).text() + " ";
+		 });
+		 $( ".testDropdown" ).text( str );
+	}); 
+}); 
+</script>
+
+</body> </html>
