@@ -104,7 +104,7 @@ $activity = elgg_list_river($options);
 
  
 
-//$content .= elgg_view('core/river/filter', array('selector' => $selector));
+//$content = elgg_view('core/river/filter', array('selector' => $selector));
 
  
 
@@ -116,6 +116,8 @@ $params = array(
 
 'content' =>  $content . $activity,
 
+'sidebar' => $sidebar,
+
 'filter_context' => $page_filter,
 
 'class' => 'elgg-river-layout',
@@ -123,9 +125,7 @@ $params = array(
 );
 
  
-$body = elgg_view_layout('content', $params);
 
+$body .= elgg_view_layout('content', $params);
 
-
-
-echo elgg_view_page($title, $body);
+ 
