@@ -34,18 +34,20 @@ if (!empty($functions)) {
 	array_walk($functions, create_function('&$v, $k', '$v = $k;'));
 
 	?>
-	
-
+	<table>
+	<tr>
+	<td>
 	<label><?php echo elgg_echo('filters:functions'); ?></label><br />
 	<?php
 	
 		echo elgg_view('input/dropdown', array(
 			'value' => '',
-			'name' => 'functions[]',
+			'name' => 'functions',
 			'options_values' => $functions
 
 		));
 	?>
+	</td>
 	<?php
 
 } 

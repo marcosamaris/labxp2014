@@ -34,18 +34,27 @@ if (!empty($spaces)) {
 	array_walk($spaces, create_function('&$v, $k', '$v = $k;'));
 
 	?>
-	
 
+	<td>
 	<label><?php echo elgg_echo('filters:spaces'); ?></label><br />
 	<?php
 	
 		echo elgg_view('input/dropdown', array(
 			'value' => '',
-			'name' => 'spaces[]',
+			'name' => 'spaces',
 			'options_values' => $spaces
 
 		));
+		echo elgg_view('input/dropdown', array(
+		'value' => '',
+		'name' => 'spaces1',
+		'options_values' => $spaces
+
+));
 	?>
+	</td>
+	</tr>
+	</table>
 	<?php
 
 } 
