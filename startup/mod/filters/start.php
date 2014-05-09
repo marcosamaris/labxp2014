@@ -26,18 +26,22 @@ function filters_save($event, $object_type, $object) {
 
 		if ($marker == 'on') {*/
 			$functions = get_input('functions');
+			$functions1 = get_input('functions1');
+				
 			$spaces = get_input('spaces');
+			
+			$functions  = array(
+					$functions, $functions1,
+			);				
+			
 			if (empty($functions)) {
 				$functions  = array();
 			}
 			if (empty($spaces)) {
 				$spaces = array();
 			}
-			
-			
-			$object->spaces = $spaces;
-			
 				
+			$object->spaces = $spaces;
 			$object->functions = $functions;
 		//}
 	}

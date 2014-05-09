@@ -39,15 +39,22 @@ if (!empty($functions)) {
 	<td>
 	<label><?php echo elgg_echo('filters:functions'); ?></label><br />
 	<?php
-	
 		echo elgg_view('input/dropdown', array(
 			'value' => '',
 			'name' => 'functions',
 			'options_values' => $functions
 
 		));
+		
+		echo elgg_view('input/dropdown', array(
+		'value' => '',
+		'name' => 'functions1',
+		'options_values' => $functions
+
+	));
 	?>
 	</td>
+	</tr>
 	<?php
 
 } 

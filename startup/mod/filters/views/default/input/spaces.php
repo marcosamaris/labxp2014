@@ -45,12 +45,7 @@ if (!empty($spaces)) {
 			'options_values' => $spaces
 
 		));
-		echo elgg_view('input/dropdown', array(
-		'value' => '',
-		'name' => 'spaces1',
-		'options_values' => $spaces
 
-));
 	?>
 	</td>
 	</tr>
