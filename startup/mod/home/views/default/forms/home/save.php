@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Edit blog form
