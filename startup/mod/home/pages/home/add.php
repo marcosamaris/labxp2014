@@ -82,7 +82,7 @@ switch ($page_type) {
 
 // set the title
 // for distributed plugins, be sure to use elgg_echo() for internationalization
-$title = "Home";
+$title = "";
 
 // start building the main column of the page
 $content = elgg_view_title($title);
@@ -123,7 +123,7 @@ $params = array(
 );
 
 
-$body = elgg_view_layout('content', $params);
+$body = elgg_view_layout('one_sidebar', $params);
 
 
 

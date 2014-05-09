@@ -14,11 +14,11 @@
 //$container_guid_input = elgg_view('input/hidden', array('name' => 'container_guid', 'value' => elgg_get_page_owner_guid()));
 //$guid_input = elgg_view('input/hidden', array('name' => 'guid', 'value' => $vars['guid']));
 
+$categories_input = elgg_view('input/functions', $vars);
 
 ?>
 
-<div>
-    <label><?php echo elgg_echo("body"); ?></label><br />
+<div>    
     <?php echo elgg_view('input/longtext',array('name' => 'body')); ?>
 </div>
 

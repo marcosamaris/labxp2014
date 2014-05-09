@@ -32,8 +32,8 @@ if (isset($vars['class'])) {
 	<div class="elgg-main elgg-body">
 		<?php
 			// @todo deprecated so remove in Elgg 2.0
-			if (isset($vars['area1'])) {
-				echo $vars['area1'];
+			if (isset($vars['default'])) {
+				echo $vars['default'];
 			}
 			if (isset($vars['content'])) {
 				echo $vars['content'];
