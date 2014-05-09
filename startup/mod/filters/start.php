@@ -25,13 +25,20 @@ function filters_save($event, $object_type, $object) {
 		/*$marker = get_input('universal_category_marker');
 
 		if ($marker == 'on') {*/
-			$categories = get_input('functions');
-
-			if (empty($categories)) {
-				$categories = array();
+			$functions = get_input('functions');
+			$spaces = get_input('spaces');
+			if (empty($functions)) {
+				$functions  = array();
 			}
-
-			$object->functions = $categories;
+			if (empty($spaces)) {
+				$spaces = array();
+			}
+			
+			
+			$object->spaces = $spaces;
+			
+				
+			$object->functions = $functions;
 		//}
 	}
 	return TRUE;
