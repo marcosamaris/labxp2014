@@ -1,12 +1,12 @@
 <?php
 /**
- * Edit blog form
+ * Edit home form
  *
- * @package Blog
+ * @package home
  */
 
-//$blog = get_entity($vars['guid']);
-//$vars['entity'] = $blog;
+//$home = get_entity($vars['guid']);
+//$vars['entity'] = $home;
 
 //$categories_input = elgg_view('input/functions', $vars);
 

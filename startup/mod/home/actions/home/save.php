@@ -1,34 +1,34 @@
 <?php
 // get the form inputs
 
-$body = get_input('body');
+$home = get_input('body');
 
 
-// create a new my_blog object
-$blog = new ElggObject();
+// create a new home object
+$home = new ElggObject();
 
-//$blog->subtype = "my_blog";
+//$home->subtype = "home";
 
-$blog->subtype = "home";
+$home->subtype = "home";
 
-$blog->description = $body;
+$home->description = $body;
 
 // owner is logged in user
-$blog->owner_guid = elgg_get_logged_in_user_guid();
+$home->owner_guid = elgg_get_logged_in_user_guid();
 
-// save to database and get id of the new my_blog
-$blog_guid = $blog->save();
+// save to database and get id of the new home post
+$home_guid = $home->save();
 
 
 
-// if the my_blog was saved, we want to display the new post
+// if the home post was saved, we want to display the new post
 // otherwise, we want to register an error and forward back to the form
-if ($blog_guid) {
-	add_to_river('river/ElggObject/create', 'create', $blog->owner_guid, $blog->guid);
+if ($home_guid) {
+	add_to_river('river/ElggObject/create', 'create', $home->owner_guid, $home->guid);
 	
-   system_message("Your post was saved");
+   system_message(elgg_echo('home:saved'));
    forward("home/");
 } else {
-   register_error("The blog post could not be saved");
+   register_error(elgg_echo('home:nosaved'));
    forward(REFERER); // REFERER is a global variable that defines the previous page
 }

@@ -17,21 +17,9 @@ function home_init() {
 }
 
 
-function home_page_handler($segments) {
-
-	switch ($segments[0]) {
-		case 'add':
-			default:
-			include elgg_get_plugins_path() . 'home/pages/home/add.php';
-			break;
+function home_page_handler($segments) {	
 	
-		case 'all':
-
-			include elgg_get_plugins_path() . 'home/pages/home/all.php';
-			break;
-	}
+	include elgg_get_plugins_path() . 'home/pages/home/index.php';
 	
-	return true;
-	
-	
+	return true;	
 }
