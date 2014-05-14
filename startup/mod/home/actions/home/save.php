@@ -1,7 +1,7 @@
 <?php
 // get the form inputs
 
-$home = get_input('body');
+$body = get_input('body');
 
 
 // create a new home object
