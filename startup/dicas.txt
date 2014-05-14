@@ -1,0 +1,9 @@
+## LOGIN = Alteração de template
+
+- o template quando as configurações do site estão restristas a usuarios logados, usa o tema walled_garden
+
+- o arquivo de login fica em default/core/walled_garden/login.php
+- chamado só para o login, depois, ele usa o default
+
+
+caixa de login está em default/form/login
