@@ -4,7 +4,11 @@
  */
 
 $object = $vars['item']->getObjectEntity();
-$subject = $vars['item']->getSubjectEntity();
+$excerpt = elgg_get_excerpt($object->description);
 
+$summary = elgg_echo("river:create:object:home", array($subject_link, $object_link));
 
-echo "TESTE";
+echo elgg_view('river/elements/layout', array(
+	'item' => $vars['item'],
+	'message' => $excerpt,
+));
