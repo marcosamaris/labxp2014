@@ -25,6 +25,19 @@ $title = elgg_echo('river:all');
 $page_filter = 'all';
 
 
+
+$options = array(
+		'metadata_name' => 'functions',
+		'metadata_value' => 'business',
+		'type' => 'object',
+		'subtype' => 'home',
+		'limit' => '10',
+		'owner_guid' => get_input("owner_guid", ELGG_ENTITIES_ANY_VALUE),
+		'full_view' => FALSE,
+		'metadata_case_sensitive' => FALSE,
+		
+		
+);
 // set the title
 // for distributed plugins, be sure to use elgg_echo() for internationalization
 $title = "";
@@ -46,7 +59,7 @@ $body = elgg_view_layout('content', array(
 
 $action = 'create';
 
-$activity = elgg_list_river($options);
+$activity =elgg_list_entities_from_metadata($options);
 
 
 //$content .= elgg_view('core/river/filter', array('selector' => $selector));
@@ -66,6 +79,7 @@ $params = array(
 		'class' => 'elgg-river-layout',
 
 );
+
 
 
 $body = elgg_view_layout('one_sidebar', $params);
