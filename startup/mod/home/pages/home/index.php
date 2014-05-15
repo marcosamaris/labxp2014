@@ -27,8 +27,8 @@ $page_filter = 'all';
 
 
 $options = array(
-		'metadata_name' => 'functions',
-		'metadata_value' => 'business',
+		'metadata_name' => 'Spaces',
+		'metadata_value' => 'Spaces5',
 		'type' => 'object',
 		'subtype' => 'home',
 		'limit' => '10',
@@ -59,7 +59,8 @@ $body = elgg_view_layout('content', array(
 
 $action = 'create';
 
-$activity =elgg_list_entities_from_metadata($options);
+
+$activity = elgg_list_home_filter($options);
 
 
 //$content .= elgg_view('core/river/filter', array('selector' => $selector));

@@ -4,7 +4,7 @@
 elgg_register_event_handler('init', 'system', 'home_init');
 
 function home_init() {
-	
+	elgg_register_library('elgg:home', elgg_get_plugins_path() . 'home/lib/home.php');
 	// add a site navigation item
 	$item = new ElggMenuItem('home', elgg_echo('home:home'), 'home');
 	elgg_register_menu_item('site', $item);
@@ -18,7 +18,8 @@ function home_init() {
 
 
 function home_page_handler($segments) {	
-	
+	elgg_load_library('elgg:home');
+
 	include elgg_get_plugins_path() . 'home/pages/home/index.php';
 	
 	return true;	
