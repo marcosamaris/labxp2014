@@ -24,11 +24,12 @@ $title = elgg_echo('river:all');
 
 $page_filter = 'all';
 
-
+$vetorName = array("functions", "spaces");
+$vetorFuntions = array("functions1");
 
 $options = array(
-		'metadata_name' => 'Spaces',
-		'metadata_value' => 'Spaces5',
+		'metadata_name' => $vetorName,
+		'metadata_value' => $vetorFuntions,
 		'type' => 'object',
 		'subtype' => 'home',
 		'limit' => '10',
@@ -51,11 +52,6 @@ $content .= elgg_view_form("home/save");
 // optionally, add the content for the sidebar
 $sidebar = "";
 
-// layout the page
-$body = elgg_view_layout('content', array(
-		'content' => $content,
-		'sidebar' => $sidebar
-));
 
 $action = 'create';
 
@@ -63,29 +59,15 @@ $action = 'create';
 $activity = elgg_list_home_filter($options);
 
 
-//$content .= elgg_view('core/river/filter', array('selector' => $selector));
-
-
-
-//$sidebar = elgg_view('core/river/sidebar');
-
-
-
 $params = array(
-
 		'content' =>  $content . $activity,
-
 		'filter_context' => $page_filter,
-
 		'class' => 'elgg-river-layout',
-
+		'categories' => $vetorFuntions,		
 );
 
 
 
-$body = elgg_view_layout('one_sidebar', $params);
-
-
-
+$body = elgg_view_layout('two_sidebar', $params);
 
 echo elgg_view_page($title, $body);

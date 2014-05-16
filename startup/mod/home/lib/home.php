@@ -1,38 +1,13 @@
 <?php
 
-function elgg_list_home_test() {
-	$Hola = "Hola Mundinho";
-	return $Hola;
-}
 
-function elgg_get_home_filter(array $options = array()) {
-	$defaults = array(
-		'metadata_names'                     => ELGG_ENTITIES_ANY_VALUE,
-		'metadata_values'                    => ELGG_ENTITIES_ANY_VALUE,
-		'metadata_name_value_pairs'          => ELGG_ENTITIES_ANY_VALUE,
-
-		'metadata_name_value_pairs_operator' => 'AND',
-		'metadata_case_sensitive'            => TRUE,
-		'order_by_metadata'                  => array(),
-
-		'metadata_owner_guids'               => ELGG_ENTITIES_ANY_VALUE,
-	);
-
-	$options = array_merge($defaults, $options);
-	
-	if (!$options = elgg_entities_get_metastrings_options('metadata', $options)) {
-		return FALSE;
-	}
-
-	return elgg_get_home($options);
-}
 
 function elgg_list_home_filter($options) {
-	return elgg_list_home($options, 'elgg_get_home_filter');
+	return elgg_list_home($options);
 }
 
 
-function elgg_list_home(array $options = array(), $getter = 'elgg_get_entities',
+function elgg_list_home(array $options = array(), $getter = 'elgg_get_home_filter',
 	$viewer = 'elgg_view_entity_list') {
 
 	global $autofeed;
@@ -64,6 +39,29 @@ function elgg_list_home(array $options = array(), $getter = 'elgg_get_entities',
 	$options['count'] = $count;
 
 	return $viewer($entities, $options);
+}
+
+
+function elgg_get_home_filter(array $options = array()) {
+	$defaults = array(
+		'metadata_names'                     => ELGG_ENTITIES_ANY_VALUE,
+		'metadata_values'                    => ELGG_ENTITIES_ANY_VALUE,
+		'metadata_name_value_pairs'          => ELGG_ENTITIES_ANY_VALUE,
+
+		'metadata_name_value_pairs_operator' => 'AND',
+		'metadata_case_sensitive'            => TRUE,
+		'order_by_metadata'                  => array(),
+
+		'metadata_owner_guids'               => ELGG_ENTITIES_ANY_VALUE,
+	);
+
+	$options = array_merge($defaults, $options);
+	
+
+	$options = elgg_entities_get_metastrings_options('metadata', $options);
+	
+
+	return elgg_get_home($options);
 }
 
 function elgg_get_home(array $options = array()) {
