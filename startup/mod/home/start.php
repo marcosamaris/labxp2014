@@ -10,6 +10,9 @@ function home_init() {
 	elgg_register_menu_item('site', $item);
 	elgg_register_entity_type('object', 'home');
 	
+	$home_js = elgg_get_simplecache_url('js', 'home/home');
+	elgg_register_simplecache_view('js/home/home');
+	elgg_register_js('elgg.home', $home_js);
 	
 	elgg_register_page_handler('home', 'home_page_handler');
 	elgg_register_action("home/save", elgg_get_plugins_path() . "home/actions/home/save.php");

@@ -60,7 +60,6 @@ elgg.blog.saveDraft = function() {
 elgg.blog.init = function() {
 	// get a copy of the body to compare for auto save
 	oldDescription = $('form[id=blog-post-edit]').find('textarea[name=description]').val();
-	
 	setInterval(elgg.blog.saveDraft, 60000);
 };
 

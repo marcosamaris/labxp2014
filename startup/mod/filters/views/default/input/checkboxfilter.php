@@ -48,20 +48,48 @@ if (!empty($functions)) {
 	<td>
 	<label><?php echo elgg_echo('filters:functions'); ?></label><br />
 	<?php
+		echo "<form method='post'>"; 
+		
 		echo elgg_view('input/checkboxes', array(
 			'options' => $functions,
 			'value' => $selected_categories,
-			'name' => 'functions',
-			'options_values' => $functions,
-			'align' => 'vertical'
+			'name' => 'functions',			
+			'align' => 'vertical',
+			'class'=>'function'
+			//'onclick'=> 'myFunction()'
 
-		));	
+		));
+	echo "</form>";	
 	
+//manter os checkboxes selecionados
 		
 	?>
 	</td>
 	</tr>
 	</table>
+	<script>
+	
+		
+/*	function myFunction() {
+
+			alert("hi"+$("input[name='functions']").val());
+		
+	}
+*/
+
+	$(function () {
+		$(".function").click(function(){
+				alert($(this).attr("name"));
+				//lista os checkboxes checked
+				//window.href= "? && &&"
+				// submit
+		});
+		
+	});
+
+	
+	
+</script>
 	<?php
 
 }
@@ -83,6 +111,7 @@ if (!empty($spaces) ) {
 	
 	<?php echo elgg_echo('filters:spaces'); ?></label><br />
 	<?php
+		echo "<form method='post'>";
 		echo elgg_view('input/checkboxes', array(
 			'options' => $spaces,
 			'value' => $selected_categories,
@@ -91,7 +120,7 @@ if (!empty($spaces) ) {
 			'align' => 'vertical'
 
 		));	
-	
+		echo "</form>";
 		
 	?>
 	</td>
