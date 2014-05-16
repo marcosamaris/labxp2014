@@ -22,15 +22,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <?php echo elgg_view('login/extend', $vars); ?>
 
 <div class="elgg-foot">
