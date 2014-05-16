@@ -11,9 +11,10 @@ function theme_monashees_init() {
 	//include custom css for this theme
 	elgg_extend_view('css/elgg', 'theme_monashees/css');
 	
+	
 	//custom js
-	//$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
-	//elgg_register_js('custom_js', $custom_js);
+	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
+	elgg_register_js('custom_js', $custom_js);
 	
 	$jquery_mona = 'mod/theme_monashees/vendors/plus-network/js/jquery.js';
 	elgg_register_js('jquery_mona', $jquery_mona, 'head', 10);
@@ -38,8 +39,8 @@ function theme_monashees_init() {
 	elgg_register_css('style_css', $style_css, 10);
 	
 	
-	//$bootstrap_css_resp = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-responsive.min.css';
-	//lgg_register_css('bootstrap_css_resp', $bootstrap_css_resp, 10);
+	$bootstrap_css_resp = 'mod/twitter_bootstrap/vendors/bootstrap/css/bootstrap-responsive.min.css';
+	elgg_register_css('bootstrap_css_resp', $bootstrap_css_resp, 10);
 	
 	//unregister internal jquery as we will link to Google to get the latest library, required for bootstrap
 	elgg_unregister_js('jquery');
