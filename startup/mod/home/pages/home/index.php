@@ -25,7 +25,7 @@ $title = elgg_echo('river:all');
 $page_filter = 'all';
 
 $vetorName = array("functions", "spaces");
-$vetorFuntions = array("functions1");
+$vetorFuntions = array("Function1");
 
 $options = array(
 		'metadata_name' => $vetorName,
@@ -41,33 +41,37 @@ $options = array(
 );
 // set the title
 // for distributed plugins, be sure to use elgg_echo() for internationalization
-$title = "";
 
 // start building the main column of the page
-$content = elgg_view_title($title);
 
+$functionTemp = $_GET['Functions'];
+
+if (!$FunctionsGlobal){
+	$FunctionsGlobal = $FunctionsGlobal .','. $functionTemp ;
+} else{
+	$FunctionsGlobal = $functionTemp ;
+}
+
+
+$content =  $FunctionsGlobal . elgg_view_title($title);
 // add the form to this section
+
 $content .= elgg_view_form("home/save");
 
 // optionally, add the content for the sidebar
 $sidebar = "";
 
-
 $action = 'create';
 
-
 $activity = elgg_list_home_filter($options);
-
 
 $params = array(
 		'content' =>  $content . $activity,
 		'filter_context' => $page_filter,
 		'class' => 'elgg-river-layout',
-		'categories' => $vetorFuntions,		
+		'categories' => $vetorFuntions,
+		'functSelected' => 'functionSelected',
 );
 
-
-
 $body = elgg_view_layout('two_sidebar', $params);
-
 echo elgg_view_page($title, $body);

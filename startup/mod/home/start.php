@@ -3,6 +3,9 @@
 
 elgg_register_event_handler('init', 'system', 'home_init');
 
+$GLOBALS['FunctionsGlobal'] = 'asdas';
+var_export($GLOBALS, true);
+
 function home_init() {
 	elgg_register_library('elgg:home', elgg_get_plugins_path() . 'home/lib/home.php');
 	// add a site navigation item

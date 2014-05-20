@@ -43,55 +43,24 @@ if (!empty($functions)) {
 	array_walk($functions, create_function('&$v, $k', '$v = $k;'));
 
 	?>
-	<table>
-	<tr>
-	<td>
-	<label><?php echo elgg_echo('filters:functions'); ?></label><br />
-	<?php
-		echo "<form method='post'>"; 
-		
-		echo elgg_view('input/checkboxes', array(
-			'options' => $functions,
-			'value' => $selected_categories,
-			'name' => 'functions',			
-			'align' => 'vertical',
-			'class'=>'function'
-			//'onclick'=> 'myFunction()'
 
-		));
-	echo "</form>";	
-	
-//manter os checkboxes selecionados
-		
-	?>
-	</td>
-	</tr>
-	</table>
-	<script>
-	
-		
-/*	function myFunction() {
+	<ul class="analytic-list">
+		<li><a class="active" href="#"> All Functions</a></li>
 
-			alert("hi"+$("input[name='functions']").val());
-		
+	<?php 
+	$linkstr = '';
+	if (!empty($functions)) {
+		if (!is_array($functions)) {
+			$functions = array($functions);
+		}
+		foreach($functions as $function) {			
+			$linkstr .= '<li><a href="#" id="' . $function .'" class="functionsLink"> ' . $function . '</a></li> ';			 
+		}
+		$linkstr .= '</ul>';
 	}
-*/
-
-	$(function () {
-		$(".function").click(function(){
-				alert($(this).attr("name"));
-				//lista os checkboxes checked
-				//window.href= "? && &&"
-				// submit
-		});
-		
-	});
-
-	
-	
-</script>
-	<?php
-
+	if ($linkstr) {
+		echo '<p class="elgg-output-categories">' . "$linkstr</p>";
+	}
 }
 
 if (!empty($spaces) ) {
@@ -102,32 +71,44 @@ if (!empty($spaces) ) {
 	// checkboxes want Label => value, so in our case we need category => category
 	$spaces = array_flip($spaces);
 	array_walk($spaces, create_function('&$v, $k', '$v = $k;'));
+}
 
-	?>
-	<table>
-	<tr>
-	<td>
-	<label>
+if (!empty($spaces)) {
+	if (!is_array($spaces)) {
+		$spaces = array($spaces);
+	}
 	
-	<?php echo elgg_echo('filters:spaces'); ?></label><br />
-	<?php
-		echo "<form method='post'>";
-		echo elgg_view('input/checkboxes', array(
-			'options' => $spaces,
-			'value' => $selected_categories,
-			'name' => 'spaces',
-			'options_values' => $spaces,
-			'align' => 'vertical'
-
-		));	
-		echo "</form>";
-		
+	// checkboxes want Label => value, so in our case we need category => category
+	$spaces = array_flip($spaces);
+	array_walk($spaces, create_function('&$v, $k', '$v = $k;'));
 	?>
-	</td>
-	</tr>
-	</table>
-	<?php
 
-} 
-//echo elgg_view('input/spaces');
+	<ul class="analytic-list">
+		<li><a class="active" href="#" > <?php $GLOBALS['FunctionsGlobal']  ?> All Spaces</a></li>
+	<?php 
+	$linkstr = '';
+	if (!empty($spaces)) {
+		if (!is_array($spaces)) {
+			$spaces = array($spaces);
+		}
+		foreach($spaces as $space) {
+			$link = elgg_get_site_url() . 'home/list?spaces=' . urlencode($space);
+			$linkstr .= '<li><a href="' . $link .'"> ' . $space . '</a></li> ';			 
+		}
+		$linkstr .= '</ul>';
+	}
+	if ($linkstr) {
+		echo '<p class="elgg-output-categories">' . "$linkstr</p>";
+	}
+}
 ?>
+<script>			
+$(".functionsLink").click(function () {
+	val = $(this).attr("id");
+	alert(val);
+    window.location.href = "http://localhost/labxp2014/startup/home/mod/home/index.php?Functions=" + val;
+
+    //window.location.href = "index.php?Functions=" + $(this).attr("id"));
+});
+
+</script>
