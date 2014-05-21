@@ -2,7 +2,8 @@
 
 function filters_init()
 {
-	
+	elgg_register_js('elgg.filters', 'mod/filters/views/default/js/filters/filters.js');	
+
 	elgg_register_event_handler('update', 'all', 'filters_save');
 	elgg_register_event_handler('create', 'all', 'filters_save');
 	elgg_register_plugin_hook_handler('action', 'plugins/settings/save', 'filters_save_admin_categories');
@@ -71,11 +72,6 @@ function filters_save_admin_categories($hook, $type, $value, $params) {
 
 	forward(REFERER);
 }
-
-
-
-
-
 
 
 elgg_register_event_handler('init', 'system', 'filters_init');

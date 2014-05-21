@@ -8,7 +8,7 @@
 
 
 //if (elgg_is_admin_logged_in()) {
-
+//elgg_load_js('elgg.home');	
 $options = array();
 
 
@@ -20,12 +20,15 @@ $subtype = preg_replace('[\W]', '', get_input('subtype', ''));
 
 $selector = "type=$type";
 
-$title = elgg_echo('river:all');
+$title = '';
 
 $page_filter = 'all';
 
-$vetorName = array("functions", "spaces");
-$vetorFuntions = array("Function1");
+$functionTemp = $_GET['Functions'];
+
+//$vetorName = array("functions", "spaces");
+$vetorName = 'functions';
+$vetorFuntions = $functionTemp;
 
 $options = array(
 		'metadata_name' => $vetorName,
@@ -44,16 +47,7 @@ $options = array(
 
 // start building the main column of the page
 
-$functionTemp = $_GET['Functions'];
-
-if (!$FunctionsGlobal){
-	$FunctionsGlobal = $FunctionsGlobal .','. $functionTemp ;
-} else{
-	$FunctionsGlobal = $functionTemp ;
-}
-
-
-$content =  $FunctionsGlobal . elgg_view_title($title);
+$content =   $functionTemp . elgg_view_title($title);
 // add the form to this section
 
 $content .= elgg_view_form("home/save");
