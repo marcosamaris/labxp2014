@@ -22,7 +22,7 @@ if (!$excerpt) {
 
 $owner_icon = elgg_view_entity_icon($owner, 'tiny');
 $owner_link = elgg_view('output/url', array(
-	'href' => "blog/owner/$owner->username",
+	'href' => "home/owner/$owner->username",
 	'text' => $owner->name,
 	'is_trusted' => true,
 ));
@@ -49,7 +49,7 @@ if ($blog->comments_on != 'Off') {
 
 $metadata = elgg_view_menu('entity', array(
 	'entity' => $vars['entity'],
-	'handler' => 'blog',
+	'handler' => 'home',
 	'sort_by' => 'priority',
 	'class' => 'elgg-menu-hz',
 ));
