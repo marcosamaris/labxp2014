@@ -34,9 +34,7 @@ function home_init() {
 
 function home_page_handler($segments) {	
 	elgg_load_library('elgg:home');
-	$GLOBALS['FunctionsGlobal'] = 'asdas';
-	var_export($GLOBALS, true);
-	include elgg_get_plugins_path() . 'home/pages/home/test.php';
+	include elgg_get_plugins_path() . 'home/pages/home/index.php';
 	
 	return true;	
 }
