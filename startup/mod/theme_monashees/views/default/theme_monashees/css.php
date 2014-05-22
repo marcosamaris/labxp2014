@@ -51,3 +51,12 @@ body {background:#f5f5f5}
     position: relative;
 }
 
+.content-part .elgg-layout-one-sidebar,
+.content-part .elgg-layout-two-sidebar{
+	background: none;
+}
+
+.content-part .elgg-sidebar-alt ,
+.content-part .elgg-sidebar {
+    float: left;
+}

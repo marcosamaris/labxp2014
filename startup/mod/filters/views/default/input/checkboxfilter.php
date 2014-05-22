@@ -45,25 +45,36 @@ if (!empty($functions)) {
 	array_walk($functions, create_function('&$v, $k', '$v = $k;'));
 
 	?>
+<div class="sidebar-nav">
 
-	<ul class="analytic-list">
-		<li><a class="active" href="#"> All Functions</a></li>
+	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a href="#">All Functions</a></h3>
+
+	<ul class="nav-s">
+
 
 	<?php 
-	$linkstr = '';
+	
 	if (!empty($functions)) {
 		if (!is_array($functions)) {
 			$functions = array($functions);
 		}
+
 		foreach($functions as $function) {			
-			$linkstr .= '<li><a href="#" id="' . $function .'" class="functionsLink"> ' . $function . '</a></li> ';			 
+			echo '<li><a href="#" id="' . $function .'" class="functionsLink"> ' . $function . '</a></li> ';			 
 		}
-		$linkstr .= '</ul>';
 	}
-	if ($linkstr) {
-		echo '<p class="elgg-output-categories">' . "$linkstr</p>";
-	}
+	
+	?>
+	
+	</ul>
+</div>
+	
+<?php 	
 }
+
+
+
+
 
 if (!empty($spaces) ) {
 	if (!is_array($spaces)) {
@@ -84,9 +95,14 @@ if (!empty($spaces)) {
 	$spaces = array_flip($spaces);
 	array_walk($spaces, create_function('&$v, $k', '$v = $k;'));
 	?>
+	
+	
+<div class="sidebar-nav">
 
-	<ul class="analytic-list">
-		<li><a class="active" href="#" > <?php $GLOBALS['FunctionsGlobal']  ?> All Spaces</a></li>
+	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a class="active" href="#" > <?php $GLOBALS['FunctionsGlobal']  ?> All Spaces</a></h3>
+
+	<ul class="nav-s">
+		
 	<?php 
 	$linkstr = '';
 	if (!empty($spaces)) {
@@ -95,12 +111,16 @@ if (!empty($spaces)) {
 		}
 		foreach($spaces as $space) {
 			$link = elgg_get_site_url() . 'home/list?spaces=' . urlencode($space);
-			$linkstr .= '<li><a href="' . $link .'"> ' . $space . '</a></li> ';			 
+			echo '<li><a href="' . $link .'"> ' . $space . '</a></li> ';			 
 		}
-		$linkstr .= '</ul>';
+		
 	}
-	if ($linkstr) {
-		echo '<p class="elgg-output-categories">' . "$linkstr</p>";
-	}
+	
+	?>
+	
+	</ul>
+	</div>
+	
+<?php 
 }
 ?>

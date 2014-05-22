@@ -84,25 +84,15 @@ function theme_monashees_init() {
 	
 	}
 	
-	
-	
-	//Elgg only includes the search bar in the header by default,
-	//but we usually don't show the header when the user is logged in
-/*	if (elgg_is_active_plugin('search')) {
-		elgg_extend_view('page/elements/topbar', 'search/search_box');
-		elgg_unextend_view('page/elements/header', 'search/search_box');
-		
-		if (!elgg_is_logged_in()) {
-			elgg_unextend_view('page/elements/header', 'search/header');
-		}
-	}*/
-	
-	//Elgg only includes the search bar in the header by default,
-	//but I am not sure where the best location is yet - header, topbar or... ?
+
 	if (elgg_is_active_plugin('search')) {
 		elgg_unextend_view('page/elements/header', 'search/search_box');
 		elgg_extend_view('page/elements/topbar', 'search/search_box');
+		#HACK: replace the search/header with a empty file
 	}
+	
+	//For remove the RSS icon from sidebar
+	elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 	
 }
 
