@@ -62,11 +62,11 @@ $lang = get_current_language();
 			<?php echo $header; ?>
 		</div>
 	</div>
-	<div class="elgg-page-body">
-		<div class="elgg-inner">
+	<section class="content-part">
+		<div class="container">
 			<?php echo $body; ?>
 		</div>
-	</div>
+	</section>
 <!-- 	<div class="elgg-page-footer">
 		<div class="elgg-inner">
 			<?php //echo $footer; ?>

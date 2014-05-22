@@ -24,9 +24,21 @@ $user = elgg_get_logged_in_user_entity();
 
 echo '<div class="welcome-blcok">
 		<div class="wel-c">
-			<div class="user-avatar">
-				<img alt="mask" src="'.$user->getIconURL('small').'">
-			</div>
+			<div class="user-avatar">';
+
+
+
+if (elgg_is_active_plugin('profile')) {
+	echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
+}
+		echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
+		
+if (elgg_is_active_plugin('profile')) {
+	echo '</a>';	
+}
+		
+			
+echo 		'</div>
 			<div class="txt">
 				<p class="welcome-txt"><strong>'.elgg_echo('welcome').',</strong> '.$user->name.'</p>
 				<p>';

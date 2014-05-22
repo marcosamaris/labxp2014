@@ -11,4 +11,9 @@
 //echo elgg_view('core/account/login_dropdown');
 
 // insert site-wide navigation
-echo elgg_view_menu('site');
+
+$vars['type_menu'] = 'header';
+
+echo elgg_view_menu('site', $vars);
+
+

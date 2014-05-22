@@ -50,6 +50,8 @@ $release = get_version(true);
 	<title><?php echo $title; ?></title>
 	<?php echo elgg_view('page/elements/shortcut_icon', $vars); ?>
 
+	
+	
 <?php foreach ($css as $link) { ?>
 	<link rel="stylesheet" href="<?php echo $link; ?>" type="text/css" />
 <?php } ?>
