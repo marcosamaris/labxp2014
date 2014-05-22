@@ -9,7 +9,8 @@
 $default_items = elgg_extract('default', $vars['menu'], array());
 $more_items = elgg_extract('more', $vars['menu'], array());
 
-echo '<ul class="elgg-menu elgg-menu-site elgg-menu-site-default clearfix">';
+echo '<nav role="navigation" class="navigation">';
+echo '<ul class="navbar-collapse collapse">';
 foreach ($default_items as $menu_item) {
 	echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
 }
@@ -28,3 +29,4 @@ if ($more_items) {
 	echo '</li>';
 }
 echo '</ul>';
+echo '</nav>';

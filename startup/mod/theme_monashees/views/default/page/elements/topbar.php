@@ -10,6 +10,15 @@ echo '<div class="logo col-lg-2">
         </a>
       </div>';
 
+echo '
+<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>';
+
+
 $user = elgg_get_logged_in_user_entity();
 
 

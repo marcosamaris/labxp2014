@@ -39,3 +39,15 @@ body {background:#f5f5f5}
     width: 44px;
 }
 
+.search-query{
+	border-radius: 0;
+}
+
+
+.main-navigation .elgg-menu-site-default {
+    bottom: 0;
+    height: 23px;
+    left: 0;
+    position: relative;
+}
+

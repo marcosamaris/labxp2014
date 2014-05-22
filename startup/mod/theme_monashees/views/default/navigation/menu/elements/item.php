@@ -25,15 +25,21 @@ if ($children) {
 }
 
 $item_class = $item->getItemClass();
+$item_link_class_selected = "";
 if ($item->getSelected()) {
-	$item_class = "$item_class elgg-state-selected";
+	//$item_class = "$item_class elgg-state-selected";
+	$item_link_class_selected = 'active';
 }
 if (isset($vars['item_class']) && $vars['item_class']) {
 	$item_class .= ' ' . $vars['item_class'];
 }
 
 echo "<li class=\"$item_class\">";
-echo $item->getContent();
+$link =  $item->getContent();
+
+echo str_replace("<a ", '<a class="'.$item_link_class_selected.'" ', $link);
+
+
 if ($children) {
 	echo elgg_view('navigation/menu/elements/section', array(
 		'items' => $children,
