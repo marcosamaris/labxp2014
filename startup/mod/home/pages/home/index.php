@@ -26,21 +26,29 @@ $page_filter = 'all';
 
 $functionTemp = $_GET['Functions'];
 
-//$vetorName = array("functions", "spaces");
-$vetorName = 'functions';
+
+//Preparing selected functions and spaces to the query
+//Using pair of queries between functions and spaces.
+$functions = 'functions';
 $vetorFuntions = $functionTemp;
+$spaces = 'spaces';
+$vetorSpaces = 'e';
+
+//
+$pair1 = array('name' => $functions, 'value' =>$vetorFuntions);
+$pair2 = array('name'=> $spaces, 'value' => $vetorSpaces);
 
 $options = array(
-		'metadata_name' => $vetorName,
-		'metadata_value' => $vetorFuntions,
+		//'metadata_name' => $vetorName,
+		//'metadata_value' => $vetorFuntions,
 		'type' => 'object',
 		'subtype' => 'home',
 		'limit' => '10',
 		'owner_guid' => get_input("owner_guid", ELGG_ENTITIES_ANY_VALUE),
 		'full_view' => FALSE,
 		'metadata_case_sensitive' => FALSE,
-		
-		
+		'metadata_name_value_pairs_operator' => 'AND',
+		'metadata_name_value_pairs' => array($pair1,$pair2),
 );
 // set the title
 // for distributed plugins, be sure to use elgg_echo() for internationalization
