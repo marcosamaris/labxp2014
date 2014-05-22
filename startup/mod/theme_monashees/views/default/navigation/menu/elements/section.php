@@ -18,10 +18,10 @@ $item_class = elgg_extract('item_class', $vars, '');
 if ($headers) {
 	$name = elgg_extract('name', $vars);
 	$section = elgg_extract('section', $vars);
-	echo '<h2>' . elgg_echo("menu:$name:header:$section") . '</h2>';
+	//echo '<h2>' . elgg_echo("menu:$name:header:$section") . '</h2>';
 }
 
-echo "<ul class=\"$class\">";
+echo '<ul class="'.$class.'">';
 
 if (is_array($items)) {
 	foreach ($items as $menu_item) {

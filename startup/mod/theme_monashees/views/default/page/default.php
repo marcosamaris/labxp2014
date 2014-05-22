@@ -49,8 +49,8 @@ $lang = get_current_language();
 	</div>
 	
 	<?php if (elgg_is_logged_in()){ ?>
-	<div class="elgg-page-topbar">
-		<div class="elgg-inner">
+	<div class="header-wrapper">
+		<div class="container">
 			<?php echo $topbar; ?>
 		</div>
 	</div>
@@ -67,11 +67,12 @@ $lang = get_current_language();
 			<?php echo $body; ?>
 		</div>
 	</div>
-	<div class="elgg-page-footer">
+<!-- 	<div class="elgg-page-footer">
 		<div class="elgg-inner">
-			<?php echo $footer; ?>
+			<?php //echo $footer; ?>
 		</div>
 	</div>
+	 -->
 </div>
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>

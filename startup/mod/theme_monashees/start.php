@@ -13,7 +13,7 @@ function theme_monashees_init() {
 	
 	
 	//custom js
-	$custom_js = 'mod/twitter_bootstrap/views/default/twitter_bootstrap/custom.js';
+	$custom_js = 'mod/theme_monashees/views/default/theme_monashees/custom.js';
 	elgg_register_js('custom_js', $custom_js);
 	
 	$jquery_mona = 'mod/theme_monashees/vendors/plus-network/js/jquery.js';
@@ -44,7 +44,7 @@ function theme_monashees_init() {
 	
 	//unregister internal jquery as we will link to Google to get the latest library, required for bootstrap
 	elgg_unregister_js('jquery');
-	//elgg_unregister_js('jquery-ui');
+	
 	
 	//load ibraries @todo not sure if this is the best place to do this?
 	elgg_load_js('jquery_mona');
@@ -56,10 +56,48 @@ function theme_monashees_init() {
 	//@todo find out the best approach - perhaps this should be in the pagesetup_handler?
 	if($get_context != 'admin'){
 		elgg_load_js('bootstrap_js');
-		//elgg_load_js('custom_js');
+		elgg_load_js('custom_js');
 		elgg_load_css('bootstrap_css');
 		elgg_load_css('grid_css');
 		elgg_load_css('style_css');
 		
 	}	
+	
+	/** TOPBAR **/
+	elgg_unregister_menu_item('topbar', 'elgg_logo');
+	elgg_unregister_menu_item('topbar', 'friends');
+	
+
+	
+	if(elgg_is_logged_in()){
+	
+
+		if (elgg_is_active_plugin('profile')) {
+			elgg_unregister_menu_item('topbar', 'profile');
+		}
+		
+		elgg_unregister_menu_item('topbar', 'usersettings');
+		elgg_unregister_menu_item('topbar', 'logout');
+		
+		
+		
+	
+	}
+	
+	
+	
+	//Elgg only includes the search bar in the header by default,
+	//but we usually don't show the header when the user is logged in
+	if (elgg_is_active_plugin('search')) {
+		elgg_extend_view('page/elements/topbar', 'search/search_box');
+		elgg_unextend_view('page/elements/header', 'search/search_box');
+		
+		if (!elgg_is_logged_in()) {
+			elgg_unextend_view('page/elements/header', 'search/header');
+		}
+	}
+	
 }
+
+
+
