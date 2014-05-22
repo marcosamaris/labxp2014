@@ -431,15 +431,7 @@ function elgg_entity_menu_setup($hook, $type, $return, $params) {
 		);
 		$return[] = ElggMenuItem::factory($options);
 		
-		$options = array(
-				'name' => 'comment',
-				'href' => "#comments-add-{$entity->getGUID()}",
-				'text' => elgg_view_icon('speech-bubble'),
-				'title' => elgg_echo('comment:this'),
-				'rel' => 'toggle',
-				'priority' => 50,
-		);
-		$return[] = ElggMenuItem::factory($options);
+		
 	}
 
 	return $return;

@@ -30,7 +30,38 @@ function home_init() {
 	elgg_register_action("home/save", elgg_get_plugins_path() . "home/actions/home/save.php");
 	elgg_register_action('home/delete',  elgg_get_plugins_path() . "home/actions/home/delete.php");
 	
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'elgg_post_menu_setup');
+	
+}
 
+
+
+function elgg_post_menu_setup($hook, $type, $value, $params) {
+	$handler = elgg_extract('handler', $params, false);
+	if ($handler != 'home') {
+		return $value;
+	}
+
+	foreach ($value as $index => $item) {
+		$name = $item->getName();
+		if ($name != 'delete') {
+			unset($value[$index]);
+		}
+	}
+	$entity = $params['entity'];
+	
+	$options = array(
+			'name' => 'comment',
+			'href' => "#comments-add-{$entity->getGUID()}",
+			'text' => elgg_view_icon('speech-bubble'),
+			'title' => elgg_echo('comment:this'),
+			'rel' => 'toggle',
+			'priority' => 50,
+	);
+	
+	$value[] = ElggMenuItem::factory($options);
+
+	return $value;
 }
 
 
