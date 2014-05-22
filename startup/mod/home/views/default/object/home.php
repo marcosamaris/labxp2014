@@ -85,12 +85,14 @@ if ($full) {
 
 } else {
 	// brief view
-
+	$responses = elgg_view('input/responses', $vars);
+	
+	
 	$params = array(
 		'entity' => $blog,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
-		'content' => $excerpt,
+		'content' => $excerpt.$responses,
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
