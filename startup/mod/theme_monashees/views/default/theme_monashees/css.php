@@ -60,3 +60,13 @@ body {background:#f5f5f5}
 .content-part .elgg-sidebar {
     float: left;
 }
+
+
+#textarea-home{
+	resize: none;
+	height: auto; 
+}
+
+.space-small{
+	height: 30px;
+}

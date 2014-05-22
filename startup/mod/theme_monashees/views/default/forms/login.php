@@ -6,19 +6,17 @@
  * @subpackage Core
  */
 ?>
-
-<div>
+<div class="col-xs-3"></div>
+<div class="col-xs-7">
 	<label><?php echo elgg_echo('loginusername'); ?></label>
 	<?php echo elgg_view('input/text', array(
 		'name' => 'username',
 		'class' => 'elgg-autofocus',
 		));
 	?>
-</div>
-<div>
 	<label><?php echo elgg_echo('password'); ?></label>
 	<?php echo elgg_view('input/password', array('name' => 'password')); ?>
-</div>
+
 
 
 
@@ -49,3 +47,6 @@
 		</a></li>
 	</ul>
 </div>
+</div>
+<div class="col-xs-2"></div>
+

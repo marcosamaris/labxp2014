@@ -4,9 +4,8 @@
 $login_box = elgg_view('core/account/login_box', array('module' => 'walledgarden-login'));
 
 
-echo <<<HTML
-<section class="col-lg-12 col-sm-12 login">
-	<a href="#" class="login-logo">
+echo '<section class="col-lg-12 col-sm-12 login">
+	<a href="'.elgg_get_site_url().'" class="login-logo">
 		<img src="mod/theme_monashees/vendors/plus-network/images/logo.jpg" alt="Plus Network" />
 	</a>
 
@@ -18,8 +17,8 @@ echo <<<HTML
 		</br>
 		
 		</button>
-		<p>$login_box</p>
+		<div class="space-small"></div>
+		'.$login_box.'
 	</div>
 		
-</section>
-HTML;
+</section>';
