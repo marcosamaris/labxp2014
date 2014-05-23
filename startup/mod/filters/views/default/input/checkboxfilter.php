@@ -99,7 +99,7 @@ if (!empty($spaces)) {
 	
 <div class="sidebar-nav">
 
-	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a class="active" href="#" > <?php $GLOBALS['FunctionsGlobal']  ?> All Spaces</a></h3>
+	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a class="active" href="#" > All Spaces</a></h3>
 
 	<ul class="nav-s">
 		

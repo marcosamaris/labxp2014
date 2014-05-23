@@ -1,4 +1,6 @@
 <?php
+elgg_load_js('elgg.filters');
+
 /**
  * Categories input view
  *
@@ -43,9 +45,13 @@ if (!empty($functions) && !empty($spaces)) {
 	
 	
 	?>
+<div class="sidebar-nav">
 
-<div class="categories">
-	<label><?php echo elgg_echo('functions'); ?></label><br />
+	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a href="#"><?php echo elgg_echo('Functions'); ?></a></h3>
+
+	<ul class="nav-s">
+
+	
 	<form id="myform">
 	<?php
 		echo elgg_view('input/checkboxes', array(
@@ -59,8 +65,15 @@ if (!empty($functions) && !empty($spaces)) {
 
 	?>
 	<input type="hidden" name="universal_category_marker" value="on" />
+	</ul>
+	</div>
 	
-	<label><?php echo elgg_echo('spaces'); ?></label><br />
+<div class="sidebar-nav">
+
+	<h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a class="active" href="#" ><?php echo elgg_echo('Spaces'); ?></a></h3>
+
+	<ul class="nav-s">
+	
 	<?php
 		echo elgg_view('input/checkboxes', array(
 			'options' => $spaces,
@@ -74,7 +87,10 @@ if (!empty($functions) && !empty($spaces)) {
 	?>
 	<input type="hidden" name="universal_space_marker" value="on" />
 	</form>
-</div>
+	</ul>
+	</div>
+	
+
 <script type="text/javascript">
 	function teste(){
 		document.forms["myform"].submit();
