@@ -13,6 +13,8 @@ $home->subtype = "home";
 
 $home->description = $body;
 
+$home->access_id = "1";
+$home->comments_on = "On";
 // owner is logged in user
 $home->owner_guid = elgg_get_logged_in_user_guid();
 
