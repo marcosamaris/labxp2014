@@ -22,9 +22,9 @@ if (!$excerpt) {
 
 $owner_icon = elgg_view_entity_icon($owner, 'tiny');
 $owner_link = elgg_view('output/url', array(
-	'href' => "blog/owner/$owner->username",
-	'text' => $owner->name,
-	'is_trusted' => true,
+		'href' => "blog/owner/$owner->username",
+		'text' => $owner->name,
+		'is_trusted' => true,
 ));
 $author_text = elgg_echo('byline', array($owner_link));
 $date = elgg_view_friendly_time($blog->time_created);
@@ -36,9 +36,9 @@ if ($blog->comments_on != 'Off') {
 	if ($comments_count != 0) {
 		$text = elgg_echo("comments") . " ($comments_count)";
 		$comments_link = elgg_view('output/url', array(
-			'href' => $blog->getURL() . '#blog-comments',
-			'text' => $text,
-			'is_trusted' => true,
+				'href' => $blog->getURL() . '#blog-comments',
+				'text' => $text,
+				'is_trusted' => true,
 		));
 	} else {
 		$comments_link = '';
@@ -48,10 +48,10 @@ if ($blog->comments_on != 'Off') {
 }
 
 $metadata = elgg_view_menu('entity', array(
-	'entity' => $vars['entity'],
-	'handler' => 'blog',
-	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz',
+		'entity' => $vars['entity'],
+		'handler' => 'blog',
+		'sort_by' => 'priority',
+		'class' => 'elgg-menu-hz',
 ));
 
 $subtitle = "$author_text $date $comments_link $categories";
@@ -64,33 +64,33 @@ if (elgg_in_context('widgets')) {
 if ($full) {
 
 	$body = elgg_view('output/longtext', array(
-		'value' => $blog->description,
-		'class' => 'blog-post',
+			'value' => $blog->description,
+			'class' => 'blog-post',
 	));
 
 	$params = array(
-		'entity' => $blog,
-		'title' => false,
-		'metadata' => $metadata,
-		'subtitle' => $subtitle,
+			'entity' => $blog,
+			'title' => false,
+			'metadata' => $metadata,
+			'subtitle' => $subtitle,
 	);
 	$params = $params + $vars;
 	$summary = elgg_view('object/elements/summary', $params);
 
 	echo elgg_view('object/elements/full', array(
-		'summary' => $summary,
-		'icon' => $owner_icon,
-		'body' => $body,
+			'summary' => $summary,
+			'icon' => $owner_icon,
+			'body' => $body,
 	));
 
 } else {
 	// brief view
 
 	$params = array(
-		'entity' => $blog,
-		'metadata' => $metadata,
-		'subtitle' => $subtitle,
-		'content' => $excerpt,
+			'entity' => $blog,
+			'metadata' => $metadata,
+			'subtitle' => $subtitle,
+			'content' => $excerpt,
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
