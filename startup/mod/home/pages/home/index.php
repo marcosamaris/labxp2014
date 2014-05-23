@@ -24,23 +24,23 @@ $title = '';
 
 $page_filter = 'all';
 
-$functionTemp = $_GET['Functions'];
-
+$functionTemp = get_input('functions_list');
+$spacesTemp = get_input('spaces_list');
 
 //Preparing selected functions and spaces to the query
 //Using pair of queries between functions and spaces.
 $functions = 'functions';
-$vetorFuntions = $functionTemp;
+$vetorFunctions = $functionTemp;
 $spaces = 'spaces';
-$vetorSpaces = 'e';
+$vetorSpaces = $spacesTemp;
 
 //
-$pair1 = array('name' => $functions, 'value' =>$vetorFuntions);
+$pair1 = array('name' => $functions, 'value' =>$vetorFunctions);
 $pair2 = array('name'=> $spaces, 'value' => $vetorSpaces);
 
 $options = array(
 		//'metadata_name' => $vetorName,
-		//'metadata_value' => $vetorFuntions,
+		//'metadata_value' => $vetorFunctions,
 		'type' => 'object',
 		'subtype' => 'home',
 		'limit' => '10',
@@ -55,7 +55,7 @@ $options = array(
 
 // start building the main column of the page
 
-$content =   $functionTemp . elgg_view_title($title);
+$content =  elgg_view_title($title);
 // add the form to this section
 
 $content .= elgg_view_form("home/save");
@@ -65,14 +65,24 @@ $sidebar = "";
 
 $action = 'create';
 
-$activity = elgg_list_home_filter($options);
+if (!is_array($vetorSpaces)) {
+	$spaces = array($vetorSpaces);
+}
 
+if (!is_array($vetorFunctions)) {
+	$spaces = array($vetorFunctions);
+}
+
+
+$activity = elgg_list_home_filter($options);
 $params = array(
 		'content' =>  $content . $activity,
 		'filter_context' => $page_filter,
 		'class' => 'elgg-river-layout',
-		'categories' => $vetorFuntions,
+		'spaces' => $vetorSpaces,
+		'functions' => $vetorFunctions,
 		'functSelected' => 'functionSelected',
+		
 );
 
 $body = elgg_view_layout('two_sidebar', $params);

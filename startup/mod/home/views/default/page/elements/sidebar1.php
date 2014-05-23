@@ -21,7 +21,7 @@ if (isset($vars['sidebar'])) {
 $vetor = $vars['categories'];
 
 
-$categories_input = elgg_view('input/checkboxfilter', $vars);
+$categories_input = elgg_view('input/buttonFilters', $vars);
 
 echo $categories_input;
 // @todo deprecated so remove in Elgg 2.0
