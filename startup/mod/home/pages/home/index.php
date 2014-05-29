@@ -74,7 +74,7 @@ if (!is_array($vetorFunctions)) {
 }
 
 
-$activity = elgg_list_home_filter($options);
+$activity = elgg_list_entities_from_metadata($options);
 $params = array(
 		'content' =>  $content . $activity,
 		'filter_context' => $page_filter,
