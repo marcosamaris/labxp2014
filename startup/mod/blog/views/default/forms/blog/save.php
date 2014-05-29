@@ -144,7 +144,7 @@ $categories_input
 
 <div>
 	<label for="blog_access_id">$access_label</label>
-	$access_input
+	$access_input;
 </div>
 
 <div>

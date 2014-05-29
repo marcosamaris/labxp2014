@@ -7,24 +7,37 @@
 
 $linkstr = '';
 
-$categories = elgg_get_site_entity()->filters_functions;
+//$categories = elgg_get_site_entity()->filters_functions;
 
 
 
-	//$categories = $vars['entity']->universal_categories;
-	if (!empty($categories)) {
-		if (!is_array($categories)) {
-			$categories = array($categories);
+	$functions = $vars['entity']->functions;
+	if (!empty($functions)) {
+		if (!is_array($functions)) {
+			$functions = array($functions);
 		}
-		foreach($categories as $category) {
-			$link = elgg_get_site_url() . 'categories/list?category=' . urlencode($category);
+		
+		foreach($functions as $functions) {
 			if (!empty($linkstr)) {
 				$linkstr .= ', ';
 			}
-			$linkstr .= '<a href="'.$link.'">' . $category . '</a>';
+			
+			$linkstr .=  $functions;
 		}
 	}
-
+	$linkstr = $linkstr."<br>";
+	$spaces = $vars['entity']->spaces;
+	if (!empty($spaces)) {
+		if (!is_array($spaces)) {
+			$spaces = array($spaces);
+		}
+		
+		
+		foreach($spaces as $spaces) {
+			
+			$linkstr .=  $spaces;
+		}
+	}	
 
 
 if ($linkstr) {

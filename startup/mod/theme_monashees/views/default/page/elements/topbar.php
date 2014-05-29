@@ -3,7 +3,7 @@
  * Elgg topbar
  * The standard elgg top toolbar
  */
-$logo_url = elgg_get_site_url() . "mod/theme_monashees/vendors/plus-network/images/logo2.jpg";
+$logo_url = elgg_get_site_url() . "mod/theme_monashees/vendors/plus-network/images/logo2.png";
 echo '<div class="logo col-lg-2">
 		<a href="'.elgg_get_site_url() .'">
         <img src="'.$logo_url.'" title=\"Plus-Network\" alt=\"Plus-Network\"  class=\"img-responsive\" />
