@@ -29,10 +29,26 @@ function home_init() {
 	elgg_register_page_handler('home', 'home_page_handler');
 	elgg_register_action("home/save", elgg_get_plugins_path() . "home/actions/home/save.php");
 	elgg_register_action('home/delete',  elgg_get_plugins_path() . "home/actions/home/delete.php");
+	register_plugin_hook('index', 'system', 'home_index');
 	
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'elgg_post_menu_setup');
 	
 }
+function home_index($hook, $type, $return, $params)
+{
+	if ($return == true)
+	{
+		return $return;
+	}
+	// index.php can do whatever it needs to for loggedIn or loggedOut
+	if (!include_once(dirname(__FILE__) . "/pages/home/index.php"))
+	{
+		return false;
+	}
+	return true;
+}
+
+
 
 
 
