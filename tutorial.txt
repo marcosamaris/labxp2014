@@ -1,8 +1,9 @@
 TUTORIAL PARA INSTALAÇÃO DA REDE SOCIAL
 
 Requerimentos para tutorial:
-
+  
   -apache2
+  -[NEW:30/05/2014]apt-get install php5-curl (requisito para login lingedin)
   -php5
   -phpmyadmin
   -bando de dados mysql
@@ -59,3 +60,4 @@ Tutorial para instalação da rede social plus network.
       sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf.d/phpmyadmin.conf 
       sudo /etc/init.d/apache2 reload
 
+ 
