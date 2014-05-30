@@ -30,14 +30,14 @@ if(elgg_is_logged_in()){
 	
 	
 	
-	if (elgg_is_active_plugin('profile')) {
-		echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
-	}
-			echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
-			
-	if (elgg_is_active_plugin('profile')) {
-		echo '</a>';	
-	}
+				if (elgg_is_active_plugin('profile')) {
+					echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
+				}
+						echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
+						
+				if (elgg_is_active_plugin('profile')) {
+					echo '</a>';	
+				}
 	
 	
 	

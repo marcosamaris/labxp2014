@@ -48,14 +48,14 @@ $lang = get_current_language();
 		</div>
 	</div>
 	
-	<?php if (elgg_is_logged_in()){ ?>
+	
 	<header class="header-wrapper">
 		<div class="container">
 			<?php echo $topbar; ?>
 		</div>
 	</header>
 	
-	<?php } ?>
+	
 	
 	<div class="main-navigation">
 		<div class="container">
