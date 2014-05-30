@@ -25,7 +25,8 @@ header("Content-type: text/html; charset=UTF-8");
 		<?php echo elgg_view('page/elements/messages', array('object' => $vars['sysmessages'])); ?>
 	</div>
 	<div class="<?php echo $wg_body_class; ?>">
-		<?php echo $vars['body']; ?>
+		<?php //echo $vars['body']; ?>
+		<?php echo elgg_view('core/walled_garden/login',$vars);?>
 	</div>
 </div>
 <?php if ($is_sticky_register): ?>

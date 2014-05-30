@@ -11,6 +11,14 @@
  * @uses $vars['sysmessages'] A 2d array of various message registers, passed from system_messages()
  */
 
+if(!elgg_is_logged_in()){
+	echo elgg_view('page/walled_garden',$vars);	
+	return true;
+}
+else 
+{
+
+
 // backward compatability support for plugins that are not using the new approach
 // of routing through admin. See reportedcontent plugin for a simple example.
 if (elgg_get_context() == 'admin') {
@@ -77,3 +85,6 @@ $lang = get_current_language();
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
 </html>
+<?php 
+}
+?>
