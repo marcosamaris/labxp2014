@@ -11,11 +11,10 @@
  * @uses $vars['class']       Additional class to apply to layout
  */
 
-$class = 'row';
 
 ?>
 
-<div class="<?php echo $class; ?>">
+<div class="row">
 	<div class="col-lg-2 col-md-3">
 		<?php
 			echo elgg_view('page/elements/sidebar1', $vars);
@@ -29,10 +28,7 @@ $class = 'row';
 
 	<div class="col-lg-8 col-md-6">
 		<?php
-			// @todo deprecated so remove in Elgg 2.0
-			if (isset($vars['default'])) {
-				echo $vars['default'];
-			}
+			
 			if (isset($vars['content'])) {
 				echo $vars['content'];
 			}

@@ -1,82 +1,44 @@
 <?php
 
-/**
-
-* Main activity stream list page
-
-*/
-
-
-//if (elgg_is_admin_logged_in()) {
-//elgg_load_js('elgg.home');	
+/** Setup **/	
 $options = array();
-
-
-$page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));
-$type = preg_replace('[\W]', '', get_input('type', 'all'));
-$active_section =
-$subtype = preg_replace('[\W]', '', get_input('subtype', ''));
-
-
-$selector = "type=$type";
-
-$title = '';
-
+$title = 'Home'; //title is the title of page
 $page_filter = 'all';
+$action = 'create';
+$pagination = '10';
 
-$functionTemp = get_input('functions_list');
-$spacesTemp = get_input('spaces_list');
+/** Configuring the options to filter the content **/
 
-//Preparing selected functions and spaces to the query
-//Using pair of queries between functions and spaces.
-$functions = 'functions';
-$vetorFunctions = $functionTemp;
-$spaces = 'spaces';
-$vetorSpaces = $spacesTemp;
 
-//
-$pair1 = array('name' => $functions, 'value' =>$vetorFunctions);
-$pair2 = array('name'=> $spaces, 'value' => $vetorSpaces);
+$vetorFunctions = get_input('functions_list');
+$vetorSpaces = get_input('spaces_list');
+
+$pairFunctions = array('name' => 'functions', 'value' => $vetorFunctions);
+$pairSpaces = array('name'=> 'spaces', 'value' => $vetorSpaces);
 
 $options = array(
-		//'metadata_name' => $vetorName,
-		//'metadata_value' => $vetorFunctions,
 		'type' => 'object',
 		'subtype' => 'home',
-		'limit' => '10',
+		'limit' => $pagination, 
 		'owner_guid' => get_input("owner_guid", ELGG_ENTITIES_ANY_VALUE),
 		'full_view' => FALSE,
 		'metadata_case_sensitive' => FALSE,
 		'metadata_name_value_pairs_operator' => 'AND',
-		'metadata_name_value_pairs' => array($pair1,$pair2),
+		'metadata_name_value_pairs' => array($pairFunctions,$pairSpaces),
 );
-// set the title
-// for distributed plugins, be sure to use elgg_echo() for internationalization
 
-// start building the main column of the page
 
-$content =  elgg_view_title($title);
-// add the form to this section
+/** Setup page **/
 
-$content .= elgg_view_form("home/save");
 
-// optionally, add the content for the sidebar
-$sidebar = "";
+$form = elgg_view_form("home/save");
 
 $action = 'create';
 
-if (!is_array($vetorSpaces)) {
-	$spaces = array($vetorSpaces);
-}
 
-if (!is_array($vetorFunctions)) {
-	$spaces = array($vetorFunctions);
-}
-
-
-$activity = elgg_list_entities_from_metadata($options);
+$list_post = elgg_list_entities_from_metadata($options);
 $params = array(
-		'content' =>  $content . $activity,
+		'content' =>  $form . $list_post,
 		'filter_context' => $page_filter,
 		'class' => 'elgg-river-layout',
 		'spaces' => $vetorSpaces,
@@ -86,4 +48,4 @@ $params = array(
 );
 
 $body = elgg_view_layout('two_sidebar', $params);
-echo elgg_view_page($title, $body);
+echo elgg_view_page($title, $body); 
