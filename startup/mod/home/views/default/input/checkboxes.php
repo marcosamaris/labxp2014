@@ -79,7 +79,7 @@ if (count($vars['options']) > 0) {
 			$label = $value;
 		}
 		//CHANGE TO CHECK IF CHECKBOXES WERE PREVIOUSLY CHECKED
-		$input_vars['checked'] = in_array(elgg_strtolower($value), $vars['categories']);
+		$input_vars['checked'] = in_array($value, $vars['categories']);
 		$input_vars['value']   = $value;
 		$teste = $input_vars['categories'];
 		$input = elgg_view('input/checkbox', $input_vars);
