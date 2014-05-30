@@ -26,10 +26,27 @@ if ($children) {
 
 $item_class = $item->getItemClass();
 $item_link_class_selected = "";
+
+
+
+if (elgg_is_active_plugin('home'))
+{
+	if(elgg_get_context() == 'main')
+	{
+		
+		if ($item->getName() == 'home' ) {
+			//$item_class = "$item_class elgg-state-selected";
+			$item_link_class_selected = 'active';
+		}
+	}
+}
+ 
 if ($item->getSelected()) {
 	//$item_class = "$item_class elgg-state-selected";
 	$item_link_class_selected = 'active';
 }
+
+
 if (isset($vars['item_class']) && $vars['item_class']) {
 	$item_class .= ' ' . $vars['item_class'];
 }

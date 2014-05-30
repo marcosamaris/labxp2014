@@ -18,59 +18,51 @@ echo '
 <span class="icon-bar"></span>
 </button>';
 
+//need to check if the user is logged because this topbar can be always loaded if the site is public
+if(elgg_is_logged_in()){
 
-$user = elgg_get_logged_in_user_entity();
-
-
-echo '<div class="welcome-blcok">
-		<div class="wel-c">
-			<div class="user-avatar">';
-
-
-
-if (elgg_is_active_plugin('profile')) {
-	echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
-}
-		echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
-		
-if (elgg_is_active_plugin('profile')) {
-	echo '</a>';	
-}
-		
+	$user = elgg_get_logged_in_user_entity();
+	
+	
+	echo '<div class="welcome-blcok">
+			<div class="wel-c">
+				<div class="user-avatar">';
+	
+	
+	
+	if (elgg_is_active_plugin('profile')) {
+		echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
+	}
+			echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
 			
-echo 		'</div>
-			<div class="txt">
-				<p class="welcome-txt"><strong>'.elgg_echo('welcome').',</strong> '.$user->name.'</p>
-				<p>';
-
-				if(elgg_is_admin_logged_in () == true)
-				{
-					echo '<a href="'.elgg_get_site_url() .'admin">'.elgg_echo('admin').'</a> <span> | </span>';
-				}
+	if (elgg_is_active_plugin('profile')) {
+		echo '</a>';	
+	}
+	
+	
+	
 				
+	echo 		'</div>
+				<div class="txt">
+					<p class="welcome-txt"><strong>'.elgg_echo('welcome').',</strong> '.$user->name.'</p>
+					<p>';
+	
+					if(elgg_is_admin_logged_in () == true)
+					{
+						echo '<a href="'.elgg_get_site_url() .'admin">'.elgg_echo('admin').'</a> <span> | </span>';
+					}
+					
+					
+					echo ' <a href="'.elgg_get_site_url() .'settings/user/'.$user->username.'">'.elgg_echo('settings').'</a> <span>';
+					echo '|</span> <a href="'.elgg_get_site_url() .'action/logout">'.elgg_echo('logout').' </a>';
+					
+					
+	echo '			</p>
+				</div>
 				
-				echo ' <a href="'.elgg_get_site_url() .'settings/user/'.$user->username.'">'.elgg_echo('settings').'</a> <span>';
-				echo '|</span> <a href="'.elgg_get_site_url() .'action/logout">'.elgg_echo('logout').' </a>';
-				
-				
-echo '			</p>
 			</div>
-			
-		</div>
-	</div>';
+		</div>';
 
-
-
-
-
-// Elgg logo
-//echo elgg_view_menu('topbar', array('sort_by' => 'priority', array('elgg-menu-hz')));
-
-// elgg tools menu
-// need to echo this empty view for backward compatibility.
-/*$content = elgg_view("navigation/topbar_tools");
-if ($content) {
-	elgg_deprecated_notice('navigation/topbar_tools was deprecated. Extend the topbar menus or the page/elements/topbar view directly', 1.8);
-	echo $content;
 }
-*/
+
+

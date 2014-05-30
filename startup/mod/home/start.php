@@ -6,6 +6,8 @@ elgg_register_event_handler('init', 'system', 'home_init');
 
 
 function home_init() {
+	
+	
 	elgg_register_library('elgg:home', elgg_get_plugins_path() . 'home/lib/home.php');
 	// add a site navigation item
 	$item = new ElggMenuItem('home', elgg_echo('home:home'), 'home');
@@ -32,6 +34,12 @@ function home_init() {
 	register_plugin_hook('index', 'system', 'home_index');
 	
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'elgg_post_menu_setup');
+	
+	//for remove the activity page
+	elgg_unregister_page_handler('activity');
+	elgg_unregister_menu_item('site', 'activity');
+	elgg_register_page_handler('activity', 'core_twocan_page_handler');
+	
 	
 }
 function home_index($hook, $type, $return, $params)
