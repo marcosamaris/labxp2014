@@ -1,70 +1,38 @@
-<?php
-/**
- * Administrator sets the advisors for the site
- *
- * @package ElggAdvisors
- */
 
-// Get site categories
-$site = elgg_get_site_entity();
-$guid = $site->guid;
-$name = $site->name;
-$email = $site->email;
-$photo = $site->photo;
-$skype = $site->skype;
-$linkedin = $site->linkedin;
-$plus = $site->plus;
-$twitter = $site->twitter;
-$facebook = $site->facebook;
-
-?>
 <div>
-	<p><?php echo elgg_echo('advisors:explanation'); ?></p>
-	<p><?php echo elgg_echo('advisors:name'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $name,'name' => 'name' 
-) );
-?>
-<p><?php echo elgg_echo('advisors:email'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $email,'name' => 'email'));
-?>
-
-<p><?php echo elgg_echo('advisors:photo'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $email,'name' => 'email'));
-?>
-
-
-<p><?php echo elgg_echo('advisors:skype'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $skype,'name' => 'skype'));
-?>
-
-
-<p><?php echo elgg_echo('advisors:linkedin'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $linkedin,'name' => 'linkedin'));
-?>
-
-
-
-<p><?php echo elgg_echo('advisors:plus'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $plus,'name' => 'plus'));
-?>
-
-
-
-<p><?php echo elgg_echo('advisors:twitter'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $twitter,'name' => 'twitter'));
-?>
-
-
-<p><?php echo elgg_echo('advisors:facebook'); ?></p>
-<?php
-echo elgg_view ( 'input/text', array ('value' => $facebook,'name' => 'facebook'));
-?>
+<label><?php echo elgg_echo("advisors:name"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorname')); ?>
 </div>
 
+
+<div><label><?php echo elgg_echo("advisors:description"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisordescr')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:email"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisoremail')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:skype"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorskype')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:linkedin"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorlinkedin')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:plus"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorplus')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:twitter"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisortwitter')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:facebook"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorfb')); ?>
+</div>
+
+<div><label><?php echo elgg_echo("advisors:photo"); ?></label><br />
+<dd><?php echo elgg_view('input/file', array('name' => 'advisorimage', 'value' => $image)); ?></dd> 
+</div>
