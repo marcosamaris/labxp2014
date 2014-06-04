@@ -9,7 +9,7 @@ $home = new ElggObject();
 
 //$home->subtype = "home";
 
-$home->subtype = "home";
+$home->subtype = "";
 
 $home->description = $body;
 

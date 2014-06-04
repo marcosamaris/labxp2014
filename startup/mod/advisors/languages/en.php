@@ -9,6 +9,8 @@ $english = array(
 	'advisors:explanation' => 'To set some venture advisors of Monashees.',
 	'advisors:name' => 'Name',
 	'advisors:email' => 'Email',
+	'advisors:deleted_advisor' => 'Advisor deleted.',
+		
 );
 
 add_translation("en", $english);

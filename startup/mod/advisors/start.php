@@ -8,9 +8,41 @@ function advisors_init() {
 	elgg_register_event_handler('update', 'all', 'advisors_save');
 	elgg_register_event_handler('create', 'all', 'advisors_save');
 	elgg_register_plugin_hook_handler('action', 'plugins/settings/save', 'advisor_save_admin');
+	elgg_register_action ( 'advisors/delete', elgg_get_plugins_path () . "advisors/actions/advisors/delete.php" );
+	
+	elgg_register_page_handler ( 'advisors', 'advisors_page_handler' );
+	elgg_register_plugin_hook_handler ( 'register', 'menu:entity', 'elgg_advisors_menu_setup' );
+	
 }
 
 elgg_register_event_handler ( 'init', 'system', 'advisors_init' );
+
+
+function elgg_advisors_menu_setup($hook, $type, $value, $params) {
+	$handler = elgg_extract ( 'handler', $params, false );
+	if ($handler != 'advisors') {
+		return $value;
+	}
+
+	foreach ( $value as $index => $item ) {
+		$name = $item->getName ();
+		if ($name != 'delete' ) {
+			unset ( $value [$index] );
+		}
+	}
+	$entity = $params ['entity'];
+
+	
+	return $value;
+}
+
+function advisors_page_handler($segments) {
+
+	include elgg_get_plugins_path () . 'advisors/pages/advisors/index.php';
+
+	return true;
+}
+
 
 
 function advisors_save($event, $object_type, $object) {
@@ -47,6 +79,13 @@ function advisor_save_admin($hook, $type, $value, $params) {
 		return $value;
 	}
 
+	$advisor = new ElggObject();
+	
+	//$home->subtype = "home";
+	
+	$advisor->subtype = "advisors";
+	$advisor->description = "teste de um avisor";
+	
 	$advisorname = get_input('advisorname');
 	$advisordescr = get_input('advisordescr');
 	$advisoremail = get_input('advisoremail');
@@ -57,22 +96,20 @@ function advisor_save_admin($hook, $type, $value, $params) {
 	$advisorfb = get_input('advisorfb');
 	$advisorimage = get_input('advisorimage');
 	 	
-	$site = elgg_get_site_entity();
 	
-	$site->owner_guid = elgg_get_logged_in_user_guid();
-	$site->filters_functions  = $filters_functions;
-	$site->filters_spaces = $filters_spaces;
+	$advisor->owner_guid = elgg_get_logged_in_user_guid();
 	
-	$site->advisorname = $advisorname;
-	$site->advisordescr = $advisordescr;
-	$site->advisoremail = $advisoremail;
-	$site->advisorskype = $advisorskype;
-	$site->advisorlinkedin = $advisorlinkedin;
-	$site->advisorplus = $advisorplus;
-	$site->advisortwitter = $advisortwitter;
-	$site->advisorfb = $advisorfb;
-	$site->advisorimage = $advisorimage;
+	$advisor->advisorname = $advisorname;
+	$advisor->advisordescr = $advisordescr;
+	$advisor->advisoremail = $advisoremail;
+	$advisor->advisorskype = $advisorskype;
+	$advisor->advisorlinkedin = $advisorlinkedin;
+	$advisor->advisorplus = $advisorplus;
+	$advisor->advisortwitter = $advisortwitter;
+	$advisor->advisorfb = $advisorfb;
+	$advisor->advisorimage = $advisorimage;
 
+	$advisor->save();
 	system_message(elgg_echo("advisors:save:success"));
 
 	#elgg_delete_admin_notice('categories_admin_notice_no_categories');
