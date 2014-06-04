@@ -70,3 +70,7 @@ body {background:#f5f5f5}
 .space-small{
 	height: 30px;
 }
+
+.filter-active{
+	font-weight: bold;
+}
