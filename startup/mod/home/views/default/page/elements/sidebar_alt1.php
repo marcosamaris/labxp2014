@@ -1,12 +1,8 @@
-<?php 
+<?php
+ 
 /**
- * Elgg secondary sidebar contents
- *
- * You can override, extend, or pass content to it
- *
- * @uses $vars['sidebar_alt] HTML content for the alternate sidebar
+ * Sidebar com os filtros de functions
  */
+echo elgg_view('input/buttonFiltersSpaces', $vars);
 
-$sidebar = elgg_extract('sidebar_alt', $vars, '');
-
-echo $sidebar;
+?>
