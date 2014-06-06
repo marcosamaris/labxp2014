@@ -81,33 +81,20 @@ function advisor_save_admin($hook, $type, $value, $params) {
 
 	$advisor = new ElggObject();
 	
-	//$home->subtype = "home";
-	
 	$advisor->subtype = "advisors";
-	$advisor->description = "teste de um avisor";
-	
-	$advisorname = get_input('advisorname');
-	$advisordescr = get_input('advisordescr');
-	$advisoremail = get_input('advisoremail');
-	$advisorskype = get_input('advisorskype');
-	$advisorlinkedin = get_input('advisorlinkedin');
-	$advisorplus = get_input('advisorplus');
-	$advisortwitter = get_input('advisortwitter');
-	$advisorfb = get_input('advisorfb');
-	$advisorimage = get_input('advisorimage');
 	 	
 	
 	$advisor->owner_guid = elgg_get_logged_in_user_guid();
 	
-	$advisor->advisorname = $advisorname;
-	$advisor->advisordescr = $advisordescr;
-	$advisor->advisoremail = $advisoremail;
-	$advisor->advisorskype = $advisorskype;
-	$advisor->advisorlinkedin = $advisorlinkedin;
-	$advisor->advisorplus = $advisorplus;
-	$advisor->advisortwitter = $advisortwitter;
-	$advisor->advisorfb = $advisorfb;
-	$advisor->advisorimage = $advisorimage;
+	$advisor->advisorname = get_input('advisorname');
+	$advisor->advisordescr = get_input('advisordescr');
+	$advisor->advisoremail = get_input('advisoremail');
+	$advisor->advisorskype = get_input('advisorskype');
+	$advisor->advisorlinkedin = get_input('advisorlinkedin');
+	$advisor->advisorplus = get_input('advisorplus');
+	$advisor->advisortwitter = get_input('advisortwitter');
+	$advisor->advisorfb = get_input('advisorfb');
+	$advisor->advisorimage = get_input('advisorimage');
 
 	$advisor->save();
 	system_message(elgg_echo("advisors:save:success"));
