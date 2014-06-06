@@ -40,7 +40,7 @@ if (!empty($functions)) {
 	<?php
 		echo elgg_view('input/dropdown_register', array(
 			'value' => '',
-			'name' => 'function',
+			'name' => 'functions',
 			'options_values' => $functions
 
 		));
@@ -90,9 +90,9 @@ if (!empty($spaces)) {
 	
 		echo elgg_view('input/dropdown_register', array(
 			'value' => '',
-			'name' => 'space',
+			'name' => 'spaces',
 			'options_values' => $spaces
-
+			
 		));
 
 	?>

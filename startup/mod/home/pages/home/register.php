@@ -4,11 +4,14 @@
 
 $title = 'Register'; //title is the title of page
 
-$content = elgg_view("forms/home/register");
+$form_vars = array(
+	'action' => elgg_get_site_url()."home",
+);
+
+$form = elgg_view_form("home/register",$form_vars);
 
 $params = array(
-	'content' => $content,	
-		
+	'content' => $form,			
 );
 
 
