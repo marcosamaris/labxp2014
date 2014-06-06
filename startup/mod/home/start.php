@@ -61,9 +61,16 @@ function elgg_post_menu_setup($hook, $type, $value, $params) {
 	
 	return $value;
 }
-function home_page_handler($segments) {
 
+
+function home_page_handler($segments) {
+	
+	if($segments[0] == 'register'){
+		include elgg_get_plugins_path () . 'home/pages/home/register.php';
+	}
+	else{
 	include elgg_get_plugins_path () . 'home/pages/home/index.php';
+	}
 	
 	return true;
 }
