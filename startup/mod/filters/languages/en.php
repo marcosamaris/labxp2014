@@ -12,6 +12,8 @@ $english = array(
 	'filters:on_activate_reminder' => "Site-wide Categories won't work until you add categories. <a href=\"%s\">Add categories now.</a>",
 	'filters:functions' => "Functions",
 	'filters:spaces' => "Spaces",
+	'filters:allfunctions' => "All Functions",
+	'filters:allspaces' => "All Spaces",
 	
 );
 

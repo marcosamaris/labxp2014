@@ -7,3 +7,7 @@
 
 
 caixa de login está em default/form/login
+
+
+
+current_page_url();
