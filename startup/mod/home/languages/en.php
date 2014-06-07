@@ -10,7 +10,8 @@ $english = array(
 	'home:newsfeed' => 'News',
 	'home:saved'=> 'Your post was saved',
 	'home:nosaved'=> 'The post could not be saved',
-		
+	'home:registered'=> 'You were successfully registered',
+	'home:noregistered' => 'Your register could not be done',	
 	/**
 	 * Home river
 	 */	

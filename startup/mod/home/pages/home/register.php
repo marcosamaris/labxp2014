@@ -5,7 +5,6 @@
 $title = 'Register'; //title is the title of page
 
 $form_vars = array(
-	'action' => elgg_get_site_url()."home",
 );
 
 $form = elgg_view_form("home/register",$form_vars);
