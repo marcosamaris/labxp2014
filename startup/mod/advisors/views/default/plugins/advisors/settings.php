@@ -34,12 +34,14 @@
 </div>
 
 <div><label><?php echo elgg_echo("advisors:photo"); ?></label><br />
-<dd><?php echo elgg_view('input/file', array('name' => 'advisorimage', 'value' => $image)); ?></dd> 
+ <?php echo elgg_view('input/file', array('name' => 'advisorimage')); ?> 
 </div>
 
  
 <?php 
 
+$categories_input = elgg_view('input/functions', $vars);
+echo $categories_input;
 
 $options = array(
 		'type' => 'object',
@@ -48,13 +50,10 @@ $options = array(
 		'owner_guid' => get_input("owner_guid", ELGG_ENTITIES_ANY_VALUE),
 		'full_view' => FALSE,
 		'metadata_case_sensitive' => FALSE,
-		
+
 );
 
 $list_post = elgg_list_entities_from_metadata($options);
-$categories_input = elgg_view('input/functions', $vars);
-echo $categories_input;
-
 echo $list_post;
 
 ?>

@@ -47,5 +47,5 @@ $params = array(
 		
 );
 
-$body = elgg_view_layout('two_sidebar', $params);
+$body = elgg_view_layout('two_sidebar_advisor', $params);
 echo elgg_view_page($title, $body); 

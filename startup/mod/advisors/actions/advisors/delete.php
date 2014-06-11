@@ -1,27 +1,33 @@
 <?php
 /**
- * Delete blog entity
+ * Delete advisor entity
  *
- * @package Blog
+ * @package Advisors
  */
 
-$blog_guid = get_input('guid');
-$blog = get_entity($blog_guid);
+$advisor_guid = get_input('guid');
+$advisor = get_entity($advisor_guid);
 
-if (elgg_instanceof($blog, 'object', 'advisors') && $blog->canEdit()) {
-	$container = get_entity($blog->container_guid);
-	if ($blog->delete()) {
+$elggUrl = elgg_get_site_entity()->getURL ();
+$forwardUrl = $elggUrl."admin/plugin_settings/advisors";
+
+if (elgg_instanceof($advisor, 'object', 'advisors') && $advisor->canEdit()) {
+	
+	$container = get_entity($advisor->container_guid);
+	
+	if ($advisor->delete()) {
 		system_message(elgg_echo('advisors:deleted_advisor'));
-		if (elgg_instanceof($container, 'group')) {
-			forward("home/group/$container->guid/all");
-		} else {
-			forward("home/owner/$container->username");
-		}
+		forward($forwardUrl);
 	} else {
 		register_error(elgg_echo('home:error:cannot_delete_post'));
 	}
+	
 } else {
 	register_error(elgg_echo('home:error:post_not_found'));
 }
 
-forward(REFERER);
+
+$elggUrl = elgg_get_site_entity()->getURL ();
+
+
+forward($forwardUrl);
