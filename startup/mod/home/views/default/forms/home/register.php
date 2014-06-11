@@ -5,8 +5,6 @@
 
 		<?php echo elgg_view("input/register_form",$vars); ?>
 		<input type="submit" value="Finish" name="" class="submit-btn" />
-
-
-
+		
 	</div>
 </section>

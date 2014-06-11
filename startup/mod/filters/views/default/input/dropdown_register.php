@@ -43,7 +43,7 @@ unset($vars['value']);
 
 ?>
 <select class="selectpicker show-tick form-control" <?php echo elgg_format_attributes($vars); ?> >
-<option selected>Your main <?php echo $vars['name']?></option>
+<option selected>Your <?php echo $vars['name']?></option>
 <?php
 
 

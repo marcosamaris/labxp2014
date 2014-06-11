@@ -40,7 +40,7 @@ if (!empty($functions)) {
 	<?php
 		echo elgg_view('input/dropdown_register', array(
 			'value' => '',
-			'name' => 'functions',
+			'name' => 'main functions',
 			'options_values' => $functions
 
 		));
@@ -49,22 +49,6 @@ if (!empty($functions)) {
 	<?php
 } 
 
-/**
- * Categories input view
- *
- * @package ElggCategories
- *
- * @uses $vars['entity'] The entity being edited or created
- */
-
-/*if (isset($vars['entity']) && $vars['entity'] instanceof ElggEntity) {
- $selected_categories = $vars['entity']->universal_categories;
-}*/
-
-// use sticky values if set
-/*if (isset($vars['universal_categories_list'])) {
- $selected_categories = $vars['universal_categories_list'];
-}*/
 
 $spaces = elgg_get_site_entity()->filters_spaces;
 if (empty($spaces)) {
@@ -90,7 +74,7 @@ if (!empty($spaces)) {
 	
 		echo elgg_view('input/dropdown_register', array(
 			'value' => '',
-			'name' => 'spaces',
+			'name' => 'main spaces',
 			'options_values' => $spaces
 			
 		));
@@ -98,17 +82,20 @@ if (!empty($spaces)) {
 	?>
 	
 	
+	<?php
 	
-	<select class="selectpicker show-tick form-control">
-        <option selected>Your role</option>
-        <option>Team Member</option>
-        <option>Leadership Team (reports do CEO/ board)</option>
-        <option>Founder</option>
-        <option>Advisor</option>
-        <!--<option class="get-class">Option2</option>-->
-        
-    </select>
+		echo elgg_view('input/dropdown_register', array(
+			'value' => '',
+			'name' => 'role',
+			#'options_values' => $spaces
+			
+		));
+
+	?>
 	
+
+  	<input type="text" class="form-control" placeholder="Your Company's Mail"></input>
+
 		
 	<?php
 
