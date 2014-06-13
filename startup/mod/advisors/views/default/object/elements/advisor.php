@@ -20,12 +20,13 @@
 
 $message_book = elgg_echo('advisors:bookhours');
 
+
 echo <<<HTML
 
 <div class="detail clearfix">
 	<div class="col-lg-8 description">
 		<div class="avatar">
-			<img src="images/avatar.jpg" alt="#">
+			<img src="{$vars['avatar']}" alt="#" width="50" height="49">
 		</div>
 	<div class="avatar-detail">
 		<h3>{$vars['title']}</h3>

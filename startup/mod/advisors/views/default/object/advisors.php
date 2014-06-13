@@ -18,13 +18,21 @@ $categories = elgg_view('output/filters_list', $vars);
 
 
 // TODO: ARRUMAR A FOTO
-$owner = $advisors->getOwnerEntity();
-$owner_icon = elgg_view_entity_icon($owner, 'tiny');
-$owner_link = elgg_view('output/url', array(
-	'href' => "home/owner/$owner->username",
-	'text' => $owner->name,
-	'is_trusted' => true,
-));
+
+$advisors->setUrl('/advisors/upload?guid='.$advisors->getGUID());
+
+$url = (empty($advisors->advisorimage))?"_graphics/icons/default/tiny.png":$advisors->advisorimage;
+
+
+$advisors->setIcon($url);
+
+
+
+$owner_icon = elgg_view_entity_icon($advisors, 'tiny', $vars);
+
+
+
+//$owner_link = elgg_view('form/action', $advisors);
 
 
 	if(elgg_get_context() != 'admin'){
@@ -32,6 +40,8 @@ $owner_link = elgg_view('output/url', array(
 		//context of site
 		$metadata = "";
 
+		$advisors->setIcon($advisors->advisorimage);
+		
 		$params = array(
 				'title' => $advisors->advisorname,
 				'description'=> $advisors->advisordescr,
@@ -42,7 +52,8 @@ $owner_link = elgg_view('output/url', array(
 				'googleplus' => $advisors->advisorplus,
 				'linkedin' => $advisors->advisorlinkedin,
 				'twitter'=> $advisors->advisortwitter,
-				'facebook' => $advisors->advisorfb
+				'facebook' => $advisors->advisorfb,
+				'avatar' => $advisors->getIconURL()
 		);
 		
 		
@@ -69,8 +80,10 @@ $owner_link = elgg_view('output/url', array(
 		$plus = $advisors->advisorplus;
 		$twitter = $advisors->advisortwitter;
 		$fb = $advisors->advisorfb;
+		$image = $advisors->advisorimage;
+		$icon = $advisors->getIcon();
 		
-		$content = $name.','.$descrip.','.$email.','.$skype.','.$plus.','.$twitter.','.$fb;
+		$content = $name.','.$descrip.','.$email.','.$skype.','.$plus.','.$twitter.','.$fb.','.$image.', '.$icon;
 		
 		$params = array(
 						'content'=> $content,
