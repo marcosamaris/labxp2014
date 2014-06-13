@@ -7,9 +7,12 @@ function advisors_init() {
 	
 	elgg_register_event_handler('update', 'all', 'advisors_save');
 	elgg_register_event_handler('create', 'all', 'advisors_save');
-	elgg_register_action ( "advisors/upload", elgg_get_plugins_path () . "advisors/actions/advisors/upload.php" );
+	
 	elgg_register_plugin_hook_handler('action', 'plugins/settings/save', 'advisor_save_admin');
+	
 	elgg_register_action ( 'advisors/delete', elgg_get_plugins_path () . "advisors/actions/advisors/delete.php" );
+	elgg_register_action ( "advisors/upload", elgg_get_plugins_path () . "advisors/actions/advisors/upload.php" );
+	
 	
 	elgg_register_page_handler ( 'advisors', 'advisors_page_handler' );
 	elgg_register_plugin_hook_handler ( 'register', 'menu:entity', 'elgg_advisors_menu_setup' );
