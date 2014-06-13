@@ -23,14 +23,16 @@ $uploadfile = "advisors/graphic/".$_FILES['img_upload']['name'];
 if (!is_dir($uploaddir)){
 	$newDir = mkdir($uploaddir);
 }
+
+$path =  elgg_get_site_url () . 'mod/advisors/graphic/'.$_FILES['img_upload']['name'];
  
 
 
 print "<pre>";
 if (move_uploaded_file($_FILES['img_upload']['tmp_name'], $uploaddir . $_FILES['img_upload']['name'])) {
 	
-	$advisor->advisorimage = $uploadfile;
-	$advisor->setIcon($uploadfile);
+	$advisor->advisorimage = $path;
+	$advisor->setIcon($path);
 	$advisor->save();
 	
 	print "O arquivo é valido e foi carregado com sucesso. Aqui está alguma informação:\n";

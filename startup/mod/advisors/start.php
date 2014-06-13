@@ -49,7 +49,8 @@ function advisors_page_handler($page) {
 	switch ($page_type) {
 		
 		case 'graphic':
-			include elgg_get_plugins_path () . 'advisors/graphic/'.$page[1];
+			//Header("Content-type: image/jpeg");
+			//include elgg_get_site_url () . 'mod/advisors/graphic/'.$page[1];
 			break;
 			
 		case 'upload':			

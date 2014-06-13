@@ -20,7 +20,14 @@ $categories = elgg_view('output/filters_list', $vars);
 // TODO: ARRUMAR A FOTO
 
 $advisors->setUrl('/advisors/upload?guid='.$advisors->getGUID());
-$advisors->setIcon($advisors->advisorimage);
+
+$url = (empty($advisors->advisorimage))?"_graphics/icons/default/tiny.png":$advisors->advisorimage;
+
+
+$advisors->setIcon($url);
+
+
+
 $owner_icon = elgg_view_entity_icon($advisors, 'tiny', $vars);
 
 
@@ -33,6 +40,8 @@ $owner_icon = elgg_view_entity_icon($advisors, 'tiny', $vars);
 		//context of site
 		$metadata = "";
 
+		$advisors->setIcon($advisors->advisorimage);
+		
 		$params = array(
 				'title' => $advisors->advisorname,
 				'description'=> $advisors->advisordescr,
@@ -43,7 +52,8 @@ $owner_icon = elgg_view_entity_icon($advisors, 'tiny', $vars);
 				'googleplus' => $advisors->advisorplus,
 				'linkedin' => $advisors->advisorlinkedin,
 				'twitter'=> $advisors->advisortwitter,
-				'facebook' => $advisors->advisorfb
+				'facebook' => $advisors->advisorfb,
+				'avatar' => $advisors->getIconURL()
 		);
 		
 		
