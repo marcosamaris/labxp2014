@@ -12,8 +12,12 @@
 
 // insert site-wide navigation
 
+$user = elgg_get_logged_in_user_entity();
+if($user->permission == 'allowed'|| elgg_is_admin_logged_in()){
+
 $vars['type_menu'] = 'header';
 
 echo elgg_view_menu('site', $vars);
 
 
+}

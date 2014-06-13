@@ -26,13 +26,25 @@ function home_init() {
 }
 
 function home_index($hook, $type, $return, $params) {
+	$user = elgg_get_logged_in_user_entity();
 	if ($return == true) {
 		return $return;
 	}
 	// index.php can do whatever it needs to for loggedIn or loggedOut
-	if (! include_once (dirname ( __FILE__ ) . "/pages/home/index.php")) {
+	
+	
+	
+	if(($user->permission == 'allowed' )|| elgg_is_admin_logged_in()){
+		if (! include_once (dirname ( __FILE__ ) . "/pages/home/index.php")) {
+			return false;
+		}	
+	}
+	else if(!include_once (dirname ( __FILE__ ) .  '/pages/home/register.php')){
 		return false;
 	}
+	
+	
+	
 	return true;
 }
 
@@ -66,12 +78,13 @@ function elgg_post_menu_setup($hook, $type, $value, $params) {
 
 
 function home_page_handler($segments) {
-	
-	if($segments[0] == 'register'){
-		include elgg_get_plugins_path () . 'home/pages/home/register.php';
+	$user = elgg_get_logged_in_user_entity();
+	if((!$segments[0] && $user->permission == 'allowed' )|| elgg_is_admin_logged_in()){
+		include elgg_get_plugins_path () . 'home/pages/home/index.php';
+		
 	}
 	else{
-	include elgg_get_plugins_path () . 'home/pages/home/index.php';
+		include elgg_get_plugins_path () . 'home/pages/home/register.php';
 	}
 	
 	return true;

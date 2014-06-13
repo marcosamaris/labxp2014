@@ -63,11 +63,12 @@ function theme_monashees_init() {
 		
 	}	
 	
-	/** TOPBAR **/
+	/** TOPBAR **
+	 * 
+	 */
 	elgg_unregister_menu_item('topbar', 'elgg_logo');
 	elgg_unregister_menu_item('topbar', 'friends');
 	
-
 	
 	if(elgg_is_logged_in()){
 	
@@ -84,14 +85,16 @@ function theme_monashees_init() {
 	
 	}
 	
-
-	if (elgg_is_active_plugin('search')) {
+	$user = elgg_get_logged_in_user_entity();
+	
+	if (elgg_is_active_plugin('search') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
 		elgg_unextend_view('page/elements/header', 'search/search_box');
 		elgg_extend_view('page/elements/topbar', 'search/search_box');
 		#HACK: replace the search/header with a empty file
 	}
 	
 	//For remove the RSS icon from sidebar
+	
 	elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 	
 }

@@ -3,6 +3,7 @@
  * Elgg topbar
  * The standard elgg top toolbar
  */
+
 $logo_url = elgg_get_site_url() . "mod/theme_monashees/vendors/plus-network/images/logo2.png";
 echo '<div class="logo col-lg-2">
 		<a href="'.elgg_get_site_url() .'">
@@ -19,7 +20,9 @@ echo '
 </button>';
 
 //need to check if the user is logged because this topbar can be always loaded if the site is public
-if(elgg_is_logged_in()){
+$user = elgg_get_logged_in_user_entity();
+
+if(elgg_is_logged_in() && ($user->permission == 'allowed' || elgg_is_admin_logged_in())){
 
 	$user = elgg_get_logged_in_user_entity();
 	

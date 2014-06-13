@@ -38,9 +38,14 @@ function elgg_advisors_menu_setup($hook, $type, $value, $params) {
 }
 
 function advisors_page_handler($segments) {
-
-	include elgg_get_plugins_path () . 'advisors/pages/advisors/index.php';
-
+	$user = elgg_get_logged_in_user_entity();
+	if((!$segments[0] && $user->permission == 'allowed' ) || elgg_is_admin_logged_in()){
+		include elgg_get_plugins_path () . 'advisors/pages/advisors/index.php';
+			
+	}
+	else{
+		include elgg_get_plugins_path () . 'home/pages/home/register.php';
+	}
 	return true;
 }
 
