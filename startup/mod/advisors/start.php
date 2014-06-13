@@ -14,7 +14,7 @@ function advisors_init() {
 	elgg_register_action ( "advisors/upload", elgg_get_plugins_path () . "advisors/actions/advisors/upload.php" );
 	
 	
-	elgg_register_page_handler ( 'advisors', 'advisors_page_handler' );
+	elgg_register_page_handler ( 'advisors', 'advisors_page_handler');
 	elgg_register_plugin_hook_handler ( 'register', 'menu:entity', 'elgg_advisors_menu_setup' );
 	
 	elgg_register_library('elgg:file', elgg_get_plugins_path() . 'file/lib/file.php');
@@ -44,7 +44,14 @@ function elgg_advisors_menu_setup($hook, $type, $value, $params) {
 function advisors_page_handler($page) {
 	
 	$page_type = $page[0];
+	
+	
 	switch ($page_type) {
+		
+		case 'graphic':
+			include elgg_get_plugins_path () . 'advisors/graphic/'.$page[1];
+			break;
+			
 		case 'upload':			
 			include elgg_get_plugins_path () . 'advisors/pages/advisors/imageform.php';
 			break;
@@ -112,100 +119,10 @@ function advisor_save_admin($hook, $type, $value, $params) {
 	$advisor->advisorplus = get_input('advisorplus');
 	$advisor->advisortwitter = get_input('advisortwitter');
 	$advisor->advisorfb = get_input('advisorfb');
-	$advisor->advisorimage = get_input('advisorimage');
+	
 
 	$advisor->save();
 	
-	if (empty($advisor->advisorimage))
-	{
-		$error = elgg_echo('file:nofile');
-		register_error($error);
-		forward(REFERER);
-	}
-	
-
-	//Make a file
-	$file = new FilePluginFile();
-	$file->subtype = "file";
-	
-	// if no title, grab filename
-	if (empty($titolo))
-		$titolo = htmlspecialchars($_FILES['advisorimage']['name'], ENT_QUOTES, 'UTF-8');
-	
-	$file->title = $titolo;
-	$file->description = "description file";
-	$file->access_id = ACCESS_PUBLIC;
-	$file->owner_guid = elgg_get_logged_in_user_guid();
-	
-	// we have a file upload, so process it
-	if (isset($_FILES['advisorimage']['name']) && !empty($_FILES['advisorimage']['name']))
-	{
-		//Generate filename
-		$prefix = "file/";
-		$filestorename = elgg_strtolower(time().$_FILES['advisorimage']['name']);
-		$file->setFilename($prefix . $filestorename);
-		//Set Mimetype
-		$mime_type = ElggFile::detectMimeType($_FILES['advisorimage']['tmp_name'], $_FILES['advisorimage']['type']);
-		$file->setMimeType($mime_type);
-		//Set attributes
-		$file->originalfilename = $_FILES['advisorimage']['name'];
-		$file->simpletype = file_get_simple_type($mime_type);
-		// Open the file to guarantee the directory exists
-		$file->open("write");
-		$file->close();
-		//Move file
-		move_uploaded_file($_FILES['advisorimage']['tmp_name'], $file->getFilenameOnFilestore());
-		//Save file
-		$guid = $file->save();
-	
-		//Make thumbnails
-		if ($guid && $file->simpletype == "image")
-		{
-			$file->icontime = time();
-			$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 60, 60, true);
-			if ($thumbnail)
-			{
-				$thumb = new ElggFile();
-				$thumb->setMimeType($_FILES['advisorimage']['type']);
-	
-				$thumb->setFilename($prefix."thumb".$filestorename);
-				$thumb->open("write");
-				$thumb->write($thumbnail);
-				$thumb->close();
-	
-				$file->thumbnail = $prefix."thumb".$filestorename;
-				unset($thumbnail);
-			}
-	
-			$thumbsmall = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 153, 153, true);
-			if ($thumbsmall)
-			{
-				$thumb->setFilename($prefix."smallthumb".$filestorename);
-				$thumb->open("write");
-				$thumb->write($thumbsmall);
-				$thumb->close();
-				$file->smallthumb = $prefix."smallthumb".$filestorename;
-				unset($thumbsmall);
-			}
-	
-			$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
-			if ($thumblarge)
-			{
-				$thumb->setFilename($prefix."largethumb".$filestorename);
-				$thumb->open("write");
-				$thumb->write($thumblarge);
-				$thumb->close();
-				$file->largethumb = $prefix."largethumb".$filestorename;
-				unset($thumblarge);
-			}
-		}
-		if ($guid)
-		{
-			$message = elgg_echo("gallery:status:upsuccess");
-			system_message($message);
-			forward($guid->getURL());
-		}
-	}
 	
 	system_message(elgg_echo("advisors:save:success"));
 

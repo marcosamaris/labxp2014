@@ -1,29 +1,53 @@
 <?php
 
-var_dump($_FILES['img_upload']['name']);
+$site = elgg_get_site_entity();
+$url = $site->getURL();
 
 
 
-$uploaddir = '/var/www/labxp2014/startup-data/advisors/';
-$uploadfile = $uploaddir . $_FILES['img_upload']['name'];
+
+$guid = get_input("advisor_guid");
+$advisor = get_entity($guid);
+
+$dirAdvisorUploadFiles = elgg_get_plugins_path()."advisors/graphic/";
+
+
+
+//$uploaddir = '/var/www/labxp2014/startup-data/advisors/';
+//$uploadfile = 'http://localhost/labxp2014/startup-data/advisors/' . $_FILES['img_upload']['name'];
+
+
+$uploaddir = $dirAdvisorUploadFiles;
+$uploadfile = "advisors/graphic/".$_FILES['img_upload']['name'];
 
 if (!is_dir($uploaddir)){
 	$newDir = mkdir($uploaddir);
 }
-
+ 
 
 
 print "<pre>";
 if (move_uploaded_file($_FILES['img_upload']['tmp_name'], $uploaddir . $_FILES['img_upload']['name'])) {
+	
+	$advisor->advisorimage = $uploadfile;
+	$advisor->setIcon($uploadfile);
+	$advisor->save();
+	
 	print "O arquivo é valido e foi carregado com sucesso. Aqui está alguma informação:\n";
 	print_r($_FILES);
+	system_message(elgg_echo("advisors:save:success"));
+	
+	
+	
 } else {
 	print "Possivel ataque de upload! Aqui esta alguma informação:\n";
 	print_r($_FILES);
+	
+	$error = elgg_echo('file:nofile');
+	register_error($error);
+	forward(REFERER);
 }
 print "</pre>";
-
-exit;
 
 forward('admin/plugin_settings/advisors');
 

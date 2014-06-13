@@ -1,12 +1,9 @@
-<!-- <form action="save_upload"  method="post"
-	enctype="multipart/form-data">
-	<label for="file">Filename:</label>
-	<input type="file" name="file" id="file"><br>
-	
-	<input type="submit" name="submit" value="Submit">
-</form>
- -->
+<?php 
+
+
+?>
 
 <label for="image_upload">Image upload</label>
 <?php echo elgg_view('input/file', array('name' => 'img_upload')); ?>
+<?php echo elgg_view('input/hidden', array('name' => 'advisor_guid', 'value'=> $_REQUEST['guid'])); ?>
 <input type="submit" name="submit" value="Submit">

@@ -19,8 +19,9 @@ $categories = elgg_view('output/filters_list', $vars);
 
 // TODO: ARRUMAR A FOTO
 
-$advisors->setUrl('/advisors/upload');
-$owner_icon = elgg_view_entity_icon($advisors, 'tiny');
+$advisors->setUrl('/advisors/upload?guid='.$advisors->getGUID());
+$advisors->setIcon($advisors->advisorimage);
+$owner_icon = elgg_view_entity_icon($advisors, 'tiny', $vars);
 
 
 
@@ -69,8 +70,10 @@ $owner_icon = elgg_view_entity_icon($advisors, 'tiny');
 		$plus = $advisors->advisorplus;
 		$twitter = $advisors->advisortwitter;
 		$fb = $advisors->advisorfb;
+		$image = $advisors->advisorimage;
+		$icon = $advisors->getIcon();
 		
-		$content = $name.','.$descrip.','.$email.','.$skype.','.$plus.','.$twitter.','.$fb;
+		$content = $name.','.$descrip.','.$email.','.$skype.','.$plus.','.$twitter.','.$fb.','.$image.', '.$icon;
 		
 		$params = array(
 						'content'=> $content,
