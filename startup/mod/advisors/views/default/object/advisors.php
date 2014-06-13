@@ -18,13 +18,13 @@ $categories = elgg_view('output/filters_list', $vars);
 
 
 // TODO: ARRUMAR A FOTO
-$owner = $advisors->getOwnerEntity();
-$owner_icon = elgg_view_entity_icon($owner, 'tiny');
-$owner_link = elgg_view('output/url', array(
-	'href' => "home/owner/$owner->username",
-	'text' => $owner->name,
-	'is_trusted' => true,
-));
+
+$advisors->setUrl('/advisors/upload');
+$owner_icon = elgg_view_entity_icon($advisors, 'tiny');
+
+
+
+//$owner_link = elgg_view('form/action', $advisors);
 
 
 	if(elgg_get_context() != 'admin'){

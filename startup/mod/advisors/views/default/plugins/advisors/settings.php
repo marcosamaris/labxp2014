@@ -33,8 +33,8 @@
     <?php echo elgg_view('input/text',array('name' => 'advisorfb')); ?>
 </div>
 
-<div><label><?php echo elgg_echo("advisors:photo"); ?></label><br />
- <?php echo elgg_view('input/file', array('name' => 'advisorimage')); ?> 
+<div><label><?php //echo elgg_echo("advisors:photo"); ?></label><br />
+ <?php //echo elgg_view('input/file', array('name' => 'advisorimage')); ?> 
 </div>
 
  
