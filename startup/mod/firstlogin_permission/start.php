@@ -9,7 +9,7 @@ function permission_check($event,$type,$params){
 	if($params instanceof ElggUser){
 		$user = $params;
 		if($user->last_login == 0){
-			$user->permission = 'allowed';
+			$user->permission = 'restrict';
 		}
 		
 	}
