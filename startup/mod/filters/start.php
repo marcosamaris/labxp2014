@@ -41,7 +41,6 @@ function filters_save($event, $object_type, $object) {
 			if (empty($spaces)) {
 				$spaces = array();
 			}
-				
 			$object->spaces = $spaces;
 			$object->functions = $functions;
 		//}
