@@ -11,7 +11,7 @@ elgg_register_event_handler('init', 'system', 'people_init', 1);
  * People init function
  */
 function people_init() {
-
+	
 	// add a site navigation item
 	$item = new ElggMenuItem ( 'people', elgg_echo ( 'people:people' ), 'people' );
 	elgg_register_menu_item ( 'site', $item );

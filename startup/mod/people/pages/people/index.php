@@ -25,12 +25,15 @@ $options = array(
 		'metadata_case_sensitive' => FALSE,
 		'metadata_name_value_pairs_operator' => 'AND',
 		'metadata_name_value_pairs' => array($pairFunctions,$pairSpaces),
+		'view_path_list' => 'people/list'
 );
 
 
 
 
-$list_post = elgg_list_entities_from_metadata($options);
+//$list_post = elgg_list_entities_from_metadata($options);
+
+$list_post = elgg_list_entities($options, 'elgg_get_entities_from_metadata','view_adm_permission');
 
 
 
