@@ -21,6 +21,8 @@ $options = array(
 		'metadata_case_sensitive' => FALSE,
 		'metadata_name_value_pairs_operator' => 'AND',
 		'metadata_name_value_pairs' => array($permission),
+		'view_path_list' => 'page/components/pendent_users'
+		
 );
 
 

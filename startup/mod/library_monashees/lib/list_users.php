@@ -51,14 +51,7 @@ function view_adm_permission($entities, $vars = array(), $offset = 0, $limit = 1
 	}
 	
 	if($vars['view_path_list']){
-		return elgg_view('page/components/'.$vars['view_path_list'], $vars);
-	}
-	
-	
-	
-	
-	if($vars['view_path_list']){
-		return elgg_view('page/components/'.$vars['view_path_list'], $vars);
+		return elgg_view($vars['view_path_list'], $vars);
 	}	
 	
 	if ($vars['list_type'] != 'list') {
