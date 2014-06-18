@@ -50,6 +50,7 @@ function view_adm_permission($entities, $vars = array(), $offset = 0, $limit = 1
 		$vars["pagination"] = false;
 	}
 	
+
 	if($vars['view_path_list']){
 		return elgg_view($vars['view_path_list'], $vars);
 	}	
