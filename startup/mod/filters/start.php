@@ -34,8 +34,8 @@ function filters_save_entity($event, $object_type, $object) {
 
 			$functions = get_input('functions');
 			$functions1 = get_input('functions1');
-				
 			$spaces = get_input('spaces');
+			$email = get_input('companie_mail');
 			
 			$functions  = array(
 					$functions, $functions1,
@@ -49,7 +49,10 @@ function filters_save_entity($event, $object_type, $object) {
 			}
 			$object->spaces = $spaces;
 			$object->functions = $functions;
-
+			
+			if(!empty($email)){
+				$object->companie_mail = $email;
+			}
 	}
 	return TRUE;
 }

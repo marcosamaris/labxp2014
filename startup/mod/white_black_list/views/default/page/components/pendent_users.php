@@ -58,7 +58,14 @@ if (is_array($items) && count($items) > 0) {
 			} else {
 				$id = "item-{$item->getType()}-{$item->id}";
 			}
-			$html .= "<li id=\"$id\" class=\"$item_class\">$item</li>";
+			
+			$html .= "<div> 
+			
+			<li id=\"$id\" class=\"$item_class\">$item->companie_mail
+			<input type=\"submit\" value=\"accept\" name=\"\" class=\"submit-btn\" />
+			</li>
+			</div>";
+			
 		}
 	}
 	$html .= '</ul>';

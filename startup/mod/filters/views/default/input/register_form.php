@@ -94,7 +94,7 @@ if (!empty($spaces)) {
 	?>
 	
 
-  	<input type="text" class="form-control" placeholder="Your Company's Mail"></input>
+  	<input name="companie_mail" type="text" class="form-control" placeholder="Your Company's Mail"></input>
 
 		
 	<?php
