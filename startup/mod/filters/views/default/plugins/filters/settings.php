@@ -9,6 +9,7 @@
 $site = elgg_get_site_entity();
 $filters_functions = $site->filters_functions;
 $filters_spaces = $site->filters_spaces;
+$filters_companies =  $site->filters_companies;
 
 if (empty($filters)) {
 	$filters = array();
@@ -16,15 +17,27 @@ if (empty($filters)) {
 
 ?>
 <div>
-	<p><?php echo elgg_echo('filters:explanation'); ?></p>
-	<p><?php echo elgg_echo('filters:functions'); ?></p>
+<p><?php echo elgg_echo('filters:explanation'); ?></p>
+
+<p>
+<?php echo elgg_echo('filters:functions'); ?>
 <?php
 	echo elgg_view('input/tags', array('value' => $filters_functions, 'name' => 'filters_functions'));
 ?>
-<p><?php echo elgg_echo('filters:spaces'); ?></p>
+</p>
+<p>
+<?php echo elgg_echo('filters:spaces'); ?>
 <?php
 	echo elgg_view('input/tags', array('value' => $filters_spaces, 'name' => 'filters_spaces'));
 ?>
+</p>
+<p>
+<?php echo elgg_echo('filters:companies'); ?>
+<?php
+	echo elgg_view('input/tags', array('value' => $filters_companies, 'name' => 'filters_companies'));
+?>
+</p>
+
 </div>
 
 <script type="text/javascript">
