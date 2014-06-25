@@ -14,7 +14,8 @@ $english = array(
 	'filters:spaces' => "Spaces",
 	'filters:allfunctions' => "All Functions",
 	'filters:allspaces' => "All Spaces",
-	'filters:companies' => "Companies"
+	'filters:companies' => "Companies",
+    'filters:roles' => "Roles",
 );
 
 add_translation("en", $english);

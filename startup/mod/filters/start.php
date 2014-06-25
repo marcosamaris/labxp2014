@@ -19,7 +19,7 @@ function filters_init() {
  * Saves the site categories.
  *
  * @param type $event            
- * @param type $object_type            
+ * @param type $objectType            
  * @param type $object
  *            @TODO Rever o save de filters. Ele está salvando functions e spaces para todas as entidades.
  */
@@ -51,7 +51,16 @@ function filters_save_entity($event, $objectType, $object) {
     }
     return TRUE;
 }
+/**
+ * Saves the filters in the admin page
+ *
+ * @param type $hook 
+ * @param type $type
+ * @param type $value
+ * @param type $params optional
+ */
 function filters_save_admin_categories($hook, $type, $value, $params) {
+    
     $pluginId = get_input ( 'plugin_id' );
     if ($pluginId != 'filters') {
         return $value;
@@ -60,16 +69,20 @@ function filters_save_admin_categories($hook, $type, $value, $params) {
     $filtersFunctions = get_input ( 'filters_functions' );
     $filtersFunctions = string_to_tag_array ( $filtersFunctions );
     
-    $filtersFunctions = get_input ( 'filters_spaces' );
-    $filtersFunctions = string_to_tag_array ( $filtersFunctions );
+    $filtersSpaces = get_input ( 'filters_spaces' );
+    $filtersSpaces = string_to_tag_array ( $filtersSpaces );
     
     $filtersCompanies = get_input ( 'filters_companies' );
     $filtersCompanies = string_to_tag_array ( $filtersCompanies );
     
+    $filtersRoles = get_input ( 'filters_roles' );
+    $filtersRoles = string_to_tag_array ( $filtersRoles );
+    
     $site = elgg_get_site_entity ();
     $site->filters_functions = $filtersFunctions;
-    $site->filters_spaces = $filtersFunctions;
+    $site->filters_spaces = $filtersSpaces;
     $site->filters_companies = $filtersCompanies;
+    $site->filters_roles = $filtersRoles;
     
     system_message ( elgg_echo ( "filters:save:success" ) );
     
