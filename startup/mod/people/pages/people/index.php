@@ -6,7 +6,7 @@ $options = array();
 $title = 'People'; //title is the title of page
 $page_filter = 'all';
 $action = 'create';
-$pagination = '10';
+$pagination = '9';
 
 /** Configuring the options to filter the content **/
 
