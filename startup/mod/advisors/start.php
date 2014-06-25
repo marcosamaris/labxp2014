@@ -35,9 +35,7 @@ function elgg_advisors_menu_setup($hook, $type, $value, $params) {
 			unset ( $value [$index] );
 		}
 	}
-	$entity = $params ['entity'];
-
-	
+	$entity = $params ['entity'];	
 	return $value;
 }
 
@@ -46,22 +44,18 @@ function advisors_page_handler($page) {
 	$user = elgg_get_logged_in_user_entity();
 	$page_type = $page[0];
 	if((!$page[0] && $user->permission == 'allowed' ) || elgg_is_admin_logged_in()){
-		switch ($page_type) {
-		
-			case 'graphic':
-				//Header("Content-type: image/jpeg");
-				//include elgg_get_site_url () . 'mod/advisors/graphic/'.$page[1];
-				break;
-				
+		switch ($page_type) {		
+			case 'graphic':				
+				break;				
 			case 'upload':			
 				include elgg_get_plugins_path () . 'advisors/pages/advisors/imageform.php';
 				break;
 			case 'save_upload':
 				include elgg_get_plugins_path () . 'advisors/pages/advisors/upload.php';
-				
+				break;				
 			default:		
 				include elgg_get_plugins_path () . 'advisors/pages/advisors/index.php';
-			break;
+                break;
 		}
 		
 			

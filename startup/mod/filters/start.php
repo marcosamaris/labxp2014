@@ -21,7 +21,7 @@ function filters_init() {
  * @param type $object
  *            @TODO Rever o save de filters. Ele está salvando functions e spaces para todas as entidades.
  */
-function filters_save_entity($event, $object_type, $object) {
+function filters_save_entity($event, $objectType, $object) {
     if ($object instanceof ElggEntity) {
         
         $functions = get_input ( 'functions' );
@@ -50,24 +50,24 @@ function filters_save_entity($event, $object_type, $object) {
     return TRUE;
 }
 function filters_save_admin_categories($hook, $type, $value, $params) {
-    $plugin_id = get_input ( 'plugin_id' );
-    if ($plugin_id != 'filters') {
+    $pluginId = get_input ( 'plugin_id' );
+    if ($pluginId != 'filters') {
         return $value;
     }
     
-    $filters_functions = get_input ( 'filters_functions' );
-    $filters_functions = string_to_tag_array ( $filters_functions );
+    $filtersFunctions = get_input ( 'filters_functions' );
+    $filtersFunctions = string_to_tag_array ( $filtersFunctions );
     
-    $filters_spaces = get_input ( 'filters_spaces' );
-    $filters_spaces = string_to_tag_array ( $filters_spaces );
+    $filtersFunctions = get_input ( 'filters_spaces' );
+    $filtersFunctions = string_to_tag_array ( $filtersFunctions );
     
-    $filters_companies = get_input ( 'filters_companies' );
-    $filters_companies = string_to_tag_array ( $filters_companies );
+    $filtersCompanies = get_input ( 'filters_companies' );
+    $filtersCompanies = string_to_tag_array ( $filtersCompanies );
     
     $site = elgg_get_site_entity ();
-    $site->filters_functions = $filters_functions;
-    $site->filters_spaces = $filters_spaces;
-    $site->filters_companies = $filters_companies;
+    $site->filters_functions = $filtersFunctions;
+    $site->filters_spaces = $filtersFunctions;
+    $site->filters_companies = $filtersCompanies;
     
     system_message ( elgg_echo ( "filters:save:success" ) );
     
