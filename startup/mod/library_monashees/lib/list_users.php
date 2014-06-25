@@ -1,16 +1,16 @@
 <?php
 function view_adm_permission($entities, $vars = array(), $offset = 0, $limit = 10, $full_view = true,
-		$list_type_toggle = true, $pagination = true) {
+		$listTypeToggle = true, $pagination = true) {
 
 	if (!is_int($offset)) {
 		$offset = (int)get_input('offset', 0);
 	}
 
 	// list type can be passed as request parameter
-	$list_type = get_input('list_type', 'list');
+	$listType = get_input('list_type', 'list');
 	if (get_input('listtype')) {
 		elgg_deprecated_notice("'listtype' has been deprecated by 'list_type' for lists", 1.8);
-		$list_type = get_input('listtype');
+		$listType = get_input('listtype');
 	}
 
 	if (is_array($vars)) {
@@ -40,7 +40,7 @@ function view_adm_permission($entities, $vars = array(), $offset = 0, $limit = 1
 				'full_view' => $full_view,
 				'pagination' => $pagination,
 				'list_type' => $list_type,
-				'list_type_toggle' => $list_type_toggle,
+				'list_type_toggle' => $listTypeToggle,
 				'list_class' => 'elgg-list-entity',
 		);
 	}
