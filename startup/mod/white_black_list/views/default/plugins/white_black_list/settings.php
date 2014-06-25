@@ -11,7 +11,7 @@ $filters_functions = $site->filters_functions;
 $filters_spaces = $site->filters_spaces;
 
 
-$permission = array('name' => 'permission', 'value' => 'allowed');
+$permission = array('name' => 'permission', 'value' => 'restrict');
 
 
 $options = array(

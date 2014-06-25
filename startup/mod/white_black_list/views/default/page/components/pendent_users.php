@@ -49,7 +49,7 @@ if ($pagination && $count) {
 }
 
 if (is_array($items) && count($items) > 0) {
-	$html .= "<ul class=\"$list_class\">";
+	$html .= "<ul class=\"$list_class\"><div> ";
 	foreach ($items as $item) {
 		$li = elgg_view_list_item($item, $vars);
 		if ($li) {
@@ -59,16 +59,14 @@ if (is_array($items) && count($items) > 0) {
 				$id = "item-{$item->getType()}-{$item->id}";
 			}
 			
-			$html .= "<div> 
+			$html .= "<input type=\"checkbox\" value=\"$item->guid\" name=\"pendent_users\"/> $item->companie_mail <br>
 			
-			<li id=\"$id\" class=\"$item_class\">$item->companie_mail
-			<input type=\"submit\" value=\"accept\" name=\"\" class=\"submit-btn\" />
-			</li>
-			</div>";
+			</input	>
+			<input type=\"hidden\" name=\"\" value=\"\"/>";
 			
 		}
 	}
-	$html .= '</ul>';
+	$html .= '</div></ul>';
 }
 
 if ($position == 'before' || $position == 'both') {
