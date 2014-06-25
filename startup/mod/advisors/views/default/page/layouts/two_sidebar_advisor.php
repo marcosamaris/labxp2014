@@ -36,12 +36,5 @@
 			}
 		?>
 	</div>
-		<div class="col-lg-8 col-md-6"  id="grid-view" style="display: none;">
-		<?php
-			
-			if (isset($vars['content'])) {
-				//echo $vars['content'];
-			}
-		?>
-	</div>
+		
 </div>

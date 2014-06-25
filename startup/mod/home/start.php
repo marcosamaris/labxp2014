@@ -13,6 +13,7 @@ function home_init() {
 	elgg_register_action ( "home/save", elgg_get_plugins_path () . "home/actions/home/save.php" );
 	elgg_register_action ( "home/register", elgg_get_plugins_path () . "home/actions/home/register.php" );
 	
+
 	elgg_register_action ( 'home/delete', elgg_get_plugins_path () . "home/actions/home/delete.php" );
 	register_plugin_hook ( 'index', 'system', 'home_index' );
 	

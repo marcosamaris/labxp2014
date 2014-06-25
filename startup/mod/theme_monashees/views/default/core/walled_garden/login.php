@@ -10,10 +10,12 @@ echo '<section class="col-lg-12 col-sm-12 login">
 	</a>
 
 	<div class="login-block">
-		<p class="login-text">Please sign in to continue</p>
-		<button class="linkedin-bt">
-		<span class="icon"><img src="mod/theme_monashees/vendors/plus-network/images/linkdin-icon.png" alt="linkedin" /></span>
-		<span>Sign in with LinkedIn</span>
+		<p class="login-text">'.elgg_echo('monashees:login:message').'</p>';
+		
+echo elgg_view('forms/login_monashees');
+
+echo '
+		
 		</br>
 		
 		</button>
