@@ -26,106 +26,75 @@
  *
  */
 
+if (count ( $vars ['options'] ) > 0) {
+    
+    $content = "<ul>";
+    
+    foreach ( $vars ['options'] as $label => $value ) {
+        
+        $url = $vars ['url'];
+        $name = $vars ['name'];
+        $class_active = $vars ['class'];
+        
+        $info = array ();
+        $info ['class'] = "";
+        $info ['url'] = "";
+        
+        if (strpos ( $url, "home" ) == false) {
+            $url .= "";
+        } else if (strpos ( $url, "?" ) != false) {
+            $url .= "";
+        } else {
+            $url .= "/";
+        }
+        
+        if (strpos ( $url, "?" ) == false) {
+            $url .= "?";
+        } else {
+            $url .= "";
+        }
+        
+        $get_var = $name . "=" . $value;
+        
+        if (strpos ( $url, $value ) == false) { // não existe
+                                           // se não existir,
+                                           // não marca como bold
+                                           // add no link
+            
+            $info ['class'] = "";
+            $info ['url'] = $url;
+            
+            if (substr ( $url, - 1 ) != "?")
+                $info ['url'] .= "&";
+            
+            $info ['url'] .= $get_var;
+        } else {
+            
+            // se existir, marca como bold
+            // remove do link ou não adiciona no link
+            
+            $info ['class'] = $class_active;
+            
+            $info ['url'] = strstr ( $url, "?", true ); // antes do ?
+            
+            $temp = strstr ( $url, "?" ); // depois do ?
+            $urlParameters = str_replace ( $get_var, "", $temp );
+            $urlParameters = rtrim ( $urlParameters, "&" );
+            $urlParameters = str_replace ( "?&", "?", $urlParameters );
+            
+            if (! empty ( $urlParameters ))
+                $info ['url'] .= $urlParameters;
+        }
+        
+        $content .= "<li><a href=\"{$info['url']}\" class=\"{$info['class']}\">";
+        
+        $content .= $label;
+        $content .= "</a></li>";
+    }
+    $content .= '</ul>';
+    
+    echo $content;
 
-
-
-
-
-
-
-
-
-
-
-
-if (count($vars['options']) > 0) {
-	
-
-	$content = "<ul>";
-
-	foreach ($vars['options'] as $label => $value) {
-	
-		
-		$url = $vars['url'];
-		$name =  $vars['name'];
-		$class_active =  $vars['class'];
-		
-		
-		$info = array();
-		$info['class'] = "";
-		$info['url'] = "";
-		
-		if(strpos($url, "home") == false){
-			$url .= "";
-		}else if(strpos($url, "?") != false ){
-			$url .= "";
-		}else{
-			$url .= "/";
-		}
-		
-		
-		if(strpos($url, "?") == false)	{
-			$url .= "?";
-		}else{
-			$url .= "";
-		}
-		
-		
-		
-		$get_var = $name."=".$value;
-		
-		
-		if(strpos($url, $value) == false){ //não existe
-		
-			//se não existir,
-			//não marca como bold
-			//add no link
-		
-		
-			$info['class'] = "";
-			$info['url'] = $url;
-		
-			if(substr($url, -1) != "?")
-				$info['url'] .= "&";
-		
-			$info['url'] .= $get_var;
-		
-		}else{
-		
-			// se existir, marca como bold
-			//remove do link ou não adiciona no link
-		
-			$info['class'] = $class_active;
-		
-		
-			$info['url'] = strstr($url, "?", true); //antes do ?
-		
-			$temp =  strstr($url, "?"); //depois do ?
-			$urlParameters = str_replace($get_var, "", $temp);
-			$urlParameters = rtrim($urlParameters, "&");
-			$urlParameters = str_replace("?&", "?", $urlParameters);
-		
-		
-			if(!empty($urlParameters))
-				$info['url'] .= $urlParameters;
-				
-		}
-		
-		
-		//$arrayInfoLink = prepareLinkForFilter($vars['url'], $vars['name'], $value, $vars['class']);
-		
-		
-		$content .= "<li><a href=\"{$info['url']}\" class=\"{$info['class']}\">";
-
-		
-		
-		$content .= $label;
-		$content .= "</a></li>";
-		
-	}
-	$content .=  '</ul>';
-	
-	echo $content;
 }
 
 

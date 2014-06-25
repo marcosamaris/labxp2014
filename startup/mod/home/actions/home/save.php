@@ -7,8 +7,6 @@ $body = get_input('body');
 // create a new home object
 $home = new ElggObject();
 
-//$home->subtype = "home";
-
 $home->subtype = "home";
 
 $home->description = $body;
