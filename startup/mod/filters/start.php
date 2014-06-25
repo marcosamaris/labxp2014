@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Elgg filters
+ * Monashees' filters
  *
  */
 elgg_register_event_handler ( 'init', 'system', 'filters_init' );
@@ -10,6 +10,8 @@ function filters_init() {
     
     elgg_register_event_handler ( 'update', 'all', 'filters_save_entity' );
     elgg_register_event_handler ( 'create', 'all', 'filters_save_entity' );
+    
+    //associate an save action in filter admin with the function filters_save_admin_categories
     elgg_register_plugin_hook_handler ( 'action', 'plugins/settings/save', 'filters_save_admin_categories' );
 }
 

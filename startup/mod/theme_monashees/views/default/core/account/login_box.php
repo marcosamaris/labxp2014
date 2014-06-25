@@ -15,7 +15,7 @@ if (elgg_get_config('https_login')) {
 	$login_url = str_replace("http:", "https:", $login_url);
 }
 
-//$title = elgg_echo('login');
+//Replace the title with a blank string
 $title = "";
 $body = elgg_view_form('login', array('action' => "{$login_url}action/login", 'role' => 'form', 'class'=> "form-horizontal"));
 
