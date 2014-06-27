@@ -3,23 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://localhost/" />
-<title>test-post-home</title>
+<link rel="selenium.base" href="http://localhost/labxp2014/startup/" />
+<title>test-error-login-empty</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">test-post-home</td></tr>
+<tr><td rowspan="1" colspan="3">test-error-login-empty</td></tr>
 </thead><tbody>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Home</td>
+	<td>open</td>
+	<td>/labxp2014/startup/</td>
 	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=textarea-home</td>
-	<td>Antonio Sena</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -27,10 +22,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=elgg-content &gt; div:first</td>
-	<td>Antonio Sena</td>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>Username/email and password are required.</td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

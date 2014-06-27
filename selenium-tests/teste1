@@ -4,22 +4,27 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost/" />
-<title>test-post-home</title>
+<title>teste1</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">test-post-home</td></tr>
+<tr><td rowspan="1" colspan="3">teste1</td></tr>
 </thead><tbody>
 <tr>
-	<td>clickAndWait</td>
-	<td>link=Home</td>
+	<td>open</td>
+	<td>/labxp2014/startup/</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=textarea-home</td>
-	<td>Antonio Sena</td>
+	<td>name=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>monashees</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -27,10 +32,36 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>css=elgg-content &gt; div:first</td>
-	<td>Antonio Sena</td>
+	<td>type</td>
+	<td>id=textarea-home</td>
+	<td>what is my question?</td>
 </tr>
+<tr>
+	<td>select</td>
+	<td>name=functions1</td>
+	<td>label=Marketing</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=spaces</td>
+	<td>label=Ecommerce</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.elgg-button.elgg-button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td></td>
+	<td>what is my question?</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+
 </tbody></table>
 </body>
 </html>
