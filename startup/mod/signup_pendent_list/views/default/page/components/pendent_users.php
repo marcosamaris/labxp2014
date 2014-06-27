@@ -59,7 +59,7 @@ if (is_array($items) && count($items) > 0) {
 				$id = "item-{$item->getType()}-{$item->id}";
 			}
 			
-			$html .= "<input type=\"checkbox\" value=\"$item->guid\" name=\"pendent_users\"/> $item->companie_mail <br>
+			$html .= "<input type=\"checkbox\" value=\"$item->guid\" name=\"pendent_users[]\"/> $item->company_email <br>
 			
 			</input	>
 			<input type=\"hidden\" name=\"\" value=\"\"/>";

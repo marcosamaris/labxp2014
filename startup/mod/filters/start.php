@@ -45,9 +45,7 @@ function filters_save_entity($event, $objectType, $object) {
         $object->spaces = $spaces;
         $object->functions = $functions;
         
-        if (! empty ( $email )) {
-            $object->companie_mail = $email;
-        }
+      
     }
     return TRUE;
 }

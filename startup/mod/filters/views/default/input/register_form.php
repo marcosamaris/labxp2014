@@ -75,7 +75,7 @@ if (! empty ( $spaces )) {
     ?>
 
 
-<input name="companie_mail" type="text" class="form-control"
+<input name="company_email" type="text" class="form-control"
 	placeholder="Your Company's Mail"></input>
 
 
