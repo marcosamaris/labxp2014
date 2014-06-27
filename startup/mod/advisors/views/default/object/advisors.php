@@ -65,7 +65,7 @@ if (elgg_get_context () != 'admin') {
     $image = $advisors->advisorimage;
     $icon = $advisors->getIcon ();
     
-    $content = $name . ',' . $descrip . ',' . $email . ',' . $skype . ',' . $plus . ',' . $twitter . ',' . $fb . ',' . $image . ', ' . $icon;
+    $content = $name . ': ' . $descrip;
     
     $params = array (
             'content' => $content,
