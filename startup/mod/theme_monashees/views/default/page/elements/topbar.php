@@ -22,7 +22,7 @@ echo '
 //need to check if the user is logged because this topbar can be always loaded if the site is public
 $user = elgg_get_logged_in_user_entity();
 
-if(elgg_is_logged_in() && ($user->permission == 'allowed' || elgg_is_admin_logged_in())){
+if(elgg_is_logged_in()){
 
 	$user = elgg_get_logged_in_user_entity();
 	
@@ -33,12 +33,12 @@ if(elgg_is_logged_in() && ($user->permission == 'allowed' || elgg_is_admin_logge
 	
 	
 	
-				if (elgg_is_active_plugin('profile')) {
+				if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
 					echo '<a href="'.elgg_get_site_url().'profile/'.$user->username.'">';
 				}
 						echo '<img alt="mask" src="'.$user->getIconURL('small').'">';
 						
-				if (elgg_is_active_plugin('profile')) {
+				if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
 					echo '</a>';	
 				}
 	
@@ -55,9 +55,12 @@ if(elgg_is_logged_in() && ($user->permission == 'allowed' || elgg_is_admin_logge
 						echo '<a href="'.elgg_get_site_url() .'admin">'.elgg_echo('admin').'</a> <span> | </span>';
 					}
 					
+					if(($user->permission == 'allowed' || elgg_is_admin_logged_in())){
+					    echo ' <a href="'.elgg_get_site_url() .'settings/user/'.$user->username.'">'.elgg_echo('settings').'</a> <span>|';
+					}
 					
-					echo ' <a href="'.elgg_get_site_url() .'settings/user/'.$user->username.'">'.elgg_echo('settings').'</a> <span>';
-					echo '|</span> <a href="'.elgg_get_site_url() .'action/logout">'.elgg_echo('logout').' </a>';
+					
+					echo '</span> <a href="'.elgg_get_site_url() .'action/logout">'.elgg_echo('logout').' </a>';
 					
 					
 	echo '			</p>

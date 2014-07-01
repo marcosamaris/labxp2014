@@ -30,20 +30,37 @@ function filters_save_entity($event, $objectType, $object) {
         $functions = get_input ( 'functions' );
         $functions1 = get_input ( 'functions1' );
         $spaces = get_input ( 'spaces' );
-        $email = get_input ( 'companie_mail' );
         
-       
+        $role = get_input('role');
+        $company = get_input('company');
+        $company_email = get_input ( 'company_email' );
+
         
-        if (!empty ( $functions )) {
+        
+        if ( $functions !== NULL) {
             $functions = array (
                     $functions,
                     $functions1
             );
             $object->functions = $functions;
         }
-        if (!empty ( $spaces )) {
+        
+        if ($spaces !== NULL) {
             $object->spaces = $spaces;
         }
+        
+        if ($role !== NULL) {
+            $object->role = $role;
+        }
+        
+        if ($company !== NULL) {
+            $object->company = $company;
+        }
+        
+        if ($company_email !== NULL) {
+            $object->company_email = $company_email;
+        }
+        
         
         
         

@@ -17,7 +17,7 @@
  * @uses $vars['class']          Additional CSS class
  */
 if (isset ( $vars ['class'] )) {
-    $vars ['class'] = "elgg-input-dropdown {$vars['class']}";
+    $vars ['class'] = "{$vars['class']}";
 } else {
     $vars ['class'] = "elgg-input-dropdown";
 }
@@ -43,7 +43,8 @@ unset ( $vars ['value'] );
 ?>
 <select class="selectpicker show-tick form-control"
 	<?php echo elgg_format_attributes($vars); ?>>
-	<option selected>Your <?php echo $vars['name']?></option>
+	
+	<option value="">Your <?php echo ucwords($vars['default']);?></option>
 <?php
 
 if ($options_values) {

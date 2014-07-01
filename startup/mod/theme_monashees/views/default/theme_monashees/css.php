@@ -63,6 +63,7 @@ body {background:#f5f5f5}
 }
 
 
+
 #textarea-home{
 	resize: none;
 	height: auto; 
@@ -80,6 +81,7 @@ body {background:#f5f5f5}
 .elgg-output-categories{
 
     padding-top: 10px;
+    padding-bottom: 10px;
     color: #666666;
     font-size: 85%;
     font-style: italic;
@@ -144,7 +146,7 @@ div.container-posts > ul > li{
 }
 
 div.elgg-content > ul  {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 
@@ -202,7 +204,7 @@ p.elgg-output-categories {
     font-family: 'sans_bold';
     font-size: 19px;
     height: 50px;
-    max-width: 292px;
+    
     width: 100%;
 }
 
