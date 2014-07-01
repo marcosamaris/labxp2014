@@ -47,13 +47,19 @@ if ($position == 'before' || $position == 'both') {
 }
 
 ?>
-
+<div class="row">
+<div class="col-lg-4">
+<div class="form-group">
+<?php echo elgg_view('input/companies',$vars);?>
+</div>
+</div>
+</div>
 <div class="row grid-view active">
 	<?php
 		foreach ($items as $item) {
 
 
-$icon_url = elgg_format_url($item->getIconURL('small'));
+$icon_url = elgg_format_url($item->getIconURL('medium'));
 	?>
 			
 			<div class="col-lg-4 col-sm-6">
@@ -65,8 +71,8 @@ $icon_url = elgg_format_url($item->getIconURL('small'));
                                 </div>    
                                 <div class="avatar-detail col-lg-12">
                                     <h3><?php echo $item->name;?></h3>
-                                    <p>role</p>
-                                    <p>company</p>
+                                    <p><?php echo $item->role;?></p>
+                                    <p><?php echo $item->company;?></p>
                                 </div>
                                 
                             </div>
