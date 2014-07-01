@@ -18,7 +18,10 @@ if (! empty ( $functions )) {
 <div class="sidebar-nav">
 
 	<h3 class="nav-title">
-		<span class="nav-title-icon">&nbsp;</span><a href="#"><?php echo elgg_echo('filters:allfunctions'); ?></a>
+	   <?php 
+	       $urlAllFunctions =  generateUrlAllFilters(current_page_url (),'functions_list');
+	   ?>
+		<span class="nav-title-icon">&nbsp;</span><a href="<?php echo $urlAllFunctions['url'];?>" class="<?php echo $urlAllFunctions['class'];?>"><?php echo elgg_echo('filters:allfunctions'); ?></a>
 	</h3>
 
 	<ul class="nav-s">

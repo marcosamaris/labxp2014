@@ -5,9 +5,12 @@
 
 <div>
 	<label><?php echo elgg_echo("advisors:description"); ?></label><br />
-    <?php echo elgg_view('input/text',array('name' => 'advisordescr')); ?>
+    <?php echo elgg_view('input/text',array('name' => 'advisordescription')); ?>
 </div>
-
+<div>
+	<label><?php echo elgg_echo("advisors:bookofficehours"); ?></label><br />
+    <?php echo elgg_view('input/text',array('name' => 'advisorbookofficehours')); ?>
+</div>
 <div>
 	<label><?php echo elgg_echo("advisors:email"); ?></label><br />
     <?php echo elgg_view('input/text',array('name' => 'advisoremail')); ?>
@@ -25,7 +28,7 @@
 
 <div>
 	<label><?php echo elgg_echo("advisors:plus"); ?></label><br />
-    <?php echo elgg_view('input/text',array('name' => 'advisorplus')); ?>
+    <?php echo elgg_view('input/text',array('name' => 'advisorgoogleplus')); ?>
 </div>
 
 <div>
@@ -35,14 +38,15 @@
 
 <div>
 	<label><?php echo elgg_echo("advisors:facebook"); ?></label><br />
-    <?php echo elgg_view('input/text',array('name' => 'advisorfb')); ?>
+    <?php echo elgg_view('input/text',array('name' => 'advisorfacebook')); ?>
 </div>
 
 
 <?php
 
-$categories_input = elgg_view ( 'input/functions', $vars );
-echo $categories_input;
+echo elgg_view ( 'input/functions', $vars );
+echo elgg_view ( 'input/spaces', $vars );
+
 
 $options = array (
         'type' => 'object',
@@ -52,9 +56,13 @@ $options = array (
         'full_view' => FALSE,
         'metadata_case_sensitive' => FALSE 
 );
-
-$list_post = elgg_list_entities_from_metadata ( $options );
-echo $list_post;
-
 ?>
+
+<div class="list-block-admin">
+   <?php 
+        $list_post = elgg_list_entities_from_metadata ( $options );
+        echo $list_post;
+    ?>
+</div>
+
 

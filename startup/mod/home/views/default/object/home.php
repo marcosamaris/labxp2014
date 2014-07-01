@@ -6,37 +6,38 @@
  */
 
 $full = elgg_extract('full_view', $vars, FALSE);
-$blog = elgg_extract('entity', $vars, FALSE);
+$home = elgg_extract('entity', $vars, FALSE);
 
-if (!$blog) {
+if (!$home) {
 	return TRUE;
 }
 
-$owner = $blog->getOwnerEntity();
-$container = $blog->getContainerEntity();
+$owner = $home->getOwnerEntity();
+$container = $home->getContainerEntity();
 $categories = elgg_view('output/filters_list', $vars);
-$excerpt = $blog->excerpt;
+$excerpt = $home->excerpt;
 if (!$excerpt) {
-	$excerpt = elgg_get_excerpt($blog->description);
+	$excerpt = elgg_get_excerpt($home->description);
 }
 
-$owner_icon = elgg_view_entity_icon($owner, 'tiny');
+
+$owner_icon = elgg_view_entity_icon($owner, 'small', $vars);
 $owner_link = elgg_view('output/url', array(
 	'href' => "home/owner/$owner->username",
 	'text' => $owner->name,
 	'is_trusted' => true,
 ));
 $author_text = elgg_echo('byline', array($owner_link));
-$date = elgg_view_friendly_time($blog->time_created);
+$date = elgg_view_friendly_time($home->time_created);
 
 // The "on" status changes for comments, so best to check for !Off
-if ($blog->comments_on != 'Off') {
-	$comments_count = $blog->countComments();
+if ($home->comments_on != 'Off') {
+	$comments_count = $home->countComments();
 	//only display if there are commments
 	if ($comments_count != 0) {
 		$text = elgg_echo("comments") . " ($comments_count)";
 		$comments_link = elgg_view('output/url', array(
-			'href' => $blog->getURL() . '#blog-comments',
+			'href' => $home->getURL() . '#home-comments', //change to see all thread
 			'text' => $text,
 			'is_trusted' => true,
 		));
@@ -64,12 +65,12 @@ if (elgg_in_context('widgets')) {
 if ($full) {
 
 	$body = elgg_view('output/longtext', array(
-		'value' => $blog->description,
+		'value' => $home->description,
 		'class' => 'blog-post',
 	));
 
 	$params = array(
-		'entity' => $blog,
+		'entity' => $home,
 		'title' => false,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
@@ -89,13 +90,16 @@ if ($full) {
 	
 	
 	$params = array(
-		'entity' => $blog,
+		'entity' => $home,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
 		'content' => $excerpt.$responses,
 	);
 	$params = $params + $vars;
-	$list_body = elgg_view('object/elements/summary', $params);
+	$list_body = elgg_view('object/elements/summary_home', $params);
 
-	echo elgg_view_image_block($owner_icon, $list_body);
+	$vars['image'] = $owner_icon;
+	$vars['body'] = $list_body;
+	echo elgg_view('page/components/image_block_home', $vars);
+	
 }

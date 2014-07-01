@@ -29,13 +29,7 @@ header("Content-type: text/html; charset=UTF-8");
 		<?php echo elgg_view('core/walled_garden/login',$vars);?>
 	</div>
 </div>
-<?php if ($is_sticky_register): ?>
-<script type="text/javascript">
-elgg.register_hook_handler('init', 'system', function() {
-	$('.registration_link').trigger('click');
-});
-</script>
-<?php endif; ?>
+
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
 </html>

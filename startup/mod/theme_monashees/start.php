@@ -8,6 +8,7 @@ function theme_monashees_init() {
     
     // include custom css for this theme
     elgg_extend_view ( 'css/elgg', 'theme_monashees/css' );
+    elgg_extend_view('css/admin', 'theme_monashees/admincss');
     
     // custom js
     $custom_js = 'mod/theme_monashees/views/default/theme_monashees/custom.js';

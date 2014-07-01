@@ -22,7 +22,7 @@ $defaults = array(
 $vars = array_merge($defaults, $vars);
 
 if (isset($vars['class'])) {
-	$vars['class'] = "elgg-form {$vars['class']}";
+	$vars['class'] = "{$vars['class']}";
 } else {
 	$vars['class'] = 'elgg-form';
 }
@@ -41,4 +41,4 @@ unset($vars['disable_security']);
 
 $attributes = elgg_format_attributes($vars);
 
-echo "<form $attributes><fieldset>$body</fieldset></form>";
+echo "<form $attributes>$body</form>";

@@ -19,7 +19,7 @@ echo '
 		</br>
 		
 		</button>
-		<div class="space-small"></div>
+        <p class="login-alternative-text">'.elgg_echo('alternative:login').'</p>
 		'.$login_box.'
 	</div>
 		

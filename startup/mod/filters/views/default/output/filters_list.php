@@ -21,7 +21,10 @@ if (! empty ( $functions )) {
         
         $linkstr .= $functions;
     }
+}else{
+    $linkstr .= elgg_echo("filters:allfunctions");
 }
+
 $linkstr = $linkstr . "<br>";
 $spaces = $vars ['entity']->spaces;
 if (! empty ( $spaces )) {
@@ -35,8 +38,12 @@ if (! empty ( $spaces )) {
         
         $linkstr .= $spaces;
     }
+}else{
+    $linkstr .= elgg_echo("filters:allspaces");
 }
 
-if ($linkstr) {
+if (isset($vars['formatted']) && $vars['formatted'] == false) {
+    echo $linkstr;
+}else{
     echo '<p class="elgg-output-categories">' . $linkstr . "</p>";
 }

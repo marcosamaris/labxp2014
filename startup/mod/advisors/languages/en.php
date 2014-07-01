@@ -17,10 +17,11 @@ $english = array(
 	'advisors:facebook' => 'Facebook',
 	'advisors:photo' => 'Photo',	
 	'advisors:save:success' => "Advisor saved successfully",
+    'advisors:uploadsave:success' => "Image saved successfully",
 		
 	'advisors:deleted_advisor' => 'Advisor deleted.',
 	'advisors:message_help' => 'Please use the Description field on Google Calendar to provide a brief context on what you\'d like to discuss and your contact info.',
-	'advisors:bookhours' => 'Book Office Hours'	
+	'advisors:bookofficehours' => 'Book Office Hours'	
 );
 
 add_translation("en", $english);

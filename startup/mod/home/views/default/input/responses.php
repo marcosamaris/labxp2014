@@ -26,7 +26,7 @@ $comment_count = $object->countComments();
 $options = array(
 	'guid' => $object->getGUID(),
 	'annotation_name' => 'generic_comment',
-	'limit' => 3,
+	
 	'order_by' => 'n_table.time_created desc'
 );
 $comments = elgg_get_annotations($options);
@@ -38,7 +38,7 @@ if ($comments) {
 	$comments = array_reverse($comments);
 
 ?>
-	<span class="elgg-river-comments-tab"><?php echo elgg_echo('comments'); ?></span>
+
 
 <?php
 

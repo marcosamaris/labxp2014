@@ -6,22 +6,23 @@
  */
 elgg_register_event_handler ( 'init', 'system', 'filters_init' );
 function filters_init() {
-    elgg_register_js ( 'elgg.filters', 'mod/filters/views/default/js/filters/filters.js' );
+    
+    elgg_register_library('elgg:filters', elgg_get_plugins_path() . 'filters/lib/filters.php');
     
     elgg_register_event_handler ( 'update', 'all', 'filters_save_entity' );
     elgg_register_event_handler ( 'create', 'all', 'filters_save_entity' );
     
     //associate an save action in filter admin with the function filters_save_admin_categories
     elgg_register_plugin_hook_handler ( 'action', 'plugins/settings/save', 'filters_save_admin_categories' );
+    elgg_load_library('elgg:filters');
 }
 
 /**
- * Saves the site categories.
+ * Saves the filters space and function for all entities that called the input
  *
  * @param type $event            
  * @param type $objectType            
  * @param type $object
- *            @TODO Rever o save de filters. Ele está salvando functions e spaces para todas as entidades.
  */
 function filters_save_entity($event, $objectType, $object) {
     if ($object instanceof ElggEntity) {
@@ -31,19 +32,20 @@ function filters_save_entity($event, $objectType, $object) {
         $spaces = get_input ( 'spaces' );
         $email = get_input ( 'companie_mail' );
         
-        $functions = array (
-                $functions,
-                $functions1 
-        );
+       
         
-        if (empty ( $functions )) {
-            $functions = array ();
+        if (!empty ( $functions )) {
+            $functions = array (
+                    $functions,
+                    $functions1
+            );
+            $object->functions = $functions;
         }
-        if (empty ( $spaces )) {
-            $spaces = array ();
+        if (!empty ( $spaces )) {
+            $object->spaces = $spaces;
         }
-        $object->spaces = $spaces;
-        $object->functions = $functions;
+        
+        
         
       
     }

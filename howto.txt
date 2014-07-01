@@ -1,0 +1,67 @@
+#HOWTO
+
+Como configurar o ambiente?
+
+	Acesse o arquivo tutorial.txt
+
+
+Como configurar o eclipse para o code style utilizado?
+
+	Abra Window > Preferences
+	PHP > Code Style > Formatter > Active Profile: PHP Convenctions > Show
+	Indentation > Tab Policy
+		Mude Tab Policy de Tab para Space
+		Mude Indentation Size para 4
+		Clique em Ok
+		Save o novo padrão
+		
+Como aplicar o novo code style a um arquivo antigo?
+	
+	No eclipse, tecle CTRL + SHIFT + F
+					
+
+
+Como criar um plugin?
+	http://learn.elgg.org/en/latest/tutorials/hello_world.html
+	http://learn.elgg.org/en/latest/tutorials/blog.html
+
+Como criar uma página de settings no admin para um plugin?
+	Crie um diretório views > default > plugins > <nome_diretorio_plugin> > settings.php
+	Para alterar a função que é chamada quando o usuário clica no save, chame:
+	elgg_register_plugin_hook_handler ( 'action', 'plugins/settings/save', '<nome_função_save_que_vc_criou>' );
+
+
+O que é o river?
+	River é a página activity (existente no elgg original).
+	Não é um plugin. O atalho no menu foi apenas retirado dessa versão do elgg. 
+	Ver: http://docs.elgg.org/wiki/River
+	
+O que são os arquivos existentes no diretório languages?
+	http://learn.elgg.org/en/latest/guides/i18n.html
+	São os arquivos de tradução que o php utilizada, sendo descrita como "palavra-chave" => "texto a ser exibido".
+	Use elgg_echo("palavra-chave") para exibir a tradução.
+	É possível adicionar vários idiomas no elgg.
+	
+Menus no elgg:
+	http://docs.elgg.org/wiki/Menus	
+	
+Alterar a página inicial do site:
+	http://learn.elgg.org/en/latest/tutorials/indexpage.html
+	
+Sobre eventos no Elgg:
+	http://docs.elgg.org/wiki/Elgg_Events
+	
+Plugin Hook:
+	http://docs.elgg.org/wiki/Plugin_Hooks
+	
+Sobre views:
+	é possível sobreescrever uma view ou estendê-la
+	http://docs.elgg.org/wiki/Engine/Views
+	
+Sobre forms:
+	elgg_view_form recebe como parâmetro <nome_arquivo_form> que deverá ser colocado em views/default/forms/<nome_arquivo_form> dentro do plugin
+	
+Plugin advisors:
+	need to set the write permissions for directory graphic in advisors	
+	
+	

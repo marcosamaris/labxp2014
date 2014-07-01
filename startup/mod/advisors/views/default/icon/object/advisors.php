@@ -22,8 +22,8 @@ if (!in_array($vars['size'], $sizes)) {
 
 $class = elgg_extract('img_class', $vars, '');
 
-if (isset($entity->name)) {
-	$title = $entity->name;
+if (isset($vars['title'])) {
+	$title = $vars['title'];
 } else {
 	$title = $entity->title;
 }
@@ -46,7 +46,8 @@ if (!isset($vars['height'])) {
 
 $img_params = array(
 	'src' => $entity->getIconURL(),
-	'alt' => $title,	
+	'alt' => $title,
+    'title' => $title	
 );
 
 if (!empty($class)) {

@@ -75,6 +75,55 @@ $release = get_version(true);
 	<script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
 
+
+<script type="text/javascript">       
+$(document).ready(function(){
+	ww = $(document).width();
+	if (ww < 992) {			
+	$(".sidebar-nav").addClass("on");
+	}	
+	$(".nav-title-icon").click(function() {				
+		if (ww < 992) {					
+			//$(this).parent(".sidebar-nav").find(".nav-s").toggle( "slow" );					
+			//$(this).parent(".sidebar-nav").find("h3").toggleClass("minus");
+			$(".sidebar-nav").find(".nav-s").toggle( "slow" );	
+			$(this).toggleClass("minus");	
+		}
+	});
+	/*$(".dropdown-toggle").click(function(){
+		$(this).parent().toggleClass("on");
+		$(".sidebar-nav a").removeClass("on");
+	});*/
+	$(".list-view").click(function() {
+		$("#grid-view").hide();
+		$("#list-view").show();
+		$(this).addClass("active");
+		$(".grid-view").removeClass("active");
+	});
+	$(".grid-view").click(function() {
+		$("#grid-view").show();
+		$("#list-view").hide();
+		$(this).addClass("active");
+		$(".list-view").removeClass("active");
+	});
+
+	$('.link-popover').popover({
+	    html: true,
+	    trigger: 'manual'
+	}).click(function(e) {
+	    $('.link-popover').not(this).popover('hide');
+	    $(this).popover('toggle');
+	});
+	$(document).click(function(e) {
+	    if (!$(e.target).is('.link-popover, .popover-title, .popover-content')) {
+	        $('.link-popover').popover('hide');
+	    }
+	});
+	
+})		
+</script>
+
+
 <script type="text/javascript">
 // <![CDATA[
 	<?php echo elgg_view('js/initialize_elgg'); ?>

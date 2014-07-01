@@ -19,23 +19,38 @@ if (! empty ( $spaces )) {
     }
     
     $spaces = array_flip ( $spaces );
+    
+   
+    
     array_walk ( $spaces, create_function ( '&$v, $k', '$v = $k;' ) );
+    
+    $allspaces = array("" => elgg_echo("filters:allspaces"));
+    $spaces = array_merge($allspaces, $spaces);
+    
     
     ?>
 
-<td><label><?php echo elgg_echo('filters:spaces'); ?></label><br />
-	<?php
-    
-    echo elgg_view ( 'input/dropdown', array (
-            'value' => '',
-            'name' => 'spaces',
-            'options_values' => $spaces 
-    ) );
-    
-    ?>
-	</td>
-</tr>
-</table>
+<div class="form-group">
+    <div class="row">
+        <div class="col-lg-8 col-md-6">
+	       <label for="spaces"><?php echo elgg_echo('filters:spaces'); ?></label>
+	    </div>
+	</div>
+	<div class="row">
+	   <div class="col-lg-3 col-md-3">
+        	<?php
+            
+            echo elgg_view ( 'input/dropdown', array (
+                    'value' => '',
+                    'name' => 'spaces',
+                    'class'=>'form-control',
+                    'options_values' => $spaces 
+            ) );
+            
+            ?>
+        </div>
+     </div>
+</div>
 <?php
 }
 ?>

@@ -21,28 +21,43 @@ if (! empty ( $functions )) {
     $functions = array_flip ( $functions );
     array_walk ( $functions, create_function ( '&$v, $k', '$v = $k;' ) );
     
-    ?>
-<table>
-	<tr>
-		<td><label><?php echo elgg_echo('filters:functions'); ?></label><br />
-	<?php
-    echo elgg_view ( 'input/dropdown', array (
-            'value' => '',
-            'name' => 'functions',
-            'options_values' => $functions 
-    )
-     );
+    $allfunctions = array("" => elgg_echo("filters:allfunctions"));
+    $functions = array_merge($allfunctions, $functions);
     
-    echo elgg_view ( 'input/dropdown', array (
-            'value' => '',
-            'name' => 'functions1',
-            'options_values' => $functions 
-    )
-     );
     ?>
-	</td>
-	</tr>
-	<?php
+<div class="form-group">
+    <div class="row">
+        <div class="col-lg-8 col-md-6">
+	       <label for="functions"><?php echo elgg_echo('filters:functions'); ?></label>
+	     </div>
+	</div>
+	<div class="row">
+	<div class="col-lg-3 col-md-3">
+        <?php
+            echo elgg_view ( 'input/dropdown', array (
+                    'value' => '',
+                    'name' => 'functions',
+                    'id' => 'functions',
+                    'class'=>'form-control',
+                    'options_values' => $functions 
+            ) );
+         ?>
+     </div>
+     <div class="col-lg-3 col-md-3">
+        <?php   
+            echo elgg_view ( 'input/dropdown', array (
+                    'value' => '',
+                    'name' => 'functions1',
+                    'class'=>'form-control',
+                    'options_values' => $functions 
+            ) );
+         ?>
+    </div>
+    </div>
+</div>
+
+
+<?php
 }
-echo elgg_view ( 'input/spaces' );
+
 ?>

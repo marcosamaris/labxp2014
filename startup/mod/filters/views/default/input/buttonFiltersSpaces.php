@@ -19,7 +19,10 @@ if (! empty ( $spaces )) {
 <div class="sidebar-nav">
 
 	<h3 class="nav-title">
-		<span class="nav-title-icon">&nbsp;</span><a class="active" href="#"><?php echo elgg_echo('filters:allspaces'); ?></a>
+	   <?php 
+	       $urlAllSpaces =  generateUrlAllFilters(current_page_url (),"spaces_list");
+	   ?>
+		<span class="nav-title-icon">&nbsp;</span><a href="<?php echo $urlAllSpaces['url'];?>" class="<?php echo $urlAllSpaces['class'];?>"><?php echo elgg_echo('filters:allspaces'); ?></a>
 	</h3>
 
 	<ul class="nav-s">

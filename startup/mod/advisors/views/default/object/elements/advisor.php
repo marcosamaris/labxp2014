@@ -18,34 +18,36 @@
  */
 
 
-$message_book = elgg_echo('advisors:bookhours');
-
+$message_book = elgg_echo('advisors:bookofficehours');
+$functions_and_spaces = elgg_view('output/filters_list', $vars);
 
 echo <<<HTML
 
 <div class="detail clearfix">
 	<div class="col-lg-8 description">
-		<div class="avatar">
+		<div class="avatar col-lg-2">
 			<img src="{$vars['avatar']}" alt="#" width="50" height="49">
 		</div>
-	<div class="avatar-detail">
-		<h3>{$vars['title']}</h3>
-		<p>{$vars['description']}</p>
-	</div>
-</div>
+    	<div class="avatar-detail  col-lg-6">
+    		<h3>{$vars['title']}</h3>
+    		<p>{$vars['description']}</p>
+    		{$functions_and_spaces}
+    	</div>
+    </div>
 <div class="col-lg-4 detail-bt">
-	<a href="#" class="book-hours-bt">
+	<a href="{$vars['bookofficehours']}" class="book-hours-bt">
 		$message_book
 	</a>
 	
 	<div class="social-icon">
 
-		<a href="maito:{$vars['email']}" class="mailto" data-toggle="tooltip" data-placement="top">mail</a>
-		<a href="#" class="skype" data-toggle="tooltip" data-placement="top" title="" data-original-title="skype: {$vars['skype']}">skype</a>
-		<a href="{$vars['linkedin']}" class="linkedin" data-toggle="tooltip" data-placement="top">linkedin</a>
-		<a href="{$vars['googleplus']}" class="googleplus" data-toggle="tooltip" data-placement="top">googleplus</a>
-		<a href="{$vars['twitter']}" class="twitter" data-toggle="tooltip" data-placement="top">twitter</a>
-		<a href="{$vars['facebook']}" class="facebook" data-toggle="tooltip" data-placement="top">facebook</a>
+		<a href="#" class="mailto link-popover" data-toggle="popover" data-placement="top" data-content="{$vars['email']}" title="E-mail" >mail</a>
+		<a href="#" class="skype link-popover" data-toggle="popover" data-placement="top" title="Skype" data-content="{$vars['skype']}">skype</a>
+		<a href="{$vars['linkedin']}" class="linkedin  link-popover" data-toggle="popover" data-placement="top">linkedin</a>
+		<a href="{$vars['googleplus']}" class="googleplus  link-popover" data-toggle="popover" data-placement="top">googleplus</a>
+		<a href="#" class="twitter  link-popover" data-toggle="popover" data-placement="top" title="Twitter" data-content="{$vars['twitter']}">twitter</a>
+		<a href="{$vars['facebook']}" class="facebook  link-popover" data-toggle="popover" data-placement="top">facebook</a>
+
 	</div>
 </div>
 

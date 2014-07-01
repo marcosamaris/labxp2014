@@ -31,10 +31,6 @@ $options = array(
 /** Setup page **/
 
 
-$form = elgg_view_form("home/save");
-
-$action = 'create';
-
 
 $list_post = elgg_list_entities_from_metadata($options);
 $params = array(
