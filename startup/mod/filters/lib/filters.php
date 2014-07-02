@@ -61,6 +61,8 @@ function generateUrlFilters($url, $name, $value, $class_active) {
         
         if (! empty ( $urlParameters ))
             $info ['url'] .= $urlParameters;
+        
+        $info ['url'] = ereg_replace('(\&)+',"&",$info ['url']);
     }
     return $info;
 }
@@ -70,7 +72,7 @@ function generateUrlAllFilters($url, $variable) {
     $info = array ();
     $info ['class'] = "";
     $info ['url'] = "";
-
+    $url = str_replace("%20"," ", $url);
     
     $pattern = '/'.$variable.'\[\]=[A-Za-z \/\-]+/';
     preg_match_all($pattern, $url, $matches);
@@ -86,7 +88,8 @@ function generateUrlAllFilters($url, $variable) {
     
 
     $info ['url'] = ereg_replace('('.$variable.'\[\]=[A-Za-z \/\-]+)', "", $url);
-
+    $info ['url'] = ereg_replace('(\&)+',"&",$info ['url']); 
+    
     
     return $info;
 }

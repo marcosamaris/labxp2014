@@ -1,7 +1,7 @@
 <?php
 
 /** Setup **/
-$options = array ();
+$options = $pairCompany = array ();
 $title = 'People'; // title is the title of page
 $page_filter = 'all';
 $action = 'create';
@@ -13,6 +13,9 @@ $pagination = '9';
 
 $vetorFunctions = get_input ( 'functions_list' );
 $vetorSpaces = get_input ( 'spaces_list' );
+$itemCompany = get_input('companies');
+
+
 
 $pairFunctions = array (
         'name' => 'functions',
@@ -23,6 +26,22 @@ $pairSpaces = array (
         'value' => $vetorSpaces 
 );
 
+if(!empty($itemCompany)){
+$pairCompany = array(
+	   'name' => 'company',
+        'value' => $itemCompany
+);
+}
+
+
+$parameters = array (
+                $pairFunctions,
+                $pairSpaces,
+                $pairCompany
+        );
+
+
+
 $options = array (
         'type' => 'user',
         'limit' => $pagination,
@@ -30,17 +49,17 @@ $options = array (
         'full_view' => FALSE,
         'metadata_case_sensitive' => FALSE,
         'metadata_name_value_pairs_operator' => 'AND',
-        'metadata_name_value_pairs' => array (
-                $pairFunctions,
-                $pairSpaces 
-        ),
+        'metadata_name_value_pairs' => $parameters,
         'view_path_list' => 'people/list' 
 );
+
+
+$filter_companies = elgg_view("input/dropdownCompanies");
 
 $list_post = elgg_list_entities ( $options, 'elgg_get_entities_from_metadata', 'view_adm_permission' );
 
 $params = array (
-        'content' => $list_post,
+        'content' => $filter_companies.$list_post,
         'filter_context' => $page_filter,
         'class' => 'elgg-river-layout',
         'spaces' => $vetorSpaces,

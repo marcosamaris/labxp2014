@@ -47,13 +47,7 @@ if ($position == 'before' || $position == 'both') {
 }
 
 ?>
-<div class="row">
-<div class="col-lg-4">
-<div class="form-group">
-<?php echo elgg_view('input/companies',$vars);?>
-</div>
-</div>
-</div>
+
 <div class="row grid-view active">
 	<?php
 		foreach ($items as $item) {
@@ -62,23 +56,34 @@ if ($position == 'before' || $position == 'both') {
 $icon_url = elgg_format_url($item->getIconURL('medium'));
 	?>
 			
-			<div class="col-lg-4 col-sm-6">
-				<div class="detail clearfix">
-                            <div class="col-lg-12 description">
-                                <div class="avatar col-lg-12">
-                                    <img src="<?php echo $icon_url;?>" alt="#">
-                                    
-                                </div>    
-                                <div class="avatar-detail col-lg-12">
-                                    <h3><?php echo $item->name;?></h3>
-                                    <p><?php echo $item->role;?></p>
-                                    <p><?php echo $item->company;?></p>
-                                </div>
+<div class="col-lg-4 col-sm-6">
+		<div class="detail clearfix">
+			<div class="col-lg-12 description">
+				<div class="avatar col-lg-12">
+                <?php 
+                if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
+					echo '<a href="'.elgg_get_site_url().'profile/'.$item->username.'">';
+				}
+						echo '<img alt="mask" src="'.$icon_url.'" alt="'.$item->name.'\'s photo">';
+						
+				if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
+					echo '</a>';	
+				}
+				?>
                                 
-                            </div>
-                                                
-                        </div>
+                                
+                                
+				</div>
+				<div class="avatar-detail col-lg-12">
+					<h3><?php echo $item->name;?></h3>
+					<p><?php echo $item->role;?></p>
+					<p><?php echo $item->company;?></p>
+				</div>
+
 			</div>
+
+		</div>
+	</div>
 			<?php 		
 			
 		}
@@ -89,7 +94,7 @@ $icon_url = elgg_format_url($item->getIconURL('medium'));
     
 
 </div>
-                
+
 
 
 <?php

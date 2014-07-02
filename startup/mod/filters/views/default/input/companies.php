@@ -1,6 +1,7 @@
 <?php
 
 $companies = elgg_get_site_entity()->filters_companies;
+$selectedCompany = get_input("companies");
 if (empty ( $companies )) {
     $companies = array ();
 }
@@ -20,7 +21,7 @@ if (! empty ( $companies )) {
     
 
             echo elgg_view ( 'input/dropdown', array (
-                    'value' => '',
+                    'value' => $selectedCompany,
                     'name' => 'companies',
                     'id' => 'companies',
                     'class'=>'form-control',
