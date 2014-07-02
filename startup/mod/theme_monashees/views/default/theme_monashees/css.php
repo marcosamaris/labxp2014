@@ -212,3 +212,13 @@ p.elgg-output-categories {
     font: 18px 'sans_regular';
     padding-top: 15px;
 }
+
+li a.unlikebutton:link, 
+li a.likebutton:link, 
+li a.buttonlink:link {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 11px;
+    padding: 1px 3px;
+}

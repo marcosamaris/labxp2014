@@ -69,7 +69,7 @@ function elgg_post_menu_setup($hook, $type, $value, $params) {
     );
     
     $value [] = ElggMenuItem::factory ( $options );
-    /*
+    
     // likes button
     $options = array (
             'name' => 'likes',
@@ -94,7 +94,7 @@ function elgg_post_menu_setup($hook, $type, $value, $params) {
         );
         $value [] = ElggMenuItem::factory ( $options );
     }
-    */
+    
     
     return $value;
 }

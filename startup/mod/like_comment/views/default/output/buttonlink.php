@@ -24,4 +24,4 @@ if (isset($vars['id']) && $vars['id']) {
 }
 
 ?>
-<a href="<?php echo $link; ?>" <?php echo $htmlid; ?> <?php echo $class; ?>><?php echo htmlentities($vars['text'], ENT_QUOTES, 'UTF-8'); ?></a>
+<a href="<?php echo $link; ?>" <?php echo $htmlid; ?> <?php echo $class; ?>><?php echo $vars['text']; ?></a>

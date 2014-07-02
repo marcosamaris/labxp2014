@@ -36,11 +36,12 @@ if ($home->comments_on != 'Off') {
 	//only display if there are commments
 	if ($comments_count != 0) {
 		$text = elgg_echo("comments") . " ($comments_count)";
-		$comments_link = elgg_view('output/url', array(
+		/*$comments_link = elgg_view('output/url', array(
 			'href' => $home->getURL() . '#home-comments', //change to see all thread
 			'text' => $text,
 			'is_trusted' => true,
-		));
+		));*/
+		$comments_link = " - ".$text;
 	} else {
 		$comments_link = '';
 	}
