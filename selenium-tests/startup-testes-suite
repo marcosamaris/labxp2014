@@ -8,11 +8,11 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="test-error-login">test-error-login-empty</a></td></tr>
-<tr><td><a href="test-error-login-empty">test-invalidated-login</a></td></tr>
+<tr><td><a href="test-error-login">test-error-login</a></td></tr>
+<tr><td><a href="test-invalidated-login">test-invalidated-login</a></td></tr>
 <tr><td><a href="test-login-successfull">test-login-successfull</a></td></tr>
 <tr><td><a href="test-advisor-admin">test-filters-admin</a></td></tr>
-<tr><td><a href="Teste login - post">test-post</a></td></tr>
+<tr><td><a href="test-post">test-post</a></td></tr>
 <tr><td><a href="test-advisor-admin">test-advisor-admin</a></td></tr>
 <tr><td><a href="teste-login-comentario">teste-login-comentario</a></td></tr>
 </tbody></table>

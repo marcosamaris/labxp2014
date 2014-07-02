@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>test-plugin-desactivate-activate</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test-plugin-desactivate-activate</td></tr>
+</thead><tbody>
+<tr>
+	<td>assertText</td>
+	<td>css=#blog .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#developers .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#likes .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#filters .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#home .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#thewire .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#twitter-api .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#bookmarks .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#custom-index .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#dashboard .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#diagnostics .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#embed .elgg-button</td>
+	<td>cannot activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#externalpages .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#file .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#garbagecollector .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#groups .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#htmlawed .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#invitefriends .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#logbrowser .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#logrotate .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#members .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#messageboard .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#messages .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#notifications .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#pages .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#profile .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#reportedcontent .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#search .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#tagcloud .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#uservalidationbyemail .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#tinymce .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#zaudio .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#categories .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#elgg-social-login .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#advisors .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#firstlogin-redirect .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#firstlogin-permission .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#library-monashees .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#people .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#phpmailer-gmail .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#myplugin .elgg-button</td>
+	<td>Activate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#like-comment .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#theme-monashees .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#signup-pendent-list .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#white-list .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#extend-elgg-social-login .elgg-button</td>
+	<td>Deactivate</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

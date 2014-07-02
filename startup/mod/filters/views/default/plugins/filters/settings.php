@@ -40,7 +40,7 @@ if (empty($filters)) {
 
 <script type="text/javascript">
 $(function(){
-	$("#filters-settings .elgg-button.elgg-button-submit").click(function(){
+	$("#filters-settings .elgg-button-submit").click(function(){
 	
 	
 		    if (confirm('Are you sure you want to save these informations?')) {
