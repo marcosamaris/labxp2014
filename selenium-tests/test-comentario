@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost/" />
-<title>test-post</title>
+<title>test-comentario</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">test-post</td></tr>
+<tr><td rowspan="1" colspan="3">test-comentario</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -28,7 +28,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=input.elgg-button.elgg-button-submit</td>
+	<td>//button[@value='Log in']</td>
 	<td></td>
 </tr>
 <tr>
@@ -43,22 +43,22 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>name=functions</td>
-	<td>label=Technology</td>
+	<td>id=functions</td>
+	<td>label=Analytics/Data</td>
 </tr>
 <tr>
 	<td>select</td>
 	<td>name=functions1</td>
-	<td>label=Marketing</td>
+	<td>label=Design/UI/UX</td>
 </tr>
 <tr>
 	<td>select</td>
 	<td>name=spaces</td>
-	<td>label=Ecommerce</td>
+	<td>label=Education</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=input.elgg-button.elgg-button-submit</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
@@ -67,29 +67,34 @@
 	<td>Your post was saved</td>
 </tr>
 <tr>
-	<td>assertText</td>
-	<td>css=div.elgg-content:first</td>
-	<td>Eu quero testar a criação do post.</td>
+	<td>click</td>
+	<td>css=span.elgg-icon.elgg-icon-speech-bubble </td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=generic_comment</td>
+	<td>Este é um comentario</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Comment']</td>
+	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
-	<td>css=p.elgg-output-categories:first</td>
-	<td>Technology, Marketing<br />Ecommerce</td>
+	<td>css=p</td>
+	<td>Your comment was successfully posted.</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.elgg-icon.elgg-icon-delete:first</td>
+	<td>css=span.elgg-icon.elgg-icon-delete </td>
 	<td></td>
 </tr>
 <tr>
 	<td>assertConfirmation</td>
 	<td>Are you sure you want to delete this item?</td>
 	<td></td>
-</tr>
-<tr>
-	<td>assertText</td>
-	<td>css=li.elgg-message.elgg-state-success &gt; p</td>
-	<td>Home post deleted.</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
