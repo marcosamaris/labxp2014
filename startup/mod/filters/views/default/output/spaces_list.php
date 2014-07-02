@@ -15,7 +15,9 @@ if (! empty ( $spaces )) {
     }
     
     foreach ( $spaces as $spaces ) {
-        
+    	if (! empty ( $linkstr ) && !empty($spaces)) {
+    		$linkstr .= ', ';
+    	}
         $linkstr .= $spaces;
     }
 }else{

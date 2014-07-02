@@ -14,6 +14,7 @@ $english = array(
 	'filters:spaces' => "Spaces",
 	'filters:allfunctions' => "All Functions",
 	'filters:allspaces' => "All Spaces",
+	'filters:allcompanies' => "All Companies",
 	'filters:companies' => "Companies",
     'filters:roles' => "Roles",
 );

@@ -22,10 +22,13 @@ function theme_monashees_init() {
     
     // register bootstrap css and js
     $bootstrap_js = 'mod/theme_monashees/vendors/plus-network/js/bootstrap.min.js';
-    elgg_register_js ( 'bootstrap_js', $bootstrap_js, 'footer' );
+    elgg_register_js ( 'bootstrap_js', $bootstrap_js, 'head' );
     
     $bootstrap_css = 'mod/theme_monashees/vendors/plus-network/css/bootstrap.min.css';
     elgg_register_css ( 'bootstrap_css', $bootstrap_css, 10 );
+    
+    $bootstrap_select_js = "mod/theme_monashees/vendors/plus-network/js/bootstrap-select.min.js";
+    elgg_register_js ( 'bootstrap_select_js', $bootstrap_select_js, 'head' );
     
     $grid_css = 'mod/theme_monashees/vendors/plus-network/css/grid.css';
     elgg_register_css ( 'grid_css', $grid_css, 10 );
@@ -47,6 +50,7 @@ function theme_monashees_init() {
     // we don't want bootstrap loading when in the admin area, not sure this is the best way to do this
     if ($get_context != 'admin') {
         elgg_load_js ( 'bootstrap_js' );
+        elgg_load_js ( 'bootstrap_select_js' );
         elgg_load_js ( 'custom_js' );
         elgg_load_css ( 'bootstrap_css' );
         elgg_load_css ( 'grid_css' );

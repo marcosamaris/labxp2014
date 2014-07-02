@@ -39,6 +39,7 @@ function home_index($hook, $type, $return, $params) {
             return false;
         }
     } else if (! include_once (dirname ( __FILE__ ) . '/pages/home/register.php')) {
+        
         return false;
     }
     

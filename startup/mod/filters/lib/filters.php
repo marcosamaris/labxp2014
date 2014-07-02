@@ -18,9 +18,21 @@ function generateUrlFilters($url, $name, $value, $class_active) {
         $url .= "";
     }
     
-    $get_var = $name . "=" . $value;
+    $url = str_replace("%20"," ", $url);
     
-    if (strpos ( $url, $value ) == false) {
+    
+    $get_var = $name . "=" . $value;
+    $pattern = quotemeta($get_var);
+    $pattern = str_replace("/", "\/", $pattern);
+    
+    $pattern = '/'.$pattern.'/';
+    preg_match_all($pattern, $url, $matches);
+    
+    
+    
+    if(count($matches[0]) == 0){
+    
+   // if (strpos ( $url, $value ) == false) {
         // não existe
         // se não existir,
         // não marca como bold
@@ -52,16 +64,7 @@ function generateUrlFilters($url, $name, $value, $class_active) {
     }
     return $info;
 }
-function generateUrlAllFunctions($url) {
-    $info = array ();
-    $info ['class'] = "";
-    $info ['url'] = "";
-    
 
-    $info ['url'] = ereg_replace('(functions_list\[\]=[A-Za-z\/\-]+)', "", $url);
-    
-    return $info;
-}
 function generateUrlAllFilters($url, $variable) {
     
     $info = array ();
@@ -69,7 +72,7 @@ function generateUrlAllFilters($url, $variable) {
     $info ['url'] = "";
 
     
-    $pattern = '/'.$variable.'\[\]=[A-Za-z\/\-]+/';
+    $pattern = '/'.$variable.'\[\]=[A-Za-z \/\-]+/';
     preg_match_all($pattern, $url, $matches);
     
     
@@ -81,16 +84,8 @@ function generateUrlAllFilters($url, $variable) {
  
     
     
-    
-        
-    
-    
-    
-    
-    
-    
 
-    $info ['url'] = ereg_replace('(spaces_list\[\]=[A-Za-z\/\-]+)', "", $url);
+    $info ['url'] = ereg_replace('('.$variable.'\[\]=[A-Za-z \/\-]+)', "", $url);
 
     
     return $info;

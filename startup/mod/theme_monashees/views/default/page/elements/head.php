@@ -76,7 +76,15 @@ $release = get_version(true);
 <?php } ?>
 
 
-<script type="text/javascript">       
+<script type="text/javascript">   
+
+$(window).on('load', function () {
+    $('.selectpicker').selectpicker({
+        'selectedText': 'test1',
+		liveSearch:false
+    });
+   
+});
 $(document).ready(function(){
 	ww = $(document).width();
 	if (ww < 992) {			
@@ -84,16 +92,12 @@ $(document).ready(function(){
 	}	
 	$(".nav-title-icon").click(function() {				
 		if (ww < 992) {					
-			//$(this).parent(".sidebar-nav").find(".nav-s").toggle( "slow" );					
-			//$(this).parent(".sidebar-nav").find("h3").toggleClass("minus");
+
 			$(".sidebar-nav").find(".nav-s").toggle( "slow" );	
 			$(this).toggleClass("minus");	
 		}
 	});
-	/*$(".dropdown-toggle").click(function(){
-		$(this).parent().toggleClass("on");
-		$(".sidebar-nav a").removeClass("on");
-	});*/
+
 	$(".list-view").click(function() {
 		$("#grid-view").hide();
 		$("#list-view").show();

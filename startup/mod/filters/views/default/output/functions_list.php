@@ -15,7 +15,7 @@ if (! empty ( $functions )) {
     }
     
     foreach ( $functions as $functions ) {
-        if (! empty ( $linkstr )) {
+        if (! empty ( $linkstr ) && !empty($functions)) {
             $linkstr .= ', ';
         }
         
