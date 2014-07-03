@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>test-social-login-plugin</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test-social-login-plugin</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/labxp2014/startup/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>monashees</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Log in']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged in.</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/labxp2014/startup/admin/plugin_settings/elgg_social_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Plugins</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#elgg-social-login &gt; div.elgg-image-block &gt; div.elgg-body &gt; div.elgg-head &gt; h3 &gt; a.elgg-plugin-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=params[ha_settings_forward_page]</td>
+	<td>http://localhost/labxp2014/startup/home</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=params[ha_settings_LinkedIn_app_key]</td>
+	<td>7540fdpfsrkin1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=params[ha_settings_LinkedIn_app_secret]</td>
+	<td>416ktki8Cn1eNsdQ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.elgg-button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>Settings for the Social Login plugin were saved successfully.</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=params[ha_settings_forward_page]</td>
+	<td>exact:http://localhost/labxp2014/startup/home</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=params[ha_settings_LinkedIn_app_key]</td>
+	<td>7540fdpfsrkin1</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=params[ha_settings_LinkedIn_app_secret]</td>
+	<td>416ktki8Cn1eNsdQ</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged out.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

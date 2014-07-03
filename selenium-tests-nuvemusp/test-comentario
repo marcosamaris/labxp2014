@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>test-comentario</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test-comentario</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/labxp2014/startup/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>monashees</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Log in']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged in.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=textarea-home</td>
+	<td>Eu quero testar a criação do post.</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=functions</td>
+	<td>label=Analytics/Data</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=functions1</td>
+	<td>label=Design/UI/UX</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=spaces</td>
+	<td>label=Education</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>Your post was saved</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.elgg-icon.elgg-icon-speech-bubble </td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=generic_comment</td>
+	<td>Este é um comentario</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Comment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>Your comment was successfully posted.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.elgg-icon.elgg-icon-delete </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure you want to delete this item?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged out.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

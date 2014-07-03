@@ -12,6 +12,41 @@
 <tr><td rowspan="1" colspan="3">test-plugin-desactivate-activate</td></tr>
 </thead><tbody>
 <tr>
+	<td>open</td>
+	<td>/labxp2014/startup/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>monashees</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Log in']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged in.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Plugins</td>
+	<td></td>
+</tr>
+<tr>
 	<td>assertText</td>
 	<td>css=#blog .elgg-button</td>
 	<td>Activate</td>
@@ -241,7 +276,16 @@
 	<td>css=#extend-elgg-social-login .elgg-button</td>
 	<td>Deactivate</td>
 </tr>
-
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged out.</td>
+</tr>
 </tbody></table>
 </body>
 </html>

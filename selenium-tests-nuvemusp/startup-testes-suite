@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="test-invalidated-login">test-invalidated-login</a></td></tr>
+<tr><td><a href="test-error-login-empty">test-error-login-empty</a></td></tr>
+<tr><td><a href="test-login-successfull">test-login-successfull</a></td></tr>
+<tr><td><a href="test-blog-desactivate">test-plugin-activate-desactivate</a></td></tr>
+<tr><td><a href="test-advisor-admin">test-filters-admin</a></td></tr>
+<tr><td><a href="test-post">test-post</a></td></tr>
+<tr><td><a href="test-error-login">test-post-complete</a></td></tr>
+<tr><td><a href="test-advisor-admin">test-advisor-admin</a></td></tr>
+<tr><td><a href="test-comentario">test-comentario</a></td></tr>
+<tr><td><a href="add_to_whitelist_test">add_to_whitelist_test</a></td></tr>
+<tr><td><a href="first_login_user_off_whitelist">first_login_user_off_whitelist</a></td></tr>
+<tr><td><a href="first_login_user_on_whitelist">first_login_user_on_whitelist</a></td></tr>
+<tr><td><a href="test-social-login-plugin">test-social-login-plugin</a></td></tr>
+<tr><td><a href="test-elgg-settings-basic-advanced">test-elgg-settings-basic-advanced-localhost</a></td></tr>
+</tbody></table>
+</body>
+</html>

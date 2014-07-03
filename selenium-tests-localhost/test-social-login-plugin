@@ -13,6 +13,31 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
+	<td>/labxp2014/startup/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=password</td>
+	<td>monashees</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='Log in']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged in.</td>
+</tr>
+<tr>
+	<td>open</td>
 	<td>/labxp2014/startup/admin/plugin_settings/elgg_social_login</td>
 	<td></td>
 </tr>
@@ -66,7 +91,16 @@
 	<td>name=params[ha_settings_LinkedIn_app_secret]</td>
 	<td>416ktki8Cn1eNsdQ</td>
 </tr>
-
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>You have been logged out.</td>
+</tr>
 </tbody></table>
 </body>
 </html>
