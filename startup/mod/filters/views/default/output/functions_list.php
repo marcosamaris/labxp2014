@@ -7,7 +7,7 @@
 $linkstr = '';
 
 $functions = $vars ['entity']->functions;
-if (! empty ( $functions )) {
+if (! empty ( $functions ) && $functions != " ") {
     if (! is_array ( $functions )) {
         $functions = array (
                 $functions 

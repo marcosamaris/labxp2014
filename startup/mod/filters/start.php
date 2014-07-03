@@ -38,10 +38,19 @@ function filters_save_entity($event, $objectType, $object) {
         
         
         if ( $functions !== NULL) {
-            $functions = array (
-                    $functions,
-                    $functions1
-            );
+            
+            if(!empty($functions1) && $functions1 != " ")
+            {
+                $functions = array (
+                        $functions,
+                        $functions1
+                );
+            }else{
+                $functions = array (
+                        $functions                  
+                );
+            }
+            
             $object->functions = $functions;
         }
         

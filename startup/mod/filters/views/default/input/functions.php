@@ -25,7 +25,7 @@ if (! empty ( $functions )) {
     $allfunctions = array("" => elgg_echo("filters:allfunctions"));
     $functionsAll = array_merge($allfunctions, $functions);
     
-    $nonefunctions = array("" => elgg_echo("filters:none"));
+    $nonefunctions = array("" => elgg_echo("filters:allfunctions")," " => elgg_echo("filters:none"));
     $functionsNone = array_merge($nonefunctions, $functions);
     
     ?>
