@@ -17,6 +17,7 @@ $english = array(
 	'filters:allcompanies' => "All Companies",
 	'filters:companies' => "Companies",
     'filters:roles' => "Roles",
+    'filters:none' => "None",
 );
 
 add_translation("en", $english);

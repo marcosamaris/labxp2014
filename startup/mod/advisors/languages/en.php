@@ -21,7 +21,8 @@ $english = array(
 		
 	'advisors:deleted_advisor' => 'Advisor deleted.',
 	'advisors:message_help' => 'Please use the Description field on Google Calendar to provide a brief context on what you\'d like to discuss and your contact info.',
-	'advisors:bookofficehours' => 'Book Office Hours'	
+	'advisors:bookofficehours' => 'Book Office Hours',
+    'item:object:advisors' => 'Venture Advisors'
 );
 
 add_translation("en", $english);

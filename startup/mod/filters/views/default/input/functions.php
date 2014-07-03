@@ -21,8 +21,12 @@ if (! empty ( $functions )) {
     $functions = array_flip ( $functions );
     array_walk ( $functions, create_function ( '&$v, $k', '$v = $k;' ) );
     
+    
     $allfunctions = array("" => elgg_echo("filters:allfunctions"));
-    $functions = array_merge($allfunctions, $functions);
+    $functionsAll = array_merge($allfunctions, $functions);
+    
+    $nonefunctions = array("" => elgg_echo("filters:none"));
+    $functionsNone = array_merge($nonefunctions, $functions);
     
     ?>
 <div class="form-group">
@@ -39,7 +43,7 @@ if (! empty ( $functions )) {
                     'name' => 'functions',
                     'id' => 'functions',
                     'class'=>'form-control',
-                    'options_values' => $functions 
+                    'options_values' => $functionsAll 
             ) );
          ?>
      </div>
@@ -49,7 +53,7 @@ if (! empty ( $functions )) {
                     'value' => '',
                     'name' => 'functions1',
                     'class'=>'form-control',
-                    'options_values' => $functions 
+                    'options_values' => $functionsNone 
             ) );
          ?>
     </div>
