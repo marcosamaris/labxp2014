@@ -48,7 +48,11 @@ if ($position == 'before' || $position == 'both') {
 
 ?>
 
-<div class="row grid-view active">
+<div class="row grid-view">
+
+
+
+
 	<?php
 		foreach ($items as $item) {
 
@@ -56,10 +60,10 @@ if ($position == 'before' || $position == 'both') {
 $icon_url = elgg_format_url($item->getIconURL('medium'));
 	?>
 			
-<div class="col-lg-4 col-sm-6">
-		<div class="detail clearfix">
+<div class="col-lg-3 col-md-4 col-sm-3 col-xs-6">
+		<div class="detail3 clearfix">
 			<div class="col-lg-12 description">
-				<div class="avatar col-lg-12">
+				<div class="row pro-pic">
                 <?php 
                 if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
 					echo '<a href="'.elgg_get_site_url().'profile/'.$item->username.'">';
@@ -74,10 +78,13 @@ $icon_url = elgg_format_url($item->getIconURL('medium'));
                                 
                                 
 				</div>
-				<div class="avatar-detail col-lg-12">
+				<div class="avatar-detail3">
 					<h3><?php echo $item->name;?></h3>
-					<p><?php echo $item->role;?></p>
-					<p><?php echo $item->company;?></p>
+					<p class="designation"><?php echo $item->role;?></p>
+					<p class="designation"><?php echo $item->company;?></p>
+					<!-- <div class="c-logo">
+                    	<img src="images/edu-k.png" alt="#" />
+                    </div> --> 
 				</div>
 
 			</div>

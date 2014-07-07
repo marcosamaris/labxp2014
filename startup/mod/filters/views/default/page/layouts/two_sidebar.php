@@ -25,6 +25,17 @@
 			echo elgg_view('page/elements/sidebar_alt1', $vars);
 		?>
 	</div>
+	<?php 
+	if(isset($vars['companies_html']) && $vars['companies_html'] == true){
+    ?>
+    <div class="col-lg-8 col-md-6">
+        <?php
+			echo elgg_view("input/dropdownCompanies");
+		?>
+    </div>
+    <?php 
+    }
+	?>
 
 	<div class="col-lg-8 col-md-6">
 		<?php

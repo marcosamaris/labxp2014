@@ -222,3 +222,12 @@ li a.buttonlink:link {
     font-size: 11px;
     padding: 1px 3px;
 }
+
+footer.footer-wrapper{
+    position: relative;
+}
+
+div.container-posts > ul.elgg-pagination > li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: none;
+}

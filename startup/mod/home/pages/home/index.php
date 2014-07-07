@@ -35,7 +35,7 @@ $options = array (
                 $pairFunctions,
                 $pairSpaces 
         ) ,
-        'view_path_list' => 'post/list'
+        'view_path_list' => 'home/list'
 );
 
 /**

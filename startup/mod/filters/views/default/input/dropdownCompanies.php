@@ -1,10 +1,14 @@
-<div class="row">
-	<div class="col-lg-4">
-		<div class="form-group">
-            <?php echo elgg_view('input/companies',$vars);?>
-        </div>
-	</div>
+<div class="col-lg-8 col-md-6">
+	<form class="select-comp mt0 clearfix">
+        <?php
+            $vars ['class'] = 'selectpicker show-tick form-control';
+            echo elgg_view ( 'input/companies', $vars );
+        ?>
+                	
+    </form>
 </div>
+
+
 <script>
 $( "select#companies" ).change(function () {
 

@@ -17,7 +17,8 @@ $container = $home->getContainerEntity();
 $categories = elgg_view('output/filters_list', $vars);
 $excerpt = $home->excerpt;
 if (!$excerpt) {
-	$excerpt = elgg_get_excerpt($home->description);
+//	$excerpt = elgg_get_excerpt($home->description); //limit for the number of characters exhibit
+    $excerpt = $home->description;
 }
 
 

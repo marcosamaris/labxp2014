@@ -733,3 +733,27 @@
 
   .col-lg-offset-12 {
     margin-left: 100%; } }
+	
+	
+/*other-media-css*/
+@media (min-width: 240px) {
+	.select-option {float:left;}
+	.tabs li a .icon {display:none;}
+	.avatar-detail-2 {overflow:hidden;}
+	.avatar-detail4 {float:left; margin-top:10px;}
+	.c-logo2 {text-align:center;}
+	.social2 {float:none;}
+}
+@media (min-width: 768px) {
+	.select-option {float:right;}
+	.tabs li a .icon {display:inline-block;}
+	.avatar-detail4 {float:none;}
+
+	
+	
+}
+@media (min-width: 992px) {
+	.c-logo2 {text-align:right;} 
+	.social2 {float:right;}
+}	
+	

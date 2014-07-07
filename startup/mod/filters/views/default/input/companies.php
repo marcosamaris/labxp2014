@@ -24,7 +24,7 @@ if (! empty ( $companies )) {
                     'value' => $selectedCompany,
                     'name' => 'companies',
                     'id' => 'companies',
-                    'class'=>'form-control',
+                    'class'=>$vars['class'],
                     'options_values' => $companies 
             ) );
 }

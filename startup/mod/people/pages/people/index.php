@@ -54,17 +54,17 @@ $options = array (
 );
 
 
-$filter_companies = elgg_view("input/dropdownCompanies");
 
 $list_post = elgg_list_entities ( $options, 'elgg_get_entities_from_metadata', 'view_adm_permission' );
 
 $params = array (
-        'content' => $filter_companies.$list_post,
+        'content' => $list_post,
         'filter_context' => $page_filter,
         'class' => 'elgg-river-layout',
         'spaces' => $vetorSpaces,
         'functions' => $vetorFunctions,
-        'functSelected' => 'functionSelected' 
+        'functSelected' => 'functionSelected',
+        'companies_html' => true
 )
 ;
 
