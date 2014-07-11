@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<title>Home3</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/grid.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-checkbox.css" rel="stylesheet" type="text/css" />
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/dropdown.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/bootstrap-checkbox.js" type="text/javascript"></script>
+<script src="js/bootstrap-select.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        $(window).on('load', function () {
+            $('.selectpicker').selectpicker({
+                'selectedText': 'test1',
+				liveSearch:false
+            });
+            // $('.selectpicker').selectpicker('hide');
+        });
+		
+</script>
+<script type="text/javascript">       
+		$(document).ready(function(){
+			$('.checkbox').checkbox();			
+		})
+			
+		$(document).ready(function(){
+			ww = $(document).width();
+			if (ww < 992) {			
+			$(".sidebar-nav").addClass("on");
+			}	
+			$(".nav-title-icon").click(function() {				
+				if (ww < 992) {					
+					//$(this).parent(".sidebar-nav").find(".nav-s").toggle( "slow" );					
+					//$(this).parent(".sidebar-nav").find("h3").toggleClass("minus");
+					$(".sidebar-nav").find(".nav-s").toggle( "slow" );	
+					$(this).toggleClass("minus");	
+				}
+			});
+			/*$(".dropdown-toggle").click(function(){
+				$(this).parent().toggleClass("on");
+				$(".sidebar-nav a").removeClass("on");
+			});*/
+			$(".list-view").click(function() {
+				$("#grid-view").hide();
+				$("#list-view").show();
+				$(this).addClass("active");
+				$(".grid-view").removeClass("active");
+			});
+			$(".grid-view").click(function() {
+				$("#grid-view").show();
+				$("#list-view").hide();
+				$(this).addClass("active");
+				$(".list-view").removeClass("active");
+			});
+			$('.skype').tooltip();
+			
+			$('.reply-link').click (function(){
+				$('.reply-link').fadeOut("slow", function(){
+				   var div = $("<div class='reply'><input type='text' value='Reply here...'><input type='submit' value=''></div>").hide();
+				   $(this).replaceWith(div);
+				   $('.reply').fadeIn("slow");
+				});
+			});
+			
+			
+			dropdownFilter(".functions-dropdown", "#functions-list", "functions[]");
+			dropdownFilter(".spaces-dropdown", "#spaces-list","spaces[]");
+				
+			
+
+			
+		});
+		
+function dropdownFilter(classDropdown, idList, nameInputHidden, idItemAll,allItemText){
+	$(classDropdown).change(function(){
+				var dropdownValue = $(this).val();
+				var dropdownName = $(this).attr("name");
+				
+				if(dropdownValue.length > 1){
+					
+					
+		
+					$(idList).append("<div class=\"add-tags ui-button ui-button-text-only\" role=\"button\"><span class=\"ui-button-text\">"+dropdownValue+"</span><span class=\"remove\"></span><input type=\"hidden\" name=\""+nameInputHidden+"\" value=\""+dropdownValue+"\"></div>");
+					
+					$(idList).attr("class","border padtb8");
+					
+					
+					$(".remove").click(function(){
+						
+						var elementText = $(this).parent().children(".ui-button-text").text();
+						console.info(elementText);
+						console.info(classDropdown);
+						console.info($(classDropdown+' option[value="' + elementText + '"]').val());
+						
+						$(classDropdown+' option[value="' + elementText + '"]').removeAttr('disabled');
+						$('.selectpicker').selectpicker('render');
+						$(this).parent().remove();
+						
+						if($(idList).children().length == 0){
+							$(idList).attr("class","");
+					
+							
+						}
+					});
+				
+					
+					$(this).children("option:selected").attr('disabled','disabled');
+					$(this).children("option:selected").removeAttr("selected");
+					$('.selectpicker').selectpicker('deselectAll');
+					$('.selectpicker').selectpicker('render');
+					
+					
+					
+					
+				}
+			});
+}
+</script>
+<style>
+
+.ui-button {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.1em;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+
+.add-tags.ui-button-text-only .ui-button-text {
+    padding-top: 0.4em;
+	padding-bottom:0.4em;
+	padding-left: 0.5em;
+	padding-right: 28px;
+}
+.ui-button .ui-button-text {
+    display: block;
+    line-height: 1.4;
+}
+
+li.disabled {
+    background: none repeat scroll 0 0 #f5f5f5;
+}
+
+</style>
+</head>
+<body>
+<header class="header-wrapper">
+	<div class="container">
+        <div class="logo col-lg-2">
+            <img src="images/logo2.jpg" class="img-responsive" alt="Plus-Network" title="Plus-Network" />
+        </div>
+        <div class="search-colum">
+            <form method="post" action="#">
+                <input type="text" value="" />
+                <button class="search-bt"><span class="search-icon"><img src="images/search-icon.png" alt="search" /></span></button>                
+            </form>
+        </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="welcome-blcok">
+        	<div class="wel-c">
+                <div class="user-avatar">                    
+                    <img src="images/img.jpg" alt="mask" />
+                </div>
+                <div class="txt">
+                    <p class="welcome-txt"><strong>Welcome,</strong> Username</p>
+                    <p><a href="#">Settings</a> <span>|</span> <a href="#">Logout </a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</header>
+<div class="main-navigation">
+	<div class="container">
+    	<nav class="navigation" role="navigation">                        
+            <ul class="navbar-collapse collapse">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Venture Advisors</a></li>
+                <li><a href="#">Calendar</a></li>
+            </ul>        
+        </nav>
+    </div>
+</div>
+<section class="content-part">
+	<div class="container">
+    	<div class="row">
+            <div class="col-lg-2 col-md-3">
+            	<div class="sidebar-nav">
+                    <h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a href="#">All Functions</a></h3>
+                    <ul class="nav-s">
+                    	<li><a href="#">Analytics, Data</a></li>
+                        <li><a href="#">Design, UI, UX</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">General Mgm, Strategy</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Operations</a></li>
+                        <li><a href="#">Product Mgm</a></li>
+                        <li><a href="#">Sales, Biz Dev</a></li>
+                        <li><a href="#">Talent</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Other, Off Topic, Fun</a></li>                       
+                    </ul>
+                </div>                    
+            </div>
+            <div class="col-lg-2 col-md-3">
+            	<div class="sidebar-nav">
+                    <h3 class="nav-title"><span class="nav-title-icon">&nbsp;</span><a href="#">All Spaces</a></h3>
+                    <ul class="nav-s">
+                    	<li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Fin Tech</a></li>
+                        <li><a href="#">Health Tech</a></li>
+                        <li><a href="#">Marketplaces</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">SaaS/ Ent. Software</a></li>                                                              
+                    </ul>
+                </div>                    
+            </div>            
+            
+            
+            <div class="col-lg-8 col-md-6" id="list-view">
+            	<ul class="tabs tab2">
+                	<li class="active"><a href="#" class="que"><span class="icon"></span>Share a Question</a><span class="arrow-down"></span></li>
+                    <li><a href="#" class="link"><span class="icon"></span>Share a Link</a><span class="arrow-down"></span></li>
+                    <li><a href="#" class="file"><span class="icon"></span>Share a File</a><span class="arrow-down"></span></li>
+                </ul>
+                <div class="detail2 tab-detail clearfix">
+                	<div class="col-sm-12 clearfix">
+                    	<div class="plr10 clearfix">
+                			<textarea>Share some stuff....</textarea>
+                        </div>
+                        <div class="plr10 clearfix">
+                        	<form method="post" action="#" class="border select-func clearfix">
+							<select class="elgg-input-dropdown selectpicker show-tick form-control functions-dropdown" id="functions" name="functions">
+								<option selected="selected" value="">Add Function/(s)</option>
+								<option value="Analytics/Data">Analytics/Data</option>
+								<option value="Design/UI/UX">Design/UI/UX</option>
+								<option value="Finance">Finance</option>
+								<option value="General Mgm/Strategy">General Mgm/Strategy</option>
+								<option value="Marketing">Marketing</option>
+								<option value="Operations">Operations</option>
+								<option value="Product Mgm">Product Mgm</option>
+								<option value="Sales/Biz Dev">Sales/Biz Dev</option>
+								<option value="Talent">Talent</option>
+								<option value="Technology">Technology</option><option value="Other/Off Topic/Fun">Other/Off Topic/Fun</option>
+							</select>
+							
+                                <select class="selectpicker show-tick form-control spaces-dropdown" id="spaces" name="spaces">
+                                    <option selected="selected" value="">Add Space/(s)</option>
+                                    <option value="E-commerce">E-commerce</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Fin Tech">Fin Tech</option>
+                                    <option value="Health Care">Health Care</option>
+                                    <option value="Marketplaces">Marketplaces</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="SaaS/Ent. Software">SaaS/Ent. Software</option>
+                                </select>
+                                <div class="select-option">
+                                	<input type="checkbox" class="checkbox" />
+                                    <label>Everyone</label>
+                                    <input type="checkbox" class="checkbox" />
+                                    <label>Leadership</label>
+                                    <input type="checkbox" class="checkbox" />
+                                    <label>Founders</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="plr10 clearfix">
+                        	<div class="" id="functions-list">
+								
+							</div>
+                        </div>
+                        <div class="plr10 clearfix">
+                        	<div class="" id="spaces-list">
+                            	
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-bt col-sm-12 col-xs-12">
+                        <div class="plr10">
+                              <input type="button" class="cancel-bt right" name="" value="Cancel">                          
+                              <input type="button" class="submit-btn2 right" name="" value="Share">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            	<div class="detail2 clearfix">                
+                	<div class="col-lg-10 col-xs-12 description">
+                    	<div class="avatar avatar2 avatar-width" >
+                    		<img src="images/avatar.jpg" alt="#" />
+                            <p class="name">User Name here</p>
+                            <p class="date">May 22, 2014</p>
+                        </div>    
+                        <div class="avatar-detail-2">                        	
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est</p>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-2 col-xs-12 detail-bt">
+                    	<button class="grey-bt">Unfollow <span>Q</span></button>                     
+                    </div>
+                    
+                    <div class="col-sm-12 col-xs-12">
+                    	<div class="shared">
+                        	<p class="border">Shared with:  Functions: <span>Operations, Strategy, Technology</span> <span class="sep">|</span>Spaces:  <span>Data, Mobile, Gaming</span></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 grey-bar">
+                    	<div class="answer">
+                            <a href="#">Add Answer</a>
+                            <a href="#">Delete</a>
+                            <a href="#">Change Group</a>
+                        </div>
+                    </div>                                       
+                </div>
+                <div class="detail2 clearfix">                
+                	<div class="col-lg-10 col-xs-12 description">
+                    	<div class="avatar avatar2 avatar-width" >
+                    		<img src="images/avatar.jpg" alt="#" />
+                            <p class="name">User Name here</p>
+                            <p class="date">May 22, 2014</p>
+                        </div>    
+                        <div class="avatar-detail-2">                        	
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est</p>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-2 col-xs-12 detail-bt">
+                    	<button class="grey-bt">Unfollow <span>Q</span></button>                     
+                    </div>                    
+                    <div class="col-sm-12 col-xs-12">
+                    	<div class="shared">
+                        	<p class="border">Shared with:  Functions: <span>Operations, Strategy, Technology</span> <span class="sep">|</span>Spaces:  <span>Data, Mobile, Gaming</span></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 grey-bar">
+                    	<div class="answer">
+                            <a href="#">Add Answer</a>
+                            <a href="#">Delete</a>
+                            <a href="#">Change Group</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-xs-12">
+                    	<div class="comment-text">
+                        	Comments: <span>5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 co-xs-12">                    
+                        <div class="comments">
+                            <div class="com-wrap border clearfix">
+                                <div class="col-lg-10 col-xs-12 description">
+                                    <div class="avatar avatar2 avatar-width" >
+                                        <img src="images/avatar.jpg" alt="#" />
+                                        <p class="name">User Name here</p>
+                                        <p class="date">May 22, 2014</p>
+                                    </div>    
+                                    <div class="avatar-detail-2">                        	
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est</p>
+                                        <a href="javascript:void(0);" class="reply-link">Reply</a>
+                                        
+                                    </div>                        
+                                </div>
+                                <div class="col-lg-2 col-xs-12 text-center">
+                                  	<a href="#" class="vote">UP<br/>Vote<br/><span>(10)</span></a>
+                                </div>
+                            </div>
+                            <div class="com-wrap border clearfix">
+                                <div class="col-lg-10 description">
+                                    <div class="avatar avatar2 avatar-width" >
+                                        <img src="images/avatar.jpg" alt="#" />
+                                        <p class="name">User Name here</p>
+                                        <p class="date">May 22, 2014</p>
+                                    </div>    
+                                    <div class="avatar-detail-2">                        	
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crasmalesuada viverra leo, eu suscipit erat mollis a. Fusce quis est</p>
+                                        <div class="reply">
+                                        	<input type="text" value="Reply here..." />
+                                            <input type="submit" value="" />
+                                        </div>
+                                        
+                                    </div>                        
+                                </div>
+                                <div class="col-lg-2 text-center">
+                                  	<a href="#" class="vote">UP<br/>Vote<br/><span>(10)</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                </div>                	
+            </div>
+            
+            
+                        
+        </div>
+    </div>
+</section>
+<footer class="footer-wrapper clearfix">
+	<div class="container">
+    	<p class="logoimg"><img src="images/footer-logo.jpg" alt=" " /></p>
+        <p>Plus Network is the online platform connecting the Monashees' community. Monashees Capital &copy; 2014 All rights reserved.</p>
+        <p>Should you have any questions or comments, please contact <a href="mailto:cferrerias@monashees.com.br">Camila Ferreira</a></p>        
+    </div>
+</footer>
+</body>
+</html>
