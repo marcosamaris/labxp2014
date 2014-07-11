@@ -43,7 +43,7 @@ $options = array (
  */
 
 //FORM
-$form = elgg_view_form ( "home/save", array("role"=>"form") );
+$form = elgg_view_form ( "home/save", array("role"=>"form", "class"=>"") );
 $container_form = '<div class="container-form">'.$form.'</div>';
 
 //LIST OF POSTS

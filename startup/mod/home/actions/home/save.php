@@ -9,7 +9,9 @@ $home = new ElggObject();
 
 $home->subtype = "home";
 
-$home->description = $body;
+
+
+$home->description = nl2br($body);
 
 $home->access_id = "1";
 $home->comments_on = "On";

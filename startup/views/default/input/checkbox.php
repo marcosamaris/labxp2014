@@ -36,8 +36,4 @@ if (isset($vars['name']) && $default !== false) {
 }
 
 ?>
-<input type="checkbox" <?php 
-$teste = $vars['testeChecked'];
-echo elgg_format_attributes($vars); 
- ?>
-checked />
+<input type="checkbox" <?php echo elgg_format_attributes($vars); ?> />

@@ -88,6 +88,7 @@ body {background:#f5f5f5}
     line-height: 1.2em;
 }
 
+/*
 .container-form{
     background-color: #fff;
     border-color: #ddd;
@@ -112,6 +113,7 @@ body {background:#f5f5f5}
     text-transform: uppercase;
     top: 15px;
 }
+*/
 
 .container-posts{
     padding-top: 20px;
@@ -231,3 +233,36 @@ div.container-posts > ul.elgg-pagination > li {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: none;
 }
+
+.tab-detail input[type="text"]:focus, textarea:focus {
+    background: none;
+    border: none;
+    color: #444444;
+}
+
+.ui-button {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.1em;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+
+.add-tags.ui-button-text-only .ui-button-text {
+    padding-top: 0.4em;
+	padding-bottom:0.4em;
+	padding-left: 0.5em;
+	padding-right: 28px;
+}
+.ui-button .ui-button-text {
+    display: block;
+    line-height: 1.4;
+}
+
+li.disabled {
+    background: none repeat scroll 0 0 #f5f5f5;
+}
+
