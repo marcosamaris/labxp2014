@@ -88,7 +88,7 @@ function advisor_save_admin($hook, $type, $returnvalue, $params) {
     $advisor->advisorgoogleplus = get_input ( 'advisorgoogleplus' );
     $advisor->advisortwitter = get_input ( 'advisortwitter' );
     $advisor->advisorfacebook = get_input ( 'advisorfacebook' );
-    
+    $advisor->access_id = "1";
     $advisor->save ();
     
     system_message ( elgg_echo ( "advisors:save:success" ) );

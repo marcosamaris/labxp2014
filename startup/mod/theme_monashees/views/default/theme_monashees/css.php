@@ -140,11 +140,9 @@ body {background:#f5f5f5}
 
 div.container-posts > ul > li{
     
-    background: none repeat scroll 0 0 #fff;
-    border: 1px solid #f0f0f0;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    padding: 17px 0;
+    background: none;
+    border: none;
+    
 }
 
 div.elgg-content > ul  {
@@ -215,6 +213,7 @@ p.elgg-output-categories {
     padding-top: 15px;
 }
 
+/*
 li a.unlikebutton:link, 
 li a.likebutton:link, 
 li a.buttonlink:link {
@@ -224,6 +223,7 @@ li a.buttonlink:link {
     font-size: 11px;
     padding: 1px 3px;
 }
+*/
 
 footer.footer-wrapper{
     position: relative;
@@ -265,4 +265,14 @@ div.container-posts > ul.elgg-pagination > li {
 li.disabled {
     background: none repeat scroll 0 0 #f5f5f5;
 }
+
+div.shared{
+    padding-bottom: 8px;
+}
+
+.com-wrap{
+    padding-bottom: 10px;
+}
+
+
 

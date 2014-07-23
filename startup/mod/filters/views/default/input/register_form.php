@@ -117,6 +117,20 @@ if (! empty ( $roles )) {
 ?>
 
 <div class="form-group">
-<input name="company_email" type="text" class="form-control" placeholder="Your Company's Mail" value="<?php echo $user->company_email;?>"></input>
+<input name="company_email" type="text" class="form-control" placeholder="Your Company's Mail" title="Your Company's Mail" value="<?php echo $user->company_email;?>"></input>
 </div>
-
+<div class="form-group">
+<input name="twitter" type="text" class="form-control" placeholder="Your Twitter" title="Your Twitter" value="<?php echo $user->twitter;?>"></input>
+</div>
+<div class="form-group">
+<input name="facebook" type="text" class="form-control" placeholder="Your Facebook" title="Your Facebook" value="<?php echo $user->facebook;?>"></input>
+</div>
+<div class="form-group">
+<input name="googleplus" type="text" class="form-control" placeholder="Your Google+" title="Your Google+" value="<?php echo $user->googleplus;?>"></input>
+</div>
+<div class="form-group">
+<input name="skype" type="text" class="form-control" placeholder="Your Skype" title="Your Skype"value="<?php echo $user->skype;?>"></input>
+</div>
+<div class="form-group">
+<input name="linkedin" type="text" class="form-control" placeholder="Your LinkedIn" title="Your LinkedIn" value="<?php echo $user->linkedin;?>"></input>
+</div>

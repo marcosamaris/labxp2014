@@ -14,7 +14,7 @@ $english = array(
      */
     'like' => "like",
     'unlike' => "unlike",
-    'like:likethis' => "like this.",
+    'like:likethis' => "liked this.",
 );
 
 add_translation("en", $english);

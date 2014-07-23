@@ -36,7 +36,12 @@ function get_like_comment_string($annotation_guid) {
             }
         }
         if(!empty($results["listusername"])) $results["listusername"] .= " ".elgg_echo ("like:likethis");
+        
+        if(!empty($results["listusername"])) $results['listnumberusername'] = sizeof($like_object);
+    
     }
+    
+    
     return $results;
 }
 
@@ -44,7 +49,7 @@ function add_and_between_name($msg, $name) {
     if (empty($msg))
         $msg = $name;
     else
-        $msg = $msg . " and " . $name;
+        $msg = $msg . " , " . $name;
     return $msg;
 }
 

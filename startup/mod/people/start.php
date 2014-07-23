@@ -24,9 +24,19 @@ function people_init() {
 
 
 function people_page_handler($pages) {
+    $user = elgg_get_logged_in_user_entity ();
 	
-	include elgg_get_plugins_path () . 'people/pages/people/index.php';
-
+	// index.php can do whatever it needs to for loggedIn or loggedOut
+	
+	if (($user->permission == 'allowed') || elgg_is_admin_logged_in ()) {
+	    
+	    if (! include_once (elgg_get_plugins_path () . 'people/pages/people/index.php')) {
+	        return false;
+	    }
+	} else if (! include_once (dirname ( __FILE__ ) . '/pages/home/register.php')) {
+	
+	    return false;
+	}
 	
 	return true;
 }

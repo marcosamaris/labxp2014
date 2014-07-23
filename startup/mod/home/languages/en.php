@@ -33,6 +33,11 @@ $english = array(
 		'home:error:missing:description' => 'Please enter the body of your home!',
 		'home:error:cannot_edit_post' => 'This post may not exist or you may not have permissions to edit it.',
 		'home:error:revision_not_found' => 'Cannot find this revision.',
+		'home:form:textarea' => 'Share some stuff....',
+		'home:sharequestion' => 'Share a Question',
+		'home:addanswer' => 'Add Answer',
+		'home:delete' => 'Delete',
+		
 		
 );
 

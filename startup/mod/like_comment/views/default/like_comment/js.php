@@ -9,6 +9,13 @@
  */
 ?>
 function initDisplayLike(annoid, data){
+
+    $('.vote-tooltip').tooltip('destroy');
+    $("#unlikelistnumberusername"+annoid).attr("title","");
+    $("#likelistnumberusername"+annoid).attr("title","");
+    $("#unlikelistnumberusername"+annoid).attr("data-original-title","");
+    $("#likelistnumberusername"+annoid).attr("data-original-title","");
+    
     if(typeof(data.listusername) != "undefined" && data.listusername.length >0){
         $("#like" + annoid + " span").html(data.listusername);
         $("#like" + annoid + "").removeClass("hide");
@@ -22,6 +29,31 @@ function initDisplayLike(annoid, data){
     }  else {
         $("#likebutton"+annoid).removeClass("hide");
         $("#unlikebutton"+annoid).addClass("hide");
+    }
+    
+    if(typeof(data.listnumberusername) != "undefined" && data.listnumberusername > 0){
+            
+        $("#unlikelistnumberusername"+annoid).html("("+data.listnumberusername+")");
+        $("#likelistnumberusername"+annoid).html("("+data.listnumberusername+")");
+        
+        $("#unlikelistnumberusername"+annoid).attr("title",data.listusername);
+        $("#likelistnumberusername"+annoid).attr("title",data.listusername);
+        
+        $("#unlikelistnumberusername"+annoid).attr("data-original-title",data.listusername);
+        $("#likelistnumberusername"+annoid).attr("data-original-title",data.listusername);
+    
+        $(".vote-tooltip").tooltip();
+    
+    }else{
+       $("#unlikelistnumberusername"+annoid).html("(0)");
+        $("#likelistnumberusername"+annoid).html("(0)");
+        
+        $("#unlikelistnumberusername"+annoid).attr("title","");
+        $("#likelistnumberusername"+annoid).attr("title","");
+        $("#unlikelistnumberusername"+annoid).attr("data-original-title","");
+        $("#likelistnumberusername"+annoid).attr("data-original-title","");
+    
+        $(".vote-tooltip").tooltip();
     }
 }
 

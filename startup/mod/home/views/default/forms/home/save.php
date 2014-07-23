@@ -8,14 +8,14 @@
 
 ?>
 <ul class="tabs tab2">
-	<li class="active"><a href="#" class="que"><span class="icon"></span>Share a Question</a><span class="arrow-down"></span></li>
+	<li class="active"><a href="#" class="que"><span class="icon"></span><?php echo elgg_echo("home:sharequestion")?></a><span class="arrow-down"></span></li>
     <!-- <li><a href="#" class="link"><span class="icon"></span>Share a Link</a><span class="arrow-down"></span></li>
     <li><a href="#" class="file"><span class="icon"></span>Share a File</a><span class="arrow-down"></span></li> -->
 </ul>
                 <div class="detail2 tab-detail clearfix">
                 	<div class="col-sm-12 clearfix">
                     	<div class="plr10 clearfix">
-    						<?php echo elgg_view('input/longtext',array('name' => 'body', 'id' => 'textarea-home', 'placeholder' => 'What is your question?', 'rows'=> '3')); ?>
+    						<?php echo elgg_view('input/longtext',array('name' => 'body', 'id' => 'textarea-home', 'placeholder' => elgg_echo("home:form:textarea"), 'rows'=> '3')); ?>
                         </div>
                         <div class="plr10 clearfix">
                         

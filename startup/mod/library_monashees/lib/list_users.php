@@ -1,4 +1,42 @@
 <?php
+/**
+ * Returns a rendered list of annotations, plus pagination. This function
+ * should be called by wrapper functions.
+ *
+ * @param array $annotations Array of annotations
+ * @param array $vars        Display variables
+ *		'count'      The total number of annotations across all pages
+ *		'offset'     The current indexing offset
+ *		'limit'      The number of annotations to display per page
+ *		'full_view'  Display the full view of the annotation?
+ *		'list_class' CSS Class applied to the list
+ *		'offset_key' The url parameter key used for offset
+ *
+ * @return string The list of annotations
+ * @access private
+ */
+function view_annotation_list($annotations, array $vars = array()) {
+    $defaults = array(
+            'items' => $annotations,
+            'offset' => null,
+            'limit' => null,
+            'list_class' => 'elgg-list-annotation elgg-annotation-list', // @todo remove elgg-annotation-list in Elgg 1.9
+            'full_view' => true,
+            'offset_key' => 'annoff',
+            'view' => 'page/components/list'
+    );
+
+    $vars = array_merge($defaults, $vars);
+
+    if (!$vars["limit"] && !$vars["offset"]) {
+        // no need for pagination if listing is unlimited
+        $vars["pagination"] = false;
+    }
+
+    
+    return elgg_view($vars['view'], $vars);
+}
+
 function view_adm_permission($entities, $vars = array(), $offset = 0, $limit = 10, $full_view = true,
 		$listTypeToggle = true, $pagination = true) {
 

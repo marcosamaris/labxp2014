@@ -55,11 +55,11 @@ if(elgg_is_logged_in()){
 						echo '<a href="'.elgg_get_site_url() .'admin">'.elgg_echo('admin').'</a> <span> | </span>';
 					}
 					
-					if(($user->permission == 'allowed' || elgg_is_admin_logged_in())){
+					/*if(($user->permission == 'allowed' || elgg_is_admin_logged_in())){
 					    echo ' <a href="'.elgg_get_site_url() .'settings/user/'.$user->username.'">'.elgg_echo('settings').'</a> <span>|';
-					}
+					}*/
 					
-					
+					echo ' <a href="'.elgg_get_site_url() .'home/register">'.elgg_echo('settings').'</a> <span>|';
 					echo '</span> <a href="'.elgg_get_site_url() .'action/logout">'.elgg_echo('logout').' </a>';
 					
 					

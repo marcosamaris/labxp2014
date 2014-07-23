@@ -28,6 +28,23 @@ $owner_link = elgg_view('output/url', array(
 	'text' => $owner->name,
 	'is_trusted' => true,
 ));
+
+
+$user = elgg_get_logged_in_user_entity();
+
+$image = "";
+if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
+    $image .= '<a href="'.elgg_get_site_url().'profile/'.$owner->username.'">';
+}
+
+$image .= '<img alt="mask" src="'.$owner->getIconURL('small').'">';
+
+if (elgg_is_active_plugin('profile') && ($user->permission == 'allowed' || elgg_is_admin_logged_in())) {
+    $image .= '</a>';
+}
+
+
+
 $author_text = elgg_echo('byline', array($owner_link));
 $date = elgg_view_friendly_time($home->time_created);
 
@@ -50,12 +67,14 @@ if ($home->comments_on != 'Off') {
 	$comments_link = '';
 }
 
-$metadata = elgg_view_menu('entity', array(
+$metadata = elgg_view_menu('home', array(
 	'entity' => $vars['entity'],
 	'handler' => 'home',
 	'sort_by' => 'priority',
 	'class' => 'elgg-menu-hz',
 ));
+
+
 
 $subtitle = "$author_text $date $comments_link $categories";
 
@@ -63,6 +82,8 @@ $subtitle = "$author_text $date $comments_link $categories";
 if (elgg_in_context('widgets')) {
 	$metadata = '';
 }
+
+
 
 if ($full) {
 
@@ -92,16 +113,26 @@ if ($full) {
 	
 	
 	$params = array(
-		'entity' => $home,
+		
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
 		'content' => $excerpt.$responses,
 	);
 	$params = $params + $vars;
-	$list_body = elgg_view('object/elements/summary_home', $params);
+	//$list_body = elgg_view('object/elements/summary_home', $params);
 
-	$vars['image'] = $owner_icon;
-	$vars['body'] = $list_body;
+	$vars = array(
+		'image' => $image,
+	    'entity' => $home,
+	    'content' => $excerpt,
+	    'responses' => $responses,
+	    'metadata' => $metadata,
+	    'comment_count' => $home->countComments(),
+	    'id'=> $home->getGUID(),
+	);
+	
+	
+	
 	echo elgg_view('page/components/image_block_home', $vars);
 	
 }

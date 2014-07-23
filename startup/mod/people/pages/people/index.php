@@ -33,11 +33,18 @@ $pairCompany = array(
 );
 }
 
+$pairPermission = array(
+	  'name'=> 'permission',
+      'value' => 'allowed'
+        
+);
+
 
 $parameters = array (
                 $pairFunctions,
                 $pairSpaces,
-                $pairCompany
+                $pairCompany,
+                $pairPermission
         );
 
 
@@ -61,7 +68,7 @@ $params = array (
         'content' => $list_post,
         'filter_context' => $page_filter,
         'class' => 'elgg-river-layout',
-        'spaces' => $vetorSpaces,
+        'spaces' => $vetorSpaces,   
         'functions' => $vetorFunctions,
         'functSelected' => 'functionSelected',
         'companies_html' => true

@@ -34,7 +34,13 @@ function filters_save_entity($event, $objectType, $object) {
         $role = get_input('role');
         $company = get_input('company');
         $company_email = get_input ( 'company_email' );
-
+        $twitter = get_input ( 'twitter' );
+        $facebook = get_input ( 'facebook' );
+        $googleplus = get_input("googleplus");
+        $linkedin = get_input("linkedin");
+        $skype = get_input("skype");
+        
+        
         
         if(is_array($functions) == true){
             $object->functions = $functions;
@@ -75,7 +81,25 @@ function filters_save_entity($event, $objectType, $object) {
         }
         
         
+        if ($twitter !== NULL) {
+            $object->twitter = $twitter;
+        }
         
+        if ($facebook !== NULL) {
+            $object->facebook = $facebook;
+        }
+        
+        if ($googleplus !== NULL) {
+            $object->googleplus = $googleplus;
+        }
+        
+        if ($skype !== NULL) {
+            $object->skype = $skype;
+        }
+        
+        if ($linkedin !== NULL) {
+            $object->linkedin = $linkedin;
+        }
         
       
     }

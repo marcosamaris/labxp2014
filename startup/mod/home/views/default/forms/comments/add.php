@@ -11,14 +11,16 @@
 
 if (isset($vars['entity']) && elgg_is_logged_in()) {
 	
+    /*
 	$inline = elgg_extract('inline', $vars, false);
 	
 	if ($inline) {
 		echo '<div class="form-group">';
-		echo elgg_view('input/text', array('name' => 'generic_comment'));
+		echo elgg_view('input/text', array('name' => 'generic_comment', 'placeholder'=>'Reply here...'));
 		echo '</div>';
 		
 		echo elgg_view('input/button', array('value' => elgg_echo("comment"), "class"=>"btn btn-primary btn-sm","type"=>'submit'));
+		//echo elgg_view('input/button', array('value' => '', "class"=>"","type"=>'submit'));
 	} else {
 ?>
 	<div>
@@ -32,9 +34,18 @@ if (isset($vars['entity']) && elgg_is_logged_in()) {
 	</div>
 <?php
 	}
+	*/
+?>
+	
+	<div class="col-sm-12 col-xs-12">
+	<div class="reply">
+	<?php echo elgg_view('input/text', array('name' => 'generic_comment', 'placeholder'=>'Reply here...'));?>
+	<input type="submit" value="">
+	</div></div>
+<?php	
 	
 	echo elgg_view('input/hidden', array(
 		'name' => 'entity_guid',
-		'value' => $vars['entity']->getGUID()
+		'value' => $vars['entity']->id
 	));
 }

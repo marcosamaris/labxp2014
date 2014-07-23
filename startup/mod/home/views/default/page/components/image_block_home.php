@@ -19,32 +19,75 @@
  * @uses $vars['id']          Optional id for the media element
  */
 
-$body = elgg_extract('body', $vars, '');
+
 $image = elgg_extract('image', $vars, '');
-$alt_image = elgg_extract('image_alt', $vars, '');
+$home = $vars['entity'];
+$metadata = $vars['metadata'];
+$responses = $vars['responses'];
+$comment_count = $vars['comment_count'];
 
-$class = 'elgg-image-block';
-$additional_class = elgg_extract('class', $vars, '');
-if ($additional_class) {
-	$class = "$class $additional_class";
-}
+$owner = $home->getOwnerEntity();
+$ownername = $owner->name;
 
+$date = elgg_view_friendly_time($home->time_created);
+
+$content = $vars['content'];
+
+$functions = elgg_view('output/functions_list', $vars);
+$spaces = elgg_view('output/spaces_list', $vars);
+ 
 $id = '';
 if (isset($vars['id'])) {
 	$id = "id=\"{$vars['id']}\"";
 }
 
 
-$body = "<div class=\"elgg-body\">$body</div>";
 
-if ($image) {
-	$image = "<div class=\"elgg-image user-avatar-post\">$image</div>";
-}
+
 
 
 
 echo <<<HTML
-<div class="$class clearfix" $id>
-	$image$alt_image$body
+<div class="detail2 clearfix" $id>
+    <div class="col-lg-10 col-xs-12 description">
+        <div class="avatar avatar2 avatar-width" >
+            $image
+            <p class="name">$ownername</p>
+            <p class="date">$date</p>
+        </div>    
+        <div class="avatar-detail-2">                        	
+            <p>$content</p>
+        </div>
+    </div>
+    <div class="col-sm-2 col-xs-12 detail-bt col-lg-2">
+        <!--<button class="grey-bt">Unfollow <span>Q</span></button>-->                     
+    </div>
+    <div class="col-sm-12 col-xs-12">
+                    	<div class="shared">
+                        	<p class="border">Shared with:  Functions: <span>$functions</span> <span class="sep">|</span>Spaces:  <span>$spaces</span></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 grey-bar">
+                    	<div class="answer">
+                        	 $metadata
+                        </div>
+                    </div>
+HTML;
+                    
+if($comment_count > 0){
+
+echo <<<HTML
+<div class="col-sm-12 col-xs-12">
+    	<div class="comment-text">
+        	Comments: <span>$comment_count</span>
+        </div>
+    </div>
+HTML;
+}
+echo <<<HTML
+    
+    
+    $responses             
+
 </div>
 HTML;

@@ -42,7 +42,7 @@ if ($comments) {
 
 <?php
 
-	echo elgg_view_annotation_list($comments, array('list_class' => 'elgg-river-comments'));
+	echo view_annotation_list($comments, array('list_class' => 'elgg-river-comments','view' => 'page/components/list_comment'));
 
 	if ($comment_count > count($comments)) {
 		$num_more_comments = $comment_count - count($comments);
@@ -58,6 +58,6 @@ if ($comments) {
 }
 
 // inline comment form
-$form_vars = array('id' => "comments-add-{$object->getGUID()}", 'class' => 'hidden', 'role'=>'form');
+$form_vars = array('id' => "comments-add-{$object->getGUID()}", 'class' => 'hidden reply', 'role'=>'form');
 $body_vars = array('entity' => $object, 'inline' => true);
 echo elgg_view_form('comments/add', $form_vars, $body_vars);

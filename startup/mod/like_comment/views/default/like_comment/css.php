@@ -7,6 +7,16 @@
  * @author Evobilis <info@evobilis.com>
  * @link http://evobilis.com/
  */
+/*
+ a.unlikebutton:link,a.likebutton:link,a.buttonlink:link {
+-moz-border-radius:4px 4px 4px 4px;
+background:none repeat scroll 0 0 #4690D6;
+border:1px solid #4690D6;
+padding: 1px 3px;
+color: white;
+font-size: 11px;
+}
+*/
 ?>
 
 .like_display {
@@ -24,15 +34,6 @@
 .like_display div{
     background: #eaeaea;
     padding: 5px;
-}
-
-a.unlikebutton:link,a.likebutton:link,a.buttonlink:link {
-    -moz-border-radius:4px 4px 4px 4px;
-    background:none repeat scroll 0 0 #4690D6;
-    border:1px solid #4690D6;
-    padding: 1px 3px;
-    color: white;
-    font-size: 11px;
 }
 
 .generic_comment_owner {

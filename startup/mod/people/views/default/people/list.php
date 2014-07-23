@@ -58,6 +58,8 @@ if ($position == 'before' || $position == 'both') {
 
 
 $icon_url = elgg_format_url($item->getIconURL('medium'));
+
+$user = elgg_get_logged_in_user_entity();
 	?>
 			
 <div class="col-lg-3 col-md-4 col-sm-3 col-xs-6">

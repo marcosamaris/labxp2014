@@ -330,9 +330,22 @@ background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(230,230,23
 
 .avatar-detail-2 p {color: #444444; font-family: 'sans_regular'; font-size: 15px; line-height: 21px; margin-bottom: 0;}
 .avatar-detail-2 a {font:11px Tahoma, Arial, Helvetica, sans-serif;}
+
 .avatar-detail-2 .reply {border:1px solid #d9d9d9; padding:4px; margin-top:18px; margin-bottom:18px;}
 .avatar-detail-2 .reply input[type=text] {border:none; color:#7c7c7c; font:14px;  font-family: 'sans_regular'; width:80%;}
 .avatar-detail-2 .reply input[type="submit"] {background: url("../images/submit-arrow.png") no-repeat center; border: none; float: right; width:20px; height:20px;}
+
+div.reply {border:1px solid #d9d9d9; padding:4px; margin-top:18px; margin-bottom:18px;}
+div.reply input[type=text] {border:none; color:#7c7c7c; font:14px;  font-family: 'sans_regular'; width:80%;}
+div.reply input[type=text]:focus {background: none;}
+div.reply input[type="submit"] {background: url("../images/submit-arrow.png") no-repeat center; border: none; float: right; width:20px; height:20px;}
+
+
+
+/*form.reply {border:1px solid #d9d9d9; padding:4px; margin-top:18px; margin-bottom:18px;}
+form.reply input[type=text] {border:none; color:#7c7c7c; font:14px;  font-family: 'sans_regular'; width:80%;}
+form.reply button[type="submit"] {background: url("../images/submit-arrow.png") no-repeat center; border: none; float: right; width:20px; height:20px;}*/
+
 .grey-bt {background:url(../images/button.png) no-repeat; width:93px; height:26px; border:none; outline:none; font-size:14px; font-family: 'sans_regular'; color:#777777; text-align:left; margin-bottom:10px;}
 .grey-bt span {color:#478dc8;}
 .border {border-top:1px solid #d8d8d8;}
@@ -382,8 +395,18 @@ background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(230,230,23
 
 .grey-bar {background:#f6f7f8;}
 .grey-bar div.answer {padding:8px 10px;}
-div.answer a {background:url(../images/bullet.png) no-repeat left; padding-left:14px; padding-right:5px; font:13px 'sans_regular';}
-div.answer a:first-child {background:none; padding-left:0;}
+div.answer li{background:url(../images/bullet.png) no-repeat left; padding-left:14px; padding-right:5px; font:13px 'sans_regular';}
+div.answer li:first-child,div.answer > ul.elgg-menu-annotation > li:first-child {background:none; padding-left:0;}
+div.answer li a { color: #428bca; text-decoration: none;}
+
+div.answer >  .elgg-menu-annotation > li,div.answer >   .elgg-menu-annotation {margin-left: 0px;}
+  
+
+
+div.answer ul.elgg-menu-annotation {float:left;}
+
+div.answer > a {background:url(../images/bullet.png) no-repeat left; padding-left:14px; padding-right:5px; font:13px 'sans_regular';}
+div.answer > a:first-child {background:none; padding-left:0;}
 div.comment-text {padding:8px 10px; color:#7c7c7c; font:13px 'sans_semibold';}
 div.comment-text span {color:#428bca;}
 
@@ -392,6 +415,14 @@ div.comments {padding:0 10px;}
 .vote {font:12px/12px 'sans_semibold'; color:#777; background:url(../images/up-arrow.png) no-repeat; width:62px; height:62px; display:inline-block; text-align:center; padding-top:9px; margin-top:10px; margin-bottom:10px;}
 .vote:hover {text-decoration:none;}
 .vote span {display:block; padding-top:7px; color:#428bca;}
+
+a.vote, a.vote:link {font:12px/12px 'sans_semibold'; color:#777; background:url(../images/up-arrow.png) no-repeat; width:62px; height:62px; display:inline-block; text-align:center; padding-top:9px; margin-top:10px; margin-bottom:10px;}
+a.vote:hover {text-decoration:none;}
+a.vote span {display:block; padding-top:7px; color:#428bca;}
+
+a.vote.likebutton {font-weight: bold;}
+a.vote.unlikebutton {color: #ccc;}
+
 
 /*home-2 css*/
 .add-tags {background:url(../images/arrow.jpg) top right no-repeat #f5f5f5; border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px; -moz-border-radius:5px 0 0 5px; -ms-border-radius:5px 0 0 5px; -o-border-radius:5px 0 0 5px; behavior:url(../js/PIE.htc); min-height:26px; border:none; outline:none; font:12px 'sans_regular'; padding-right:32px; position:relative; margin-right:5px; margin:2px 0;}
