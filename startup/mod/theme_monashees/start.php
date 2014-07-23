@@ -134,7 +134,7 @@ function monashees_profile_page_handler($page) {
     
     
     $body = elgg_view_layout ( 'two_sidebar', array (
-            'content' => elgg_view ( 'profile/wrapper' )."".elgg_view("profile/homeposts"),
+            'content' => elgg_view ( 'profile/wrapper' )."".elgg_view("profile/owner_block")."".elgg_view("profile/homeposts"),
             'username' => $username 
     ) );
     

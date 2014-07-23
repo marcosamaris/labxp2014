@@ -54,13 +54,12 @@ $content_menu = elgg_view_menu('owner_block', array(
 	'class' => 'profile-content-menu',
 ));
 
+if(!empty($admin_links)){
 echo <<<HTML
 
-<div id="profile-owner-block">
-	$icon
-	$profile_actions
-	$content_menu
-	$admin_links
+<div class="detail clearfix">
+    $admin_links
 </div>
 
 HTML;
+}

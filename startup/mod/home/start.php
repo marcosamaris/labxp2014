@@ -140,7 +140,10 @@ function elgg_post_menu_setup($hook, $type, $value, $params) {
 }
 function home_page_handler($segments) {
     $user = elgg_get_logged_in_user_entity ();
-    if ((! $segments [0] && $user->permission == 'allowed') || elgg_is_admin_logged_in ()) {
+    
+    if($segments[0] == "register"){
+        include elgg_get_plugins_path () . 'home/pages/home/register.php';
+    }else if ((! $segments [0] && $user->permission == 'allowed') || elgg_is_admin_logged_in ()) {
         include elgg_get_plugins_path () . 'home/pages/home/index.php';
     } else {
         include elgg_get_plugins_path () . 'home/pages/home/register.php';
