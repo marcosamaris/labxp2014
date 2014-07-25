@@ -18,8 +18,9 @@ if (elgg_is_active_plugin ( 'profile' ) && ($user->permission == 'allowed' || el
 $briefdescription = "";
 $profile_fields = elgg_get_config ( 'profile_fields' );
 if (is_array ( $profile_fields ) && sizeof ( $profile_fields ) > 0) {
-    $briefdescription = $profile_fields ['briefdescription'];
+    $briefdescription = $user->briefdescription;
 }
+
 ?>
 
 
@@ -31,7 +32,7 @@ if (is_array ( $profile_fields ) && sizeof ( $profile_fields ) > 0) {
         </div>
 		<div class="avatar-detail4">
 			<h3><?php echo $user->name;?></h3>
-			<p class="designation"><?php echo elgg_view('output/longtext', array('value' => $bri, 'class' => 'mtn'));?></p>
+			<p class="designation"><?php echo elgg_view('output/longtext', array('value' => $briefdescription, 'class' => 'mtn'));?></p>
 			<p class="function">
 				<span>Function</span><?php echo $user->functions;?></p>
 			<p class="function">
