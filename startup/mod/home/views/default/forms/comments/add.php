@@ -46,6 +46,8 @@ if (isset($vars['entity']) && elgg_is_logged_in()) {
 	
 	echo elgg_view('input/hidden', array(
 		'name' => 'entity_guid',
-		'value' => $vars['entity']->id
+		//'value' => $vars['entity']->id
+		'value' => $vars['entity']->getGUID()
+		
 	));
 }
